@@ -7,8 +7,8 @@ const Stats = () => {
   const stats = [
     { value: 35, suffix: '+', label: 'Facilities Worldwide' },
     { value: 100000, suffix: '+', label: 'Happy Customers' },
-    { value: 99.9, suffix: '%', label: 'Uptime Guarantee' },
-    { value: 15, suffix: '+', label: 'Years of Excellence' }
+    { value: 99.9, suffix: '%', label: 'Ontime Guarantee' },
+    { value: 10, suffix: '+', label: 'Years of Excellence' }
   ]
 
   const CountUp = ({ end, duration = 2, suffix = '' }) => {

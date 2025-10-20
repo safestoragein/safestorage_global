@@ -324,7 +324,7 @@ const Features = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3, type: "spring" }}
               >
-                15+
+                10+
               </motion.div>
               <span>Years of Excellence</span>
             </div>

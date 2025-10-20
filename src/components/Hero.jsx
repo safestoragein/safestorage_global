@@ -177,7 +177,7 @@ const Hero = () => {
                   </div>
                   <div className="highlight-text">
                     <h4>99.9%</h4>
-                    <p>Uptime</p>
+                    <p>Ontime</p>
                   </div>
                 </div>
                 <div className="highlight-divider"></div>

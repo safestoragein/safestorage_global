@@ -30,7 +30,7 @@ const TrustBadges = () => {
   ]
 
   const trustMetrics = [
-    { number: '15+', label: 'Years of Excellence', icon: <TrendingUp size={20} /> },
+    { number: '10+', label: 'Years of Excellence', icon: <TrendingUp size={20} /> },
     { number: '50,000+', label: 'Satisfied Customers', icon: <Users size={20} /> },
     { number: '35', label: 'Global Facilities', icon: <Globe size={20} /> },
     { number: '24/7', label: 'Security Monitoring', icon: <Zap size={20} /> }
