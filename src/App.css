@@ -3619,16 +3619,56 @@ html {
     grid-template-columns: repeat(2, 1fr);
   }
   
+  /* Location selector - Force single row on mobile */
   .location-tabs {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 0 20px;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+    padding: 0 10px !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
   }
   
   .location-tab-enhanced {
-    width: 100%;
-    max-width: 280px;
+    flex: 1 !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    padding: 12px 4px !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    border-radius: 12px;
+    gap: 6px !important;
+  }
+  
+  .location-flag-small {
+    font-size: 22px !important;
+    margin: 0 auto 4px !important;
+  }
+  
+  .location-text {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    align-items: center !important;
+  }
+  
+  .location-name-small {
+    font-size: 10px !important;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  
+  .location-desc {
+    font-size: 8px !important;
+    line-height: 1.2 !important;
+    opacity: 0.7;
+    padding: 0 2px !important;
+    min-height: 20px !important;
+  }
+  
+  .active-indicator {
+    display: none !important;
   }
   
   .form-row {
@@ -4259,18 +4299,28 @@ html {
     font-size: 12px;
   }
   
-  /* Location tabs */
+  /* Location tabs - keep single row */
+  .location-tabs {
+    gap: 4px !important;
+    padding: 0 8px !important;
+  }
+  
   .location-tab-enhanced {
-    min-width: 100%;
-    padding: 12px;
+    padding: 10px 2px !important;
+    border-radius: 10px;
   }
   
   .location-flag-small {
-    font-size: 24px;
+    font-size: 20px !important;
   }
   
   .location-name-small {
-    font-size: 13px;
+    font-size: 9px !important;
+  }
+  
+  .location-desc {
+    font-size: 7px !important;
+    min-height: 18px !important;
   }
   
   /* Partners */
