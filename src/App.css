@@ -1229,44 +1229,64 @@ html {
     line-height: 1 !important;
   }
   
-  /* Enhanced location strip for mobile */
+  /* Enhanced location strip for mobile - Force single row */
   .hero-location-strip {
-    margin-top: 20px;
-    padding: 14px;
+    margin-top: 15px;
+    padding: 10px 8px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 215, 0, 0.02));
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 215, 0, 0.15);
-    border-radius: 14px;
+    border-radius: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
   }
   
   .location-strip-content {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 11px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    font-size: 10px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-width: max-content;
+  }
+  
+  .location-strip-content > span {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 9px !important;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 4px;
   }
   
   .location-strip-content svg {
-    width: 14px;
-    height: 14px;
+    width: 12px !important;
+    height: 12px !important;
     color: #ffd700;
+    flex-shrink: 0;
   }
   
   .location-pills {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex !important;
+    gap: 4px !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0 !important;
   }
   
   .location-pill {
-    font-size: 10px;
-    padding: 4px 10px;
+    font-size: 9px !important;
+    padding: 4px 8px !important;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 215, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 8px;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
   }
 }
 
