@@ -4205,7 +4205,7 @@ html {
   
   /* Footer Columns */
   .footer-column {
-    padding: 15px;
+    padding: 12px 15px;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 15px;
     backdrop-filter: blur(10px);
@@ -4213,15 +4213,15 @@ html {
   }
   
   .footer-column h3 {
-    font-size: 15px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 6px !important;
     color: #ffd700;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
   }
   
-  /* Footer Links - Reduced spacing */
+  /* Footer Links - Minimal spacing */
   .footer-links {
     list-style: none;
     padding: 0;
@@ -4229,25 +4229,29 @@ html {
   }
   
   .footer-links li {
-    padding: 4px 0;
+    padding: 2px 0 !important;
+    margin: 0 !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    margin: 0;
+    gap: 3px;
+    line-height: 1 !important;
   }
   
   .footer-links li svg {
     color: #ffd700;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
   }
   
   .footer-links li a {
-    font-size: 12px;
+    font-size: 11px !important;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    line-height: 1.2;
+    line-height: 1 !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   
   /* Location List */
