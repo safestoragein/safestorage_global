@@ -31,6 +31,12 @@ const Hero = () => {
       <div className="hero-background">
         <div className="hero-gradient-overlay"></div>
         <div className="hero-pattern"></div>
+        {/* Add floating orbs for mobile */}
+        <div className="floating-orbs">
+          <div className="orb orb-1"></div>
+          <div className="orb orb-2"></div>
+          <div className="orb orb-3"></div>
+        </div>
       </div>
       
       <div className="container">
@@ -92,19 +98,19 @@ const Hero = () => {
             >
               <motion.button 
                 className="btn-primary-hero"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Get Instant Quote
-                <ArrowRight size={20} />
+                <span>Get Quote</span>
+                <ArrowRight size={18} />
               </motion.button>
               <motion.button 
                 className="btn-secondary-hero"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <Play size={20} />
-                Watch Virtual Tour
+                <Play size={18} />
+                <span>View Tour</span>
               </motion.button>
             </motion.div>
 
