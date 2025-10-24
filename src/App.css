@@ -1229,64 +1229,60 @@ html {
     line-height: 1 !important;
   }
   
-  /* Enhanced location strip for mobile - Force single row */
+  /* Enhanced location strip for mobile - 3 cards in row */
   .hero-location-strip {
     margin-top: 15px;
-    padding: 10px 8px;
+    padding: 10px 6px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 215, 0, 0.02));
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 215, 0, 0.15);
     border-radius: 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
   }
   
   .location-strip-content {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 6px !important;
-    font-size: 10px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
     align-items: center !important;
-    justify-content: flex-start !important;
-    min-width: max-content;
+    justify-content: center !important;
   }
   
-  .location-strip-content > span {
-    flex-shrink: 0 !important;
-    white-space: nowrap !important;
-    font-size: 9px !important;
-    color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    gap: 4px;
+  /* Hide "Now Available in:" text and icon on mobile */
+  .location-strip-content > span:first-child {
+    display: none !important;
   }
   
-  .location-strip-content svg {
-    width: 12px !important;
-    height: 12px !important;
-    color: #ffd700;
-    flex-shrink: 0;
+  .location-strip-content > svg {
+    display: none !important;
   }
   
   .location-pills {
     display: flex !important;
     gap: 4px !important;
-    justify-content: flex-start !important;
+    justify-content: space-between !important;
     flex-wrap: nowrap !important;
-    flex-shrink: 0 !important;
+    width: 100% !important;
   }
   
   .location-pill {
+    flex: 1 !important;
     font-size: 9px !important;
-    padding: 4px 8px !important;
+    padding: 8px 4px !important;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 215, 0, 0.2);
-    border-radius: 8px;
+    border-radius: 10px;
     white-space: nowrap !important;
-    flex-shrink: 0 !important;
-    display: inline-block !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Adjust emoji and text size for better fit */
+  .location-pill:first-child {
+    font-size: 8px !important;
   }
 }
 
