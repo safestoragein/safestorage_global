@@ -60,21 +60,21 @@ const UAEFooter = () => {
             <div className="footer-column">
               <h3>Get In Touch</h3>
               <div className="contact-info">
-                <div className="contact-item">
+                <a href="https://maps.google.com/?q=Al+Quoz+Industrial+Area+3+Dubai+UAE" target="_blank" rel="noopener noreferrer" className="contact-item contact-link">
                   <MapPin size={16} />
                   <div>
                     <div>Al Quoz Industrial Area 3</div>
                     <div>Dubai, UAE</div>
                   </div>
-                </div>
-                <div className="contact-item">
+                </a>
+                <a href="tel:+97145621101" className="contact-item contact-link">
                   <Phone size={16} />
                   <span>+971 4 562 1101</span>
-                </div>
-                <div className="contact-item">
+                </a>
+                <a href="mailto:dubai@safestorage.ae" className="contact-item contact-link">
                   <Mail size={16} />
                   <span>dubai@safestorage.ae</span>
-                </div>
+                </a>
                 <div className="contact-item">
                   <Clock size={16} />
                   <div>

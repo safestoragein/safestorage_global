@@ -111,6 +111,22 @@
   margin-bottom: 25px;
 }
 
+/* Contact Links */
+a.contact-link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+a.contact-link:hover {
+  transform: translateX(5px);
+  color: #ff6b35;
+}
+
+a.contact-link:hover svg {
+  transform: scale(1.1);
+}
+
 .contact-item {
   display: flex;
   align-items: flex-start;
