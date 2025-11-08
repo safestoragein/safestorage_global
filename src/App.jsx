@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom'
 import { CountryProvider } from './contexts/CountryContext'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -88,7 +88,7 @@ function AppWithRouter() {
       {!isCountrySpecificPage && <Header selectedLocation={selectedLocation} />}
       
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Navigate to="/uae" replace />} />
         <Route path="/uae" element={<UAEPage />} />
         <Route path="/uk" element={<UKPage />} />
         <Route path="/services" element={<ServicesPage />} />
@@ -109,7 +109,7 @@ function AppWithRouter() {
 function App() {
   return (
     <CountryProvider>
-      <Router>
+      <Router basename="/safestorage_global">
         <AppWithRouter />
       </Router>
     </CountryProvider>
