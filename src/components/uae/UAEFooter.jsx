@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Twitter, ChevronRight, Shield, Award } from 'lucide-react';
+import {
+  Phone, Mail, MapPin, Clock,
+  Facebook, Instagram, Linkedin, Twitter,
+  ChevronRight, Shield, Award
+} from 'lucide-react';
 import safeStorageLogo from '../../assets/safestorage-logo.jpeg';
 import './UAEFooter.css';
 
@@ -15,7 +19,7 @@ const UAEFooter = () => {
             <div className="footer-column company-info">
               <img src={safeStorageLogo} alt="SafeStorage" className="footer-logo" />
               <p className="company-description">
-                Dubai's premier self-storage solution. Secure, accessible, 
+                Dubai&apos;s premier self-storage solution. Secure, accessible, 
                 and affordable storage units for personal and business needs.
               </p>
               <div className="certifications">
@@ -56,35 +60,16 @@ const UAEFooter = () => {
               </ul>
             </div>
 
-            {/* Contact & Hours */}
+            {/* Get In Touch (Active Section) */}
             <div className="footer-column">
               <h3>Get In Touch</h3>
-              <div className="contact-info">
-                <a href="https://maps.google.com/?q=Al+Quoz+Industrial+Area+3+Dubai+UAE" target="_blank" rel="noopener noreferrer" className="contact-item contact-link">
-                  <MapPin size={16} />
-                  <div>
-                    <div>Al Quoz Industrial Area 3</div>
-                    <div>Dubai, UAE</div>
-                  </div>
-                </a>
-                <a href="tel:+97145621101" className="contact-item contact-link">
-                  <Phone size={16} />
-                  <span>+971 4 562 1101</span>
-                </a>
-                <a href="mailto:dubai@safestorage.ae" className="contact-item contact-link">
-                  <Mail size={16} />
-                  <span>dubai@safestorage.ae</span>
-                </a>
-                <div className="contact-item">
-                  <Clock size={16} />
-                  <div>
-                    <div>Office: 8AM - 6PM</div>
-                    <div>Access: 24/7</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Social Links */}
+              <ul className="footer-links">
+                <li><MapPin size={16} className="contact-icon" />Al Quoz Industrial Area 3, Dubai, UAE</li>
+                <li><Phone size={16} className="contact-icon" />+971 4 562 1101</li>
+                <li><Mail size={16} className="contact-icon" />dubai@safestorage.ae</li>
+                <li><Clock size={16} className="contact-icon" />Access: 24/7</li>
+              </ul>
+
               <div className="social-links">
                 <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
                 <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
@@ -92,6 +77,50 @@ const UAEFooter = () => {
                 <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
               </div>
             </div>
+
+            {/* Contact & Hours (Hidden for now) */}
+            {/*
+            <div className="footer-column">
+              <h3>Get In Touch</h3>
+              <div className="contact-info">
+                <div className="contact-item">
+                  <MapPin size={18} className="contact-icon" />
+                  <a
+                    href="https://goo.gl/maps/your-location"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Al Quoz Industrial Area 3, Dubai, UAE
+                  </a>
+                </div>
+
+                <div className="contact-item">
+                  <Phone size={18} className="contact-icon" />
+                  <a href="tel:+97145621101">+971 4 562 1101</a>
+                </div>
+
+                <div className="contact-item">
+                  <Mail size={18} className="contact-icon" />
+                  <a href="mailto:dubai@safestorage.ae">dubai@safestorage.ae</a>
+                </div>
+
+                <div className="contact-item">
+                  <Clock size={18} className="contact-icon" />
+                  <div className="contact-hours">
+                    <span>Office: 8AM - 6PM</span>
+                    <span>Access: 24/7</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="social-links">
+                <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
+                <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
+                <a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a>
+                <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
+              </div>
+            </div>
+            */}
           </div>
 
           {/* Newsletter */}
@@ -102,8 +131,8 @@ const UAEFooter = () => {
                 <p>Get storage tips, special offers, and updates</p>
               </div>
               <form className="newsletter-form">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   placeholder="Enter your email"
                   className="newsletter-input"
                 />
@@ -122,7 +151,7 @@ const UAEFooter = () => {
         <div className="uae-container">
           <div className="bottom-content">
             <div className="copyright">
-              <p>© 2024 SafeStorage UAE. All rights reserved.</p>
+              <p>© 2025 SafeStorage UAE. All rights reserved.</p>
             </div>
             <div className="legal-links">
               <Link to="/uae/privacy">Privacy Policy</Link>
@@ -133,23 +162,23 @@ const UAEFooter = () => {
               <span>We Accept:</span>
               {/* Visa */}
               <svg viewBox="0 0 48 32" height="25">
-                <rect fill="#f0f0f0" stroke="#0066B2" strokeWidth="2" width="48" height="32" rx="4"/>
+                <rect fill="#ffffff" width="48" height="32" rx="4" />
                 <text x="24" y="20" fill="#0066B2" fontSize="12" fontWeight="bold" textAnchor="middle">VISA</text>
               </svg>
               {/* MasterCard */}
               <svg viewBox="0 0 48 32" height="25">
-                <rect fill="#f0f0f0" stroke="#ddd" strokeWidth="1" width="48" height="32" rx="4"/>
-                <circle fill="#EB001B" cx="19" cy="16" r="8" opacity="0.8"/>
-                <circle fill="#FF5F00" cx="29" cy="16" r="8" opacity="0.8"/>
+                <rect fill="#ffffff" width="48" height="32" rx="4" />
+                <circle fill="#EB001B" cx="19" cy="16" r="8" opacity="0.9" />
+                <circle fill="#FF5F00" cx="29" cy="16" r="8" opacity="0.9" />
               </svg>
               {/* Amex */}
               <svg viewBox="0 0 48 32" height="25">
-                <rect fill="#f0f0f0" stroke="#006FCF" strokeWidth="2" width="48" height="32" rx="4"/>
+                <rect fill="#ffffff" width="48" height="32" rx="4" />
                 <text x="24" y="20" fill="#006FCF" fontSize="10" fontWeight="bold" textAnchor="middle">AMEX</text>
               </svg>
               {/* Cash */}
               <svg viewBox="0 0 48 32" height="25">
-                <rect fill="#f0f0f0" stroke="#4CAF50" strokeWidth="2" width="48" height="32" rx="4"/>
+                <rect fill="#ffffff" width="48" height="32" rx="4" />
                 <text x="24" y="20" fill="#4CAF50" fontSize="10" fontWeight="bold" textAnchor="middle">CASH</text>
               </svg>
             </div>

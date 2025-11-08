@@ -163,30 +163,53 @@ a.contact-link:hover svg {
 }
 
 /* Social Links */
+/* ---------- Social Links with Brand Colors ---------- */
 .social-links {
   display: flex;
   gap: 12px;
+  margin-top: 16px;
 }
 
 .social-links a {
-  width: 40px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  color: rgba(0, 0, 0, 0.7);
-  transition: all 0.3s;
+  background-color: #ffffff; /* white base for contrast */
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s ease-in-out;
 }
 
-.social-links a:hover {
-  background: #ff6b35;
-  border-color: #ff6b35;
-  color: white;
-  transform: translateY(-3px);
+/* Facebook */
+.social-links a[aria-label="Facebook"] {
+  background-color: #1877F2;
 }
+
+/* Instagram gradient look */
+.social-links a[aria-label="Instagram"] {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* LinkedIn */
+.social-links a[aria-label="LinkedIn"] {
+  background-color: #0077B5;
+}
+
+/* Twitter (now X) */
+.social-links a[aria-label="Twitter"] {
+  background-color: #1DA1F2;
+}
+
+/* Hover effect – a subtle glow */
+.social-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.25);
+  filter: brightness(1.1);
+}
+
 
 /* Newsletter */
 .footer-newsletter {
@@ -267,8 +290,9 @@ a.contact-link:hover svg {
 /* Bottom Bar */
 .footer-bottom {
   padding: 20px 0;
-  background: rgba(0, 0, 0, 0.02);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background: #1e3a5f;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 .bottom-content {
@@ -280,7 +304,7 @@ a.contact-link:hover svg {
 
 .copyright p {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
 }
 
@@ -290,14 +314,14 @@ a.contact-link:hover svg {
 }
 
 .legal-links a {
-  color: #555555 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s;
 }
 
 .legal-links a:hover {
-  color: #ff6b35 !important;
+  color: #ff9b65 !important;
 }
 
 .payment-methods {
@@ -308,7 +332,7 @@ a.contact-link:hover svg {
 
 .payment-methods span {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .payment-methods img {
