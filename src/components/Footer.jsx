@@ -85,7 +85,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container">
           <div className="bottom-content">
-            <p>© 2024 SafeStorage Global. All rights reserved.</p>
+            <p>© 2024 SafeStorage. All rights reserved.</p>
             <div className="bottom-links">
               <a href="#">Privacy Policy</a>
               <a href="#">Terms of Service</a>

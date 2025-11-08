@@ -15,24 +15,27 @@ const Contact = ({ selectedLocation }) => {
   const locations = {
     india: {
       address: 'SafeStorage Tower, Koramangala, Bangalore 560034',
-      phone: '+91 98765 43210',
-      email: 'india@safestorage.global',
+      phone: '+918088848484',
+      phoneDisplay: '+91 808 884 8484',
+      email: 'info@safestorage.in',
       hours: 'Mon-Sat: 9:00 AM - 7:00 PM',
       flag: '🇮🇳',
       mapUrl: 'https://maps.google.com/?q=Bangalore'
     },
     dubai: {
       address: 'Bay Square Building 13, Business Bay, Dubai, UAE',
-      phone: '+971 50 123 4567',
-      email: 'dubai@safestorage.global',
+      phone: '+971505773388',
+      phoneDisplay: '+971 50 577 3388',
+      email: 'info@safestorage.in',
       hours: 'Sun-Thu: 8:00 AM - 6:00 PM',
       flag: '🇦🇪',
       mapUrl: 'https://maps.google.com/?q=Dubai'
     },
     uk: {
       address: '123 Storage Street, Canary Wharf, London E14 5AB',
-      phone: '+44 20 7946 0958',
-      email: 'uk@safestorage.global',
+      phone: '', // No UK number available yet
+      phoneNote: 'Coming soon',
+      email: 'info@safestorage.in',
       hours: 'Mon-Fri: 8:00 AM - 6:00 PM',
       flag: '🇬🇧',
       mapUrl: 'https://maps.google.com/?q=London'
@@ -215,10 +218,16 @@ const Contact = ({ selectedLocation }) => {
                     </div>
                     <div className="detail-content">
                       <h4>Phone</h4>
-                      <p>{currentLocation.phone}</p>
-                      <a href={`tel:${currentLocation.phone}`} className="call-link">
-                        Call now
-                      </a>
+                      {currentLocation.phone ? (
+                        <>
+                          <p>{currentLocation.phoneDisplay || currentLocation.phone}</p>
+                          <a href={`tel:${currentLocation.phone.replace(/\s/g, '')}`} className="call-link">
+                            Call now
+                          </a>
+                        </>
+                      ) : (
+                        <p>{currentLocation.phoneNote || 'Coming soon'}</p>
+                      )}
                     </div>
                   </div>
                   

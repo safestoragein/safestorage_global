@@ -7,12 +7,14 @@ import Stats from '../components/Stats'
 import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
 import Contact from '../components/Contact'
+import CountrySelector from '../components/CountrySelector'
 
 const HomePage = () => {
   const [selectedLocation, setSelectedLocation] = useState('india')
 
   return (
     <>
+      <CountrySelector />
       <Hero />
       <LocationSelector 
         selectedLocation={selectedLocation} 

@@ -84,75 +84,108 @@ const Services = () => {
                 stiffness: 100
               }}
               whileHover={{ 
-                y: -10,
-                transition: { duration: 0.2 }
+                y: -10, 
+                scale: 1.02,
+                transition: { duration: 0.3 }
               }}
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(null)}
             >
               <motion.div 
-                className="service-emoji-large"
+                className="service-card-glow"
                 animate={{
-                  scale: hoveredIndex === index ? [1, 1.3, 1.1] : 1,
-                  rotate: hoveredIndex === index ? [0, 10, -10, 0] : 0
+                  opacity: hoveredIndex === index ? 1 : 0
                 }}
-                transition={{ duration: 0.6 }}
+              />
+              
+              <motion.div 
+                className="service-gradient-bg"
+                style={{ background: service.color }}
+                animate={{
+                  opacity: hoveredIndex === index ? 0.1 : 0
+                }}
+              />
+
+              <motion.div 
+                className="service-emoji-wrapper"
+                animate={{
+                  scale: hoveredIndex === index ? 1.15 : 1,
+                  rotate: hoveredIndex === index ? [0, -5, 5, 0] : 0
+                }}
+                transition={{ duration: 0.4 }}
               >
-                {service.emoji}
+                <span className="service-emoji">{service.emoji}</span>
+                <div className="emoji-glow"></div>
               </motion.div>
+
+              <h3 className="service-card-title">{service.title}</h3>
+              <p className="service-card-description">{service.description}</p>
               
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              
-              <ul className="service-features">
+              <div className="service-features">
                 {service.features.map((feature, idx) => (
-                  <motion.li 
+                  <motion.div 
                     key={idx}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    className="service-feature-tag"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 + idx * 0.05 }}
+                    transition={{ delay: index * 0.1 + idx * 0.1 }}
                   >
-                    <span className="feature-check">✨</span>
+                    <span className="feature-dot"></span>
                     {feature}
-                  </motion.li>
+                  </motion.div>
                 ))}
-              </ul>
-              
+              </div>
+
               <motion.button 
-                className="service-btn-gradient"
+                className="service-cta-btn"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                style={{ background: service.color }}
               >
-                <span>Learn More</span>
-                <motion.span
-                  className="btn-arrow"
-                  animate={{ x: hoveredIndex === index ? 5 : 0 }}
-                  transition={{ duration: 0.2 }}
+                Learn More
+                <svg 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  →
-                </motion.span>
+                  <path d="M5 12h14m-7-7 7 7-7 7"/>
+                </svg>
               </motion.button>
             </motion.div>
           ))}
         </div>
 
+        {/* Features Banner */}
         <motion.div 
-          className="services-banner"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          className="services-features-banner"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="banner-content">
-            <h3>All Our Facilities Include</h3>
-            <div className="banner-features">
+          <div className="features-banner-content">
+            <h3>Why Choose SafeStorage?</h3>
+            <div className="features-grid">
               {features.map((feature, index) => (
-                <div key={index} className="banner-feature">
-                  {feature.icon}
+                <motion.div 
+                  key={index}
+                  className="feature-item"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="feature-icon-wrapper">
+                    {feature.icon}
+                  </div>
                   <span>{feature.text}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

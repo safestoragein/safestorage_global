@@ -22,8 +22,8 @@ const FAQPage = () => {
   const faqs = [
     {
       category: 'general',
-      question: 'What is SafeStorage Global and how does it work?',
-      answer: 'SafeStorage Global is a premium storage solution provider operating across India, Dubai, and the UK. We offer secure, climate-controlled storage units for personal and business needs. Simply book a unit online, we\'ll pick up your items for free, store them safely, and deliver them back whenever you need them.'
+      question: 'What is SafeStorage and how does it work?',
+      answer: 'SafeStorage is a premium storage solution provider operating across India, Dubai, and the UK. We offer secure, climate-controlled storage units for personal and business needs. Simply book a unit online, we\'ll pick up your items for free, store them safely, and deliver them back whenever you need them.'
     },
     {
       category: 'general',
@@ -155,7 +155,7 @@ const FAQPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Everything you need to know about SafeStorage Global
+            Everything you need to know about SafeStorage
           </motion.p>
         </div>
       </div>

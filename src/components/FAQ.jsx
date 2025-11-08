@@ -7,7 +7,7 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'What security measures does SafeStorage Global provide?',
+      question: 'What security measures does SafeStorage provide?',
       answer: 'We offer military-grade security with 24/7 CCTV monitoring, biometric access control, individual unit alarms, security personnel on-site, and comprehensive insurance coverage for all stored items.',
       category: 'security'
     },

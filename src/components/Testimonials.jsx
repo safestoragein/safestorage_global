@@ -219,7 +219,7 @@ const Testimonials = ({ selectedLocation }) => {
             <span className="highlight-testimonial"> Worldwide</span>
           </h2>
           <p className="testimonials-subtitle">
-            Real stories from customers who chose SafeStorage Global
+            Real stories from customers who chose SafeStorage
           </p>
 
           <div className="rating-summary">

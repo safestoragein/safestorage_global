@@ -38,7 +38,7 @@ const Partners = () => {
           </motion.div>
           <h2 className="section-title">Trusted by Leading Companies</h2>
           <p className="section-subtitle">
-            Fortune 500 companies and industry leaders choose SafeStorage Global
+            Fortune 500 companies and industry leaders choose SafeStorage
           </p>
         </motion.div>
 
@@ -102,7 +102,7 @@ const Partners = () => {
         >
           <div className="cta-content">
             <h3>Join Our Network of Success</h3>
-            <p>Partner with SafeStorage Global for enterprise-grade storage solutions</p>
+            <p>Partner with SafeStorage for enterprise-grade storage solutions</p>
             <motion.button 
               className="btn-partner"
               whileHover={{ scale: 1.05 }}

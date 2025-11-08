@@ -1,31 +1,31 @@
 import { motion } from 'framer-motion'
-import { Shield, Award, Lock, CheckCircle, TrendingUp, Users, Globe, Zap } from 'lucide-react'
+import { Shield, Award, Star, CheckCircle, TrendingUp, Users, Globe, Zap } from 'lucide-react'
 
 const TrustBadges = () => {
   const certifications = [
     {
+      icon: <Star size={32} />,
+      title: '4.9★',
+      description: 'Google',
+      color: '#4285F4'
+    },
+    {
+      icon: <Star size={32} />,
+      title: 'Excellent',
+      description: 'TrustPilot',
+      color: '#00B67A'
+    },
+    {
       icon: <Shield size={32} />,
-      title: 'ISO 9001:2015',
-      description: 'Quality Management Certified',
+      title: 'ISO 9001',
+      description: 'Certified',
       color: '#3b82f6'
     },
     {
-      icon: <Lock size={32} />,
-      title: 'SOC 2 Type II',
-      description: 'Security & Compliance Verified',
-      color: '#10b981'
-    },
-    {
-      icon: <Award size={32} />,
-      title: 'Best Storage 2024',
-      description: 'Industry Excellence Award',
-      color: '#f59e0b'
-    },
-    {
       icon: <CheckCircle size={32} />,
-      title: 'SSA Certified',
-      description: 'Self Storage Association Member',
-      color: '#8b5cf6'
+      title: 'SIRA',
+      description: 'Approved',
+      color: '#dc2626'
     }
   ]
 
@@ -63,14 +63,14 @@ const TrustBadges = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }}
             >
-              <div className="cert-icon" style={{ color: cert.color }}>
-                {cert.icon}
-              </div>
-              <h3>{cert.title}</h3>
-              <p>{cert.description}</p>
-              <div className="verified-badge">
-                <CheckCircle size={16} />
-                <span>Verified</span>
+              <div className="cert-content">
+                <div className="cert-icon" style={{ color: cert.color }}>
+                  {cert.icon}
+                </div>
+                <div className="cert-text">
+                  <h3>{cert.title}</h3>
+                  <p>{cert.description}</p>
+                </div>
               </div>
             </motion.div>
           ))}
