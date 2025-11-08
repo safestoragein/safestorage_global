@@ -62,7 +62,10 @@ const UAEFooter = () => {
               <div className="contact-info">
                 <div className="contact-item">
                   <MapPin size={16} />
-                  <span>Al Quoz Industrial Area 3<br />Dubai, UAE</span>
+                  <div>
+                    <div>Al Quoz Industrial Area 3</div>
+                    <div>Dubai, UAE</div>
+                  </div>
                 </div>
                 <div className="contact-item">
                   <Phone size={16} />
@@ -74,7 +77,10 @@ const UAEFooter = () => {
                 </div>
                 <div className="contact-item">
                   <Clock size={16} />
-                  <span>Office: 8AM - 6PM<br />Access: 24/7</span>
+                  <div>
+                    <div>Office: 8AM - 6PM</div>
+                    <div>Access: 24/7</div>
+                  </div>
                 </div>
               </div>
               
