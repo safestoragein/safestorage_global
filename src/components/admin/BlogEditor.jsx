@@ -45,65 +45,96 @@ const BlogEditor = ({ onSave, editingBlog = null, onCancel }) => {
     }
   }, [blog.content]);
 
-  // Force LTR direction and handle initial setup
+  // AGGRESSIVE LTR enforcement
   useEffect(() => {
-    // Set HTML document direction
+    // Set HTML document direction globally
     document.documentElement.dir = 'ltr';
     document.documentElement.lang = 'en';
     document.body.dir = 'ltr';
+    document.body.style.direction = 'ltr';
     
     if (contentRef.current) {
       const element = contentRef.current;
       
-      // Set content safely without dangerouslySetInnerHTML
+      // Clear any existing content and set fresh
       element.innerHTML = blog.content || '';
       
-      // Set all attributes after content is set
-      element.dir = 'ltr';
-      element.lang = 'en';
-      element.setAttribute('dir', 'ltr');
-      element.setAttribute('lang', 'en');
-      element.style.setProperty('direction', 'ltr', 'important');
-      element.style.setProperty('text-align', 'left', 'important');
-      element.style.setProperty('unicode-bidi', 'normal', 'important');
-      element.style.setProperty('writing-mode', 'lr-tb', 'important');
-      element.style.setProperty('text-direction', 'ltr', 'important');
-      
-      // Add debugging
-      console.log('Setting LTR on element:', element);
-      console.log('Element dir:', element.dir);
-      console.log('Element style.direction:', element.style.direction);
-      
-      // Force all child elements to LTR
-      const forceChildrenLTR = () => {
-        const allElements = element.querySelectorAll('*');
-        allElements.forEach(el => {
-          el.dir = 'ltr';
-          el.setAttribute('dir', 'ltr');
-          el.style.setProperty('direction', 'ltr', 'important');
-          el.style.setProperty('text-align', 'left', 'important');
-        });
-      };
-      
-      forceChildrenLTR();
-      
-      // Watch for mutations and fix them
-      const observer = new MutationObserver((mutations) => {
-        console.log('DOM mutation detected:', mutations);
-        forceChildrenLTR();
+      // ULTRA AGGRESSIVE LTR ENFORCEMENT
+      const setLTRForce = () => {
+        // Set all possible attributes
+        element.dir = 'ltr';
+        element.lang = 'en';
+        element.setAttribute('dir', 'ltr');
+        element.setAttribute('lang', 'en');
+        element.setAttribute('style', 'direction: ltr !important; text-align: left !important; unicode-bidi: normal !important; writing-mode: lr-tb !important;');
+        
+        // Set CSS properties with maximum specificity
+        element.style.cssText = 'direction: ltr !important; text-align: left !important; unicode-bidi: normal !important; writing-mode: lr-tb !important; text-direction: ltr !important;';
         element.style.setProperty('direction', 'ltr', 'important');
         element.style.setProperty('text-align', 'left', 'important');
+        element.style.setProperty('unicode-bidi', 'normal', 'important');
+        element.style.setProperty('writing-mode', 'lr-tb', 'important');
+      };
+      
+      setLTRForce();
+      
+      // Add multiple event listeners to prevent RTL
+      const preventRTL = (e) => {
+        console.log('Event triggered, forcing LTR:', e.type);
+        setLTRForce();
+        
+        // For input events, ensure cursor position is correct
+        if (e.type === 'input' || e.type === 'keydown') {
+          setTimeout(() => {
+            setLTRForce();
+            // Force selection direction
+            const selection = window.getSelection();
+            if (selection.rangeCount > 0) {
+              const range = selection.getRangeAt(0);
+              range.collapse(false); // Move cursor to end
+              selection.removeAllRanges();
+              selection.addRange(range);
+            }
+          }, 0);
+        }
+      };
+      
+      // Add comprehensive event listeners
+      const events = ['input', 'keydown', 'keyup', 'focus', 'click', 'paste', 'cut'];
+      events.forEach(eventType => {
+        element.addEventListener(eventType, preventRTL);
+      });
+      
+      // Mutation observer with immediate correction
+      const observer = new MutationObserver((mutations) => {
+        console.log('DOM mutation - enforcing LTR:', mutations);
+        setLTRForce();
       });
       
       observer.observe(element, {
         childList: true,
         subtree: true,
         attributes: true,
-        attributeFilter: ['dir', 'style', 'class']
+        attributeFilter: ['dir', 'style', 'class'],
+        characterData: true
       });
       
-      // Cleanup observer
-      return () => observer.disconnect();
+      // Interval-based enforcement as last resort
+      const interval = setInterval(() => {
+        if (element.dir !== 'ltr' || element.style.direction !== 'ltr') {
+          console.log('Interval correction: forcing LTR');
+          setLTRForce();
+        }
+      }, 100);
+      
+      // Cleanup
+      return () => {
+        observer.disconnect();
+        clearInterval(interval);
+        events.forEach(eventType => {
+          element.removeEventListener(eventType, preventRTL);
+        });
+      };
     }
   }, [blog.content]);
 
@@ -218,17 +249,43 @@ const BlogEditor = ({ onSave, editingBlog = null, onCancel }) => {
     <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '20px', background: '#f8fafc', minHeight: '100vh', direction: 'ltr', textAlign: 'left' }}>
       <style>
         {`
-          /* Force LTR Direction Globally */
+          /* ULTRA AGGRESSIVE LTR ENFORCEMENT */
           .blog-editor-wrapper,
           .blog-editor-wrapper *,
           .blog-editor-wrapper input,
           .blog-editor-wrapper textarea,
-          .blog-editor-wrapper [contenteditable] {
+          .blog-editor-wrapper [contenteditable],
+          .blog-editor-content,
+          .blog-editor-content *,
+          .blog-editor-content p,
+          .blog-editor-content div,
+          .blog-editor-content span {
             direction: ltr !important;
             text-align: left !important;
             unicode-bidi: normal !important;
-            writing-mode: initial !important;
+            writing-mode: lr-tb !important;
             text-direction: ltr !important;
+            -webkit-writing-mode: lr-tb !important;
+            -ms-writing-mode: lr-tb !important;
+          }
+
+          /* Browser-specific overrides */
+          .blog-editor-content[contenteditable],
+          .blog-editor-content[contenteditable] *,
+          .blog-editor-content[contenteditable="true"],
+          .blog-editor-content[contenteditable="true"] * {
+            direction: ltr !important;
+            text-align: left !important;
+            unicode-bidi: embed !important;
+            writing-mode: horizontal-tb !important;
+            text-orientation: mixed !important;
+          }
+
+          /* Force text input direction */
+          .blog-editor-content::before,
+          .blog-editor-content::after {
+            direction: ltr !important;
+            text-align: left !important;
           }
           
           /* Content Editor Styles */
@@ -853,24 +910,45 @@ const BlogEditor = ({ onSave, editingBlog = null, onCancel }) => {
                   e.target.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
                 }}
                 onKeyDown={(e) => {
-                  // Force LTR on keydown
+                  // ULTRA AGGRESSIVE RTL PREVENTION
                   const element = e.target;
+                  
+                  // Force LTR immediately
                   element.dir = 'ltr';
-                  element.style.setProperty('direction', 'ltr', 'important');
-                  element.style.setProperty('text-align', 'left', 'important');
+                  element.style.cssText = 'direction: ltr !important; text-align: left !important; unicode-bidi: normal !important; writing-mode: lr-tb !important;';
+                  
+                  // Prevent RTL control characters
+                  const rtlChars = /[\u202A-\u202E\u061C\u200E\u200F]/;
+                  if (rtlChars.test(e.key)) {
+                    e.preventDefault();
+                    return;
+                  }
+                  
+                  // Force LTR for common keys
+                  if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'Home' || e.key === 'End') {
+                    setTimeout(() => {
+                      element.style.cssText = 'direction: ltr !important; text-align: left !important; unicode-bidi: normal !important; writing-mode: lr-tb !important;';
+                    }, 0);
+                  }
                   
                   // Handle Enter key for better paragraph formatting
                   if (e.key === 'Enter' && !e.shiftKey) {
                     document.execCommand('formatBlock', false, 'p');
-                    // Force LTR on new paragraphs
+                    // Force LTR on new paragraphs with more aggressive timing
                     setTimeout(() => {
                       const element = contentRef.current;
                       if (element) {
                         element.dir = 'ltr';
-                        element.style.setProperty('direction', 'ltr', 'important');
-                        element.style.setProperty('text-align', 'left', 'important');
+                        element.style.cssText = 'direction: ltr !important; text-align: left !important; unicode-bidi: normal !important; writing-mode: lr-tb !important;';
+                        
+                        // Also fix any new paragraph elements
+                        const paragraphs = element.querySelectorAll('p');
+                        paragraphs.forEach(p => {
+                          p.dir = 'ltr';
+                          p.style.cssText = 'direction: ltr !important; text-align: left !important; unicode-bidi: normal !important;';
+                        });
                       }
-                    }, 10);
+                    }, 0);
                   }
                 }}
                 suppressContentEditableWarning={true}
