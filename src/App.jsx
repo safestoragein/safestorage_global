@@ -44,42 +44,10 @@ function AppWithRouter() {
   const location = useLocation()
 
   useEffect(() => {
-    const handleIPRedirect = async () => {
-      // Skip detection if user has already selected a country manually
-      const userPreference = getUserCountryPreference()
-      if (userPreference) {
-        setSelectedLocation(userPreference)
-        setIsLoading(false)
-        return
-      }
-
-      // Skip detection if already on a country-specific route
-      if (location.pathname.startsWith('/uae') || location.pathname.startsWith('/uk')) {
-        setIsLoading(false)
-        return
-      }
-
-      try {
-        const redirect = await getRedirectPath()
-        
-        if (redirect) {
-          if (redirect.type === 'external') {
-            // Redirect to external site (India)
-            window.location.href = redirect.url
-          } else if (redirect.type === 'internal') {
-            // Navigate to internal route (UAE or UK)
-            navigate(redirect.path)
-            setSelectedLocation(redirect.country.toLowerCase())
-          }
-        }
-      } catch (error) {
-        console.error('Error in IP detection:', error)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    handleIPRedirect()
+    // Temporarily disable IP detection to fix infinite redirect loop
+    // Just set loading to false and let user navigate normally
+    setIsLoading(false)
+    setSelectedLocation('uae')
   }, [])
 
   if (isLoading) {
