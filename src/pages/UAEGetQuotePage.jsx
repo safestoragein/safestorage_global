@@ -29,8 +29,8 @@ const UAEGetQuotePage = () => {
     if (validateStep1()) {
       console.log("Form Data:", formData);
       localStorage.setItem('step1Data', JSON.stringify(formData));
-      // Navigate to step 2 (implement navigation later)
-      alert("Form data saved! Ready for step 2 implementation.");
+      // Navigate to step 2
+      window.location.href = '/uae/get-quote/step2';
     }
   };
 
