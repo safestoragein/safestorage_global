@@ -44,10 +44,6 @@ function AppWithRouter() {
   const location = useLocation()
 
   useEffect(() => {
-    // COMMENTED OUT IP REDIRECTION - USER REQUESTED TO DISABLE DUE TO VPN CAUSING SLOW TABS
-    // WILL RE-ENABLE WHEN REQUESTED BY USER
-    
-    /* 
     const handleIPRedirect = async () => {
       // Skip detection if user has already selected a country manually
       const userPreference = getUserCountryPreference()
@@ -84,10 +80,6 @@ function AppWithRouter() {
     }
 
     handleIPRedirect()
-    */
-    
-    // Directly set loading to false without IP detection
-    setIsLoading(false)
   }, [])
 
   if (isLoading) {
