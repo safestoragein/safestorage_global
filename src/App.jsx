@@ -152,12 +152,9 @@ function AppWithRouter() {
 }
 
 function App() {
-  // Determine basename based on environment
-  const basename = import.meta.env.MODE === 'production' ? '/safestorage_global' : '/'
-  
   return (
     <CountryProvider>
-      <Router basename={basename}>
+      <Router basename="/">
         <AppWithRouter />
       </Router>
     </CountryProvider>
