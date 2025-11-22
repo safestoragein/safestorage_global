@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UAEHeader from '../components/uae/UAEHeader';
 import UAEFooter from '../components/uae/UAEFooter';
+import { sessionManager } from '../utils/sessionManager';
 
 const UAEGetQuoteStep2 = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,13 +12,19 @@ const UAEGetQuoteStep2 = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
-  // Load step 1 data
+  // Load step 1 data and previous selections
   useEffect(() => {
-    const step1Data = localStorage.getItem('step1Data');
+    const step1Data = sessionManager.getData('step1Data');
     if (!step1Data) {
       alert('Please complete Step 1 first');
       window.location.href = '/uae/get-quote';
       return;
+    }
+
+    // Load previously selected items if any
+    const step2Data = sessionManager.getData('step2Data');
+    if (step2Data && step2Data.selectedItems) {
+      setSelectedItems(step2Data.selectedItems);
     }
   }, []);
 
@@ -76,6 +83,13 @@ const UAEGetQuoteStep2 = () => {
       setDisplayedItems(filtered);
     }
   }, [searchTerm, apiItems, showMore]);
+
+  // Auto-save selected items to session storage whenever they change
+  useEffect(() => {
+    if (selectedItems.length > 0) {
+      sessionManager.saveData('step2Data', { selectedItems });
+    }
+  }, [selectedItems]);
 
   const getItemIcon = (itemName) => {
     const name = itemName.toLowerCase();
@@ -139,8 +153,8 @@ const UAEGetQuoteStep2 = () => {
       return;
     }
 
-    // Save selected items to localStorage
-    localStorage.setItem('step2Data', JSON.stringify({ selectedItems }));
+    // Save selected items to session storage
+    sessionManager.saveData('step2Data', { selectedItems });
     console.log('Selected Items saved:', selectedItems);
     console.log('About to navigate to step 3...');
     
@@ -344,13 +358,6 @@ const UAEGetQuoteStep2 = () => {
                           }}>
                             {item.storage_item_name}
                           </div>
-                          <div style={{ 
-                            fontSize: '12px', 
-                            color: '#64748b',
-                            fontWeight: '600'
-                          }}>
-                            AED {item.aed_item_points}
-                          </div>
 
                           {isSelected && (
                             <>
@@ -476,9 +483,6 @@ const UAEGetQuoteStep2 = () => {
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ fontWeight: '500', color: '#1e293b', fontSize: '14px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                           {selectedItem.name}
-                        </div>
-                        <div style={{ fontSize: '12px', color: '#64748b' }}>
-                          AED {selectedItem.price} each
                         </div>
                       </div>
 

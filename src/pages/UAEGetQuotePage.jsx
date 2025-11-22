@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UAEHeader from '../components/uae/UAEHeader';
 import UAEFooter from '../components/uae/UAEFooter';
+import { sessionManager } from '../utils/sessionManager';
 
 const UAEGetQuotePage = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,21 @@ const UAEGetQuotePage = () => {
     liftAvailable: "",
     storageType: "long-term",
   });
+
+  // Load existing data from session storage on component mount
+  useEffect(() => {
+    const savedData = sessionManager.getData('step1Data');
+    if (savedData) {
+      setFormData(savedData);
+    }
+  }, []);
+
+  // Auto-save form data to session storage whenever it changes
+  useEffect(() => {
+    if (formData.fullName || formData.email || formData.phone) {
+      sessionManager.saveData('step1Data', formData);
+    }
+  }, [formData]);
 
   const validateStep1 = () => {
     if (!formData.fullName || !formData.email || !formData.phone || !formData.address || !formData.floor || !formData.liftAvailable) {
@@ -28,7 +44,7 @@ const UAEGetQuotePage = () => {
   const handleNext = () => {
     if (validateStep1()) {
       console.log("Form Data:", formData);
-      localStorage.setItem('step1Data', JSON.stringify(formData));
+      sessionManager.saveData('step1Data', formData);
       // Navigate to step 2
       window.location.href = '/uae/get-quote/step2';
     }

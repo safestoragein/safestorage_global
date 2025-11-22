@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UAEHeader from '../components/uae/UAEHeader';
 import UAEFooter from '../components/uae/UAEFooter';
+import { sessionManager } from '../utils/sessionManager';
 
 const UAEGetQuoteStep3 = () => {
   const [formData, setFormData] = useState(null);
@@ -10,8 +11,8 @@ const UAEGetQuoteStep3 = () => {
 
   // Load data from previous steps
   useEffect(() => {
-    const step1Data = localStorage.getItem('step1Data');
-    const step2Data = localStorage.getItem('step2Data');
+    const step1Data = sessionManager.getData('step1Data');
+    const step2Data = sessionManager.getData('step2Data');
 
     if (!step1Data || !step2Data) {
       alert('Please complete all previous steps');
@@ -19,17 +20,8 @@ const UAEGetQuoteStep3 = () => {
       return;
     }
 
-    try {
-      const parsedStep1 = JSON.parse(step1Data);
-      const parsedStep2 = JSON.parse(step2Data);
-
-      setFormData(parsedStep1);
-      setSelectedItems(parsedStep2.selectedItems || []);
-    } catch (error) {
-      console.error('Error parsing stored data:', error);
-      alert('Error loading data. Please start over.');
-      window.location.href = '/uae/get-quote';
-    }
+    setFormData(step1Data);
+    setSelectedItems(step2Data.selectedItems || []);
   }, []);
 
   // Calculate pricing
@@ -82,8 +74,7 @@ const UAEGetQuoteStep3 = () => {
       triggerConfetti();
 
       // Clear stored data
-      localStorage.removeItem('step1Data');
-      localStorage.removeItem('step2Data');
+      sessionManager.clearQuoteSession();
 
       alert("Quote submitted successfully! We'll contact you soon.");
 
@@ -119,8 +110,7 @@ const UAEGetQuoteStep3 = () => {
   };
 
   const handleStartOver = () => {
-    localStorage.removeItem('step1Data');
-    localStorage.removeItem('step2Data');
+    sessionManager.clearQuoteSession();
     window.location.href = '/uae/get-quote';
   };
 
