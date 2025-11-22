@@ -132,14 +132,20 @@ const UAEGetQuoteStep2 = () => {
   };
 
   const handleNext = () => {
+    console.log('handleNext clicked - selectedItems length:', selectedItems.length);
+    
     if (selectedItems.length === 0) {
       alert("Please select at least one item");
       return;
     }
 
+    // Save selected items to localStorage
     localStorage.setItem('step2Data', JSON.stringify({ selectedItems }));
-    console.log('Selected Items:', selectedItems);
-    alert("Step 2 completed! Ready for Step 3 implementation.");
+    console.log('Selected Items saved:', selectedItems);
+    console.log('About to navigate to step 3...');
+    
+    // Navigate to step 3
+    window.location.href = '/uae/get-quote/step3';
   };
 
   const handlePrevious = () => {
@@ -562,7 +568,7 @@ const UAEGetQuoteStep2 = () => {
                     cursor: selectedItems.length === 0 ? 'not-allowed' : 'pointer'
                   }}
                 >
-                  Continue to Quote →
+                  Continue to Step 3 →
                 </button>
               </div>
             </div>

@@ -161,7 +161,7 @@ const BlogEditor = ({ onSave, editingBlog = null, onCancel }) => {
   const insertAtCursor = (html) => {
     const selection = window.getSelection();
     if (selection.rangeCount > 0) {
-      const range = selection.getRangeAt(0);
+      let range = selection.getRangeAt(0);
       range.deleteContents();
       const div = document.createElement('div');
       div.innerHTML = html;

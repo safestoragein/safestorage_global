@@ -31,6 +31,7 @@ import UAETermsPage from './pages/UAETermsPage'
 import UAESitemapPage from './pages/UAESitemapPage'
 import UAEGetQuotePage from './pages/UAEGetQuotePage'
 import UAEGetQuoteStep2 from './pages/UAEGetQuoteStep2'
+import UAEGetQuoteStep3 from './pages/UAEGetQuoteStep3'
 import UAEAdminPage from './pages/UAEAdminPage'
 import UKPage from './pages/UKPage'
 import ScrollToTop from './components/ScrollToTop'
@@ -96,6 +97,7 @@ function AppWithRouter() {
         <Route path="/uae/sitemap" element={<UAESitemapPage />} />
         <Route path="/uae/get-quote" element={<UAEGetQuotePage />} />
         <Route path="/uae/get-quote/step2" element={<UAEGetQuoteStep2 />} />
+        <Route path="/uae/get-quote/step3" element={<UAEGetQuoteStep3 />} />
         <Route path="/uae/admin" element={<UAEAdminPage />} />
         <Route path="/uae/blog" element={<BlogPage />} />
         <Route path="/uae/blog/:slug" element={<BlogPostPage />} />
