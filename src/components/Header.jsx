@@ -81,7 +81,7 @@ const Header = ({ selectedLocation }) => {
     uae: { 
       phone: '+971 505773388',
       phoneDisplay: '+971-50-577-3388',
-      email: 'dubai@safestorage.global',
+      email: 'safestoragedubai@gmail.com',
       sites: [
         { city: 'Business Bay', url: '#business-bay' },
         { city: 'DIFC', url: '#difc' },

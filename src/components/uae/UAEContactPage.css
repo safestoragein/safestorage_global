@@ -1,0 +1,630 @@
+/* UAE Contact Page - Unique Scoped Styles */
+
+.uae-contact-page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding-top: 70px;
+}
+
+/* Contact Hero Section */
+.uae-contact-page .contact-hero-section {
+  background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.uae-contact-page .contact-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.uae-contact-page .contact-hero-content h1 {
+  font-size: 48px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.uae-contact-page .text-highlight {
+  color: #ff6b35;
+}
+
+.uae-contact-page .contact-hero-content p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+}
+
+.uae-contact-page .hero-quick-contacts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.uae-contact-page .quick-contact-btn {
+  padding: 14px 28px;
+  background: white;
+  color: #001f3f;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.uae-contact-page .quick-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.uae-contact-page .quick-contact-btn.whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+/* Contact Info Section */
+.uae-contact-page .contact-info-section {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.uae-contact-page .contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.uae-contact-page .contact-info-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.uae-contact-page .contact-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.uae-contact-page .info-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.uae-contact-page .contact-info-card h3 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.uae-contact-page .info-primary {
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.uae-contact-page .info-secondary {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.uae-contact-page .info-action {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.uae-contact-page .info-action:hover {
+  color: #ff5722;
+}
+
+/* Main Contact Section */
+.uae-contact-page .main-contact-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.uae-contact-page .contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Contact Form */
+.uae-contact-page .contact-form-wrapper {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.uae-contact-page .form-header {
+  margin-bottom: 40px;
+}
+
+.uae-contact-page .form-header h2 {
+  font-size: 32px;
+  color: #001f3f;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.uae-contact-page .form-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.uae-contact-page .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.uae-contact-page .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.uae-contact-page .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.uae-contact-page .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.uae-contact-page .form-group label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.uae-contact-page .form-group input,
+.uae-contact-page .form-group select,
+.uae-contact-page .form-group textarea {
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: white;
+  color: #333;
+}
+
+.uae-contact-page .form-group input:focus,
+.uae-contact-page .form-group select:focus,
+.uae-contact-page .form-group textarea:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.uae-contact-page .form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.uae-contact-page .form-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.uae-contact-page .form-note svg {
+  color: #4CAF50;
+  flex-shrink: 0;
+}
+
+.uae-contact-page .submit-btn {
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.uae-contact-page .submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(255, 107, 53, 0.3);
+}
+
+/* Contact Sidebar */
+.uae-contact-page .contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* WhatsApp Card */
+.uae-contact-page .whatsapp-card {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.uae-contact-page .whatsapp-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.uae-contact-page .whatsapp-header h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.uae-contact-page .whatsapp-card p {
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.uae-contact-page .whatsapp-btn {
+  padding: 14px 28px;
+  background: white;
+  color: #25D366;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.uae-contact-page .whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Support Features */
+.uae-contact-page .support-features {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.uae-contact-page .support-features h3 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.uae-contact-page .feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.uae-contact-page .feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.uae-contact-page .feature-item svg {
+  color: #ff6b35;
+  flex-shrink: 0;
+}
+
+.uae-contact-page .feature-item strong {
+  display: block;
+  font-size: 15px;
+  color: #001f3f;
+  margin-bottom: 3px;
+}
+
+.uae-contact-page .feature-item span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Social Card */
+.uae-contact-page .social-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  border: 2px solid #f0f0f0;
+  text-align: center;
+}
+
+.uae-contact-page .social-card h3 {
+  font-size: 18px;
+  color: #001f3f;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.uae-contact-page .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.uae-contact-page .social-link {
+  width: 45px;
+  height: 45px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #001f3f;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.uae-contact-page .social-link:hover {
+  background: #ff6b35;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Locations Section */
+.uae-contact-page .locations-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.uae-contact-page .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.uae-contact-page .section-header h2 {
+  font-size: 42px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.uae-contact-page .section-header p {
+  font-size: 18px;
+  color: #666;
+}
+
+.uae-contact-page .locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.uae-contact-page .location-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.uae-contact-page .location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.uae-contact-page .location-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.uae-contact-page .location-header svg {
+  color: #ff6b35;
+}
+
+.uae-contact-page .location-header h3 {
+  font-size: 22px;
+  color: #001f3f;
+  margin: 0;
+  font-weight: 600;
+}
+
+.uae-contact-page .location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.uae-contact-page .location-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 15px;
+  margin: 0;
+}
+
+.uae-contact-page .location-info svg {
+  color: #ff6b35;
+  flex-shrink: 0;
+}
+
+.uae-contact-page .get-directions-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.uae-contact-page .get-directions-btn:hover {
+  background: #ff5722;
+  transform: translateX(5px);
+}
+
+/* Map Section */
+.uae-contact-page .map-section {
+  padding: 0;
+}
+
+.uae-contact-page .map-container {
+  width: 100%;
+  height: 450px;
+}
+
+.uae-contact-page .map-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* CTA Section */
+.uae-contact-page .contact-cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+}
+
+.uae-contact-page .cta-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.uae-contact-page .cta-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.uae-contact-page .cta-content p {
+  font-size: 20px;
+  margin-bottom: 35px;
+  opacity: 0.95;
+}
+
+.uae-contact-page .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.uae-contact-page .cta-btn {
+  padding: 16px 35px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+}
+
+.uae-contact-page .cta-btn.primary {
+  background: white;
+  color: #ff6b35;
+}
+
+.uae-contact-page .cta-btn.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.uae-contact-page .cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .uae-contact-page .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .uae-contact-page .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .uae-contact-page .contact-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .uae-contact-page .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-contact-page .locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-contact-page .form-footer {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .uae-contact-page .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .uae-contact-page .hero-quick-contacts {
+    flex-direction: column;
+  }
+
+  .uae-contact-page .quick-contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .uae-contact-page .cta-buttons {
+    flex-direction: column;
+  }
+
+  .uae-contact-page .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

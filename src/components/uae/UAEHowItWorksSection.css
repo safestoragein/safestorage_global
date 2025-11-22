@@ -1,0 +1,279 @@
+/* UAE How It Works Section - Dubai Style (for UAE Landing Page) */
+.uae-how-it-works {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section Header */
+.uae-how-it-works .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.uae-how-it-works .section-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.uae-how-it-works .section-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #001f3f;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.uae-how-it-works .section-title .highlight {
+  color: #ff6b35;
+}
+
+.uae-how-it-works .section-subtitle {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Steps Container */
+.uae-how-it-works .steps-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.uae-how-it-works .step-card {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.uae-how-it-works .step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
+}
+
+.uae-how-it-works .step-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transform: none;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+  z-index: 1;
+}
+
+.uae-how-it-works .step-icon {
+  width: 80px;
+  height: 80px;
+  margin: 20px auto;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b35;
+  transition: all 0.3s ease;
+}
+
+.uae-how-it-works .step-card:hover .step-icon {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  color: white;
+  transform: rotate(10deg) scale(1.1);
+}
+
+.uae-how-it-works .step-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #001f3f;
+  margin-bottom: 15px;
+}
+
+.uae-how-it-works .step-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+.uae-how-it-works .step-action {
+  padding: 10px 25px;
+  background: transparent;
+  color: #ff6b35;
+  border: 2px solid #ff6b35;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.uae-how-it-works .step-action:hover {
+  background: #ff6b35;
+  color: white;
+}
+
+.uae-how-it-works .step-connector {
+  position: absolute;
+  right: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Video Section */
+.uae-how-it-works .video-section {
+  background: white;
+  border-radius: 20px;
+  padding: 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.uae-how-it-works .video-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.uae-how-it-works .video-text h3 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #001f3f;
+  margin-bottom: 20px;
+}
+
+.uae-how-it-works .video-text p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.uae-how-it-works .facility-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.uae-how-it-works .facility-features li {
+  padding: 12px 0;
+  color: #666;
+  font-size: 15px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.uae-how-it-works .facility-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #25D366;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.uae-how-it-works .tour-button {
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.uae-how-it-works .tour-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+}
+
+.uae-how-it-works .video-placeholder {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.uae-how-it-works .video-placeholder:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.uae-how-it-works .video-iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .uae-how-it-works .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .uae-how-it-works .step-connector {
+    display: none;
+  }
+
+  .uae-how-it-works .step-card:nth-child(2) .step-connector {
+    display: block;
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -40px;
+    transform: translateX(-50%) rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .uae-how-it-works .steps-container {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-how-it-works .video-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .uae-how-it-works .video-section {
+    padding: 40px 20px;
+  }
+
+  .uae-how-it-works .video-text h3 {
+    font-size: 28px;
+  }
+
+  .uae-how-it-works .section-title {
+    font-size: 36px;
+  }
+}

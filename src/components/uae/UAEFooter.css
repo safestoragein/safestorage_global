@@ -75,6 +75,13 @@
   margin-bottom: 12px;
 }
 
+/* Get in Touch icons */
+.footer-links .contact-icon {
+  color: #ff6b35 !important;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 .footer-links a {
   color: #333333 !important;
   text-decoration: none;
@@ -288,11 +295,12 @@ a.contact-link:hover svg {
 }
 
 /* Bottom Bar */
-.footer-bottom {
+/* ---------- Footer Bottom (Navy Blue) ---------- */
+.uae-footer .footer-bottom {
   padding: 20px 0;
-  background: #1e3a5f;
+  background: #001f3f !important; /* Navy blue background */
+  color: #ffffff !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
 }
 
 .bottom-content {
@@ -300,50 +308,43 @@ a.contact-link:hover svg {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
-.copyright p {
+.uae-footer .footer-bottom .copyright p {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff !important;
   margin: 0;
 }
 
 .legal-links {
   display: flex;
-  gap: 30px;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
-.legal-links a {
-  color: rgba(255, 255, 255, 0.8) !important;
+.uae-footer .footer-bottom .legal-links a {
+  color: #ffffff !important;
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s;
 }
 
 .legal-links a:hover {
-  color: #ff9b65 !important;
+  color: #ff6b35 !important;
 }
 
-.payment-methods {
+/* Made with love */
+.made-with-love {
   display: flex;
   align-items: center;
-  gap: 12px;
-}
-
-.payment-methods span {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
 }
 
-.payment-methods img {
-  height: 25px;
-  opacity: 0.7;
-  transition: opacity 0.3s;
+.uae-footer .footer-bottom .made-with-love span {
+  color: #ffffff !important;
 }
 
-.payment-methods img:hover {
-  opacity: 1;
-}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -379,7 +380,7 @@ a.contact-link:hover svg {
     gap: 10px;
   }
   
-  .payment-methods {
+  .made-with-love {
     justify-content: center;
   }
 }

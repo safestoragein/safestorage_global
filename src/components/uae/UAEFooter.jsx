@@ -42,8 +42,8 @@ const UAEFooter = () => {
                 <li><Link to="/uae/business-storage">Business Storage</Link></li>
                 <li><Link to="/uae/document-storage">Document Storage</Link></li>
                 <li><Link to="/uae/vehicle-storage">Vehicle Storage</Link></li>
-                <li><Link to="/uae/wine-storage">Wine Storage</Link></li>
                 <li><Link to="/uae/moving-services">Moving Services</Link></li>
+                <li><Link to="/uae/blog">Storage Tips Blog</Link></li>
               </ul>
             </div>
 
@@ -65,8 +65,8 @@ const UAEFooter = () => {
               <h3>Get In Touch</h3>
               <ul className="footer-links">
                 <li><MapPin size={16} className="contact-icon" />Al Quoz Industrial Area 3, Dubai, UAE</li>
-                <li><Phone size={16} className="contact-icon" />+971 4 562 1101</li>
-                <li><Mail size={16} className="contact-icon" />dubai@safestorage.ae</li>
+                <li><Phone size={16} className="contact-icon" />+971 50 577 3388</li>
+                <li><Mail size={16} className="contact-icon" />safestoragedubai@gmail.com</li>
                 <li><Clock size={16} className="contact-icon" />Access: 24/7</li>
               </ul>
 
@@ -158,29 +158,8 @@ const UAEFooter = () => {
               <Link to="/uae/terms">Terms & Conditions</Link>
               <Link to="/uae/sitemap">Sitemap</Link>
             </div>
-            <div className="payment-methods">
-              <span>We Accept:</span>
-              {/* Visa */}
-              <svg viewBox="0 0 48 32" height="25">
-                <rect fill="#ffffff" width="48" height="32" rx="4" />
-                <text x="24" y="20" fill="#0066B2" fontSize="12" fontWeight="bold" textAnchor="middle">VISA</text>
-              </svg>
-              {/* MasterCard */}
-              <svg viewBox="0 0 48 32" height="25">
-                <rect fill="#ffffff" width="48" height="32" rx="4" />
-                <circle fill="#EB001B" cx="19" cy="16" r="8" opacity="0.9" />
-                <circle fill="#FF5F00" cx="29" cy="16" r="8" opacity="0.9" />
-              </svg>
-              {/* Amex */}
-              <svg viewBox="0 0 48 32" height="25">
-                <rect fill="#ffffff" width="48" height="32" rx="4" />
-                <text x="24" y="20" fill="#006FCF" fontSize="10" fontWeight="bold" textAnchor="middle">AMEX</text>
-              </svg>
-              {/* Cash */}
-              <svg viewBox="0 0 48 32" height="25">
-                <rect fill="#ffffff" width="48" height="32" rx="4" />
-                <text x="24" y="20" fill="#4CAF50" fontSize="10" fontWeight="bold" textAnchor="middle">CASH</text>
-              </svg>
+            <div className="made-with-love">
+              <span>Made with ❤️ by SafeStorage Team</span>
             </div>
           </div>
         </div>

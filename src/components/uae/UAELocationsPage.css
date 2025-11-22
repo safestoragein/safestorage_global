@@ -1,0 +1,873 @@
+/* UAE Locations Page - Dubai Premium Storage Facilities - Fully Scoped */
+
+.uae-locations-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding-top: 70px;
+}
+
+/* Hero Section */
+.uae-locations-page .locations-hero {
+  position: relative;
+  background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+  padding: 80px 0 60px;
+  overflow: hidden;
+}
+
+.uae-locations-page .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ff6b35" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,128C672,107,768,85,864,90.7C960,96,1056,128,1152,133.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+  background-size: cover;
+  opacity: 0.3;
+}
+
+.uae-locations-page .locations-hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.uae-locations-page .hero-content {
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.uae-locations-page .hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.uae-locations-page .hero-content .highlight {
+  color: #ff6b35;
+  position: relative;
+}
+
+.uae-locations-page .hero-content p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+}
+
+/* Hero Search */
+.uae-locations-page .hero-search {
+  display: flex;
+  gap: 15px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.uae-locations-page .search-input-wrapper {
+  flex: 1;
+  position: relative;
+  background: white;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.uae-locations-page .search-input-wrapper svg {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.uae-locations-page .search-input-wrapper input {
+  width: 100%;
+  padding: 18px 20px 18px 55px;
+  border: none;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+}
+
+.uae-locations-page .search-btn {
+  padding: 18px 30px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.uae-locations-page .search-btn:hover {
+  background: #ff5722;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+/* Hero Stats */
+.uae-locations-page .hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.uae-locations-page .hero-stats .stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.uae-locations-page .hero-stats .stat svg {
+  color: #ff6b35;
+}
+
+/* Filters Section */
+.uae-locations-page .filters-section {
+  background: white;
+  padding: 25px 0;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.uae-locations-page .filters-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.uae-locations-page .filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.uae-locations-page .filter-group label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.uae-locations-page .filter-group select {
+  padding: 10px 35px 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  background: white;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6 9 12 15 18 9\'%3e%3c/polyline%3e%3c/svg%3e');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+}
+
+.uae-locations-page .filter-group select:hover,
+.uae-locations-page .filter-group select:focus {
+  border-color: #ff6b35;
+}
+
+/* Features Filter Dropdown */
+.uae-locations-page .features-filter {
+  position: relative;
+}
+
+.uae-locations-page .features-dropdown {
+  position: relative;
+}
+
+.uae-locations-page .features-toggle {
+  padding: 10px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.uae-locations-page .features-toggle:hover {
+  border-color: #ff6b35;
+}
+
+.uae-locations-page .features-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  min-width: 220px;
+  display: none;
+  z-index: 1000;
+}
+
+.uae-locations-page .features-dropdown:hover .features-menu {
+  display: block;
+}
+
+.uae-locations-page .feature-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.uae-locations-page .feature-option:hover {
+  background: #f5f5f5;
+}
+
+.uae-locations-page .feature-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.uae-locations-page .feature-option svg {
+  color: #ff6b35;
+}
+
+.uae-locations-page .feature-option span {
+  font-size: 14px;
+  color: #333;
+}
+
+.uae-locations-page .map-toggle {
+  margin-left: auto;
+  padding: 10px 20px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.uae-locations-page .map-toggle:hover {
+  background: #ff5722;
+  transform: translateY(-2px);
+}
+
+/* Main Content */
+.uae-locations-page .locations-content {
+  padding: 40px 0 80px;
+}
+
+.uae-locations-page .locations-content .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.uae-locations-page .content-grid {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 30px;
+}
+
+/* Map Section */
+.uae-locations-page .map-section {
+  position: sticky;
+  top: 150px;
+  height: calc(100vh - 200px);
+}
+
+.uae-locations-page .map-container {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.uae-locations-page .map-overlay-markers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.uae-locations-page .map-marker {
+  position: absolute;
+  pointer-events: all;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.uae-locations-page .marker-badge {
+  width: 32px;
+  height: 32px;
+  background: #ff6b35;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+  transition: all 0.3s ease;
+}
+
+.uae-locations-page .map-marker:hover .marker-badge,
+.uae-locations-page .map-marker.active .marker-badge {
+  transform: scale(1.2);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+}
+
+.uae-locations-page .marker-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  margin-bottom: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.uae-locations-page .map-marker:hover .marker-tooltip {
+  opacity: 1;
+}
+
+.uae-locations-page .marker-tooltip strong {
+  display: block;
+  font-size: 13px;
+  color: #001f3f;
+  margin-bottom: 2px;
+}
+
+.uae-locations-page .marker-tooltip span {
+  font-size: 11px;
+  color: #666;
+}
+
+/* Locations List */
+.uae-locations-page .locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.uae-locations-page .locations-list.full-width {
+  grid-column: 1 / -1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.uae-locations-page .list-header {
+  margin-bottom: 10px;
+}
+
+.uae-locations-page .list-header h2 {
+  font-size: 24px;
+  color: #001f3f;
+  margin-bottom: 5px;
+}
+
+.uae-locations-page .results-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Location Card */
+.uae-locations-page .location-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.uae-locations-page .location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.uae-locations-page .card-image {
+  position: relative;
+  height: 100%;
+  min-height: 320px;
+}
+
+.uae-locations-page .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uae-locations-page .discount-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ff6b35;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.uae-locations-page .units-badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(0, 31, 63, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.uae-locations-page .card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.uae-locations-page .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.uae-locations-page .header-left h3 {
+  font-size: 22px;
+  color: #001f3f;
+  margin-bottom: 8px;
+}
+
+.uae-locations-page .location-meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.uae-locations-page .location-meta .area {
+  color: #ff6b35;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.uae-locations-page .location-meta .distance {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #666;
+  font-size: 14px;
+}
+
+.uae-locations-page .rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.uae-locations-page .rating span {
+  color: #333;
+  font-weight: 600;
+}
+
+.uae-locations-page .rating .reviews {
+  color: #999;
+  font-weight: 400;
+}
+
+.uae-locations-page .header-right .price {
+  text-align: right;
+}
+
+.uae-locations-page .price .from {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.uae-locations-page .price .amount {
+  font-size: 28px;
+  color: #ff6b35;
+  font-weight: 700;
+}
+
+.uae-locations-page .price .period {
+  font-size: 14px;
+  color: #666;
+}
+
+.uae-locations-page .card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.uae-locations-page .info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.uae-locations-page .info-row svg {
+  color: #ff6b35;
+  flex-shrink: 0;
+}
+
+.uae-locations-page .card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.uae-locations-page .feature-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #333;
+}
+
+.uae-locations-page .feature-tag svg {
+  color: #ff6b35;
+}
+
+.uae-locations-page .more-features {
+  font-size: 12px;
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+.uae-locations-page .card-landmarks {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.uae-locations-page .card-landmarks strong {
+  color: #333;
+}
+
+.uae-locations-page .landmark {
+  padding: 4px 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.uae-locations-page .card-popular {
+  font-size: 13px;
+  color: #666;
+}
+
+.uae-locations-page .card-popular strong {
+  color: #333;
+  margin-right: 10px;
+}
+
+.uae-locations-page .popular-tags {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.uae-locations-page .popular-tag {
+  padding: 4px 10px;
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.uae-locations-page .card-actions {
+  display: flex;
+  gap: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.uae-locations-page .card-actions button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.uae-locations-page .card-actions .btn-primary {
+  background: #ff6b35;
+  color: white;
+}
+
+.uae-locations-page .card-actions .btn-primary:hover {
+  background: #ff5722;
+  transform: translateY(-2px);
+}
+
+.uae-locations-page .card-actions .btn-secondary {
+  background: #25D366;
+  color: white;
+}
+
+.uae-locations-page .card-actions .btn-secondary:hover {
+  background: #20BD5A;
+  transform: translateY(-2px);
+}
+
+.uae-locations-page .card-actions .btn-outline {
+  background: transparent;
+  color: #001f3f;
+  border: 2px solid #e0e0e0;
+}
+
+.uae-locations-page .card-actions .btn-outline:hover {
+  border-color: #ff6b35;
+  color: #ff6b35;
+}
+
+/* No Results */
+.uae-locations-page .no-results {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.uae-locations-page .no-results svg {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.uae-locations-page .no-results h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.uae-locations-page .no-results p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.uae-locations-page .no-results button {
+  padding: 12px 30px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.uae-locations-page .no-results button:hover {
+  background: #ff5722;
+  transform: translateY(-2px);
+}
+
+/* CTA Section */
+.uae-locations-page .locations-cta {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  padding: 60px 0;
+}
+
+.uae-locations-page .locations-cta .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.uae-locations-page .cta-content {
+  text-align: center;
+  color: white;
+}
+
+.uae-locations-page .cta-content h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.uae-locations-page .cta-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.uae-locations-page .cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.uae-locations-page .cta-buttons button {
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.uae-locations-page .cta-buttons .btn-primary {
+  background: white;
+  color: #ff6b35;
+}
+
+.uae-locations-page .cta-buttons .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.uae-locations-page .cta-buttons .btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.uae-locations-page .cta-buttons .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .uae-locations-page .content-grid {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .uae-locations-page .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-locations-page .map-section {
+    position: relative;
+    top: 0;
+    height: 400px;
+    margin-bottom: 30px;
+  }
+
+  .uae-locations-page .location-card {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-locations-page .card-image {
+    height: 200px;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .uae-locations-page .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .uae-locations-page .hero-search {
+    flex-direction: column;
+  }
+
+  .uae-locations-page .filters-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .uae-locations-page .map-toggle {
+    margin-left: 0;
+  }
+
+  .uae-locations-page .card-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .uae-locations-page .header-right .price {
+    text-align: left;
+  }
+
+  .uae-locations-page .card-actions {
+    flex-direction: column;
+  }
+
+  .uae-locations-page .card-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+}

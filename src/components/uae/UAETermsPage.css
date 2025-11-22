@@ -1,0 +1,479 @@
+/* UAE Terms Page Styles */
+.uae-terms-page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding-top: 70px;
+}
+
+.terms-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.terms-hero-section {
+  background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+}
+
+.terms-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 30px;
+  background: rgba(255, 107, 53, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b35;
+}
+
+.terms-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.terms-hero-content p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+}
+
+.last-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.last-updated svg {
+  color: #ff6b35;
+}
+
+/* Introduction Section */
+.terms-intro-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.intro-content h2 {
+  font-size: 36px;
+  color: #001f3f;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.intro-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.intro-highlights {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  font-size: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.highlight-item svg {
+  color: #4CAF50;
+}
+
+/* Terms Content Section */
+.terms-content-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.terms-section {
+  margin-bottom: 60px;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  border-left: 5px solid #ff6b35;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.section-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.section-header h3 {
+  font-size: 26px;
+  color: #001f3f;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.section-content li svg {
+  color: #4CAF50;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Termination Section */
+.termination-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.termination-content h2 {
+  font-size: 36px;
+  color: #001f3f;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.termination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.termination-item {
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.termination-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.termination-item svg {
+  color: #ff6b35;
+  margin-bottom: 15px;
+}
+
+.termination-item h4 {
+  font-size: 18px;
+  color: #001f3f;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.termination-item p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.abandonment-notice {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 12px;
+  border-left: 5px solid #ff6b35;
+}
+
+.abandonment-notice svg {
+  color: #ff6b35;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.abandonment-notice h4 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.abandonment-notice p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Dispute Section */
+.dispute-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.dispute-content h2 {
+  font-size: 36px;
+  color: #001f3f;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.dispute-content > p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.dispute-steps {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.dispute-step {
+  flex: 1;
+  min-width: 250px;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: #ff6b35;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.dispute-step h4 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.dispute-step p {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.governing-law {
+  padding: 30px;
+  background: #e8f5e8;
+  border-radius: 12px;
+  border-left: 5px solid #4CAF50;
+}
+
+.governing-law h4 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.governing-law p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.contact-content h2 {
+  font-size: 36px;
+  color: #001f3f;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contact-content > p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.contact-method {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contact-method svg {
+  color: #ff6b35;
+  flex-shrink: 0;
+}
+
+.contact-method h4 {
+  font-size: 18px;
+  color: #001f3f;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-method p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.contact-method span {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Updates Section */
+.updates-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.updates-content h2 {
+  font-size: 36px;
+  color: #001f3f;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.updates-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.effective-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  background: #f8f9fa;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.effective-date svg {
+  color: #ff6b35;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .terms-hero-content h1 {
+    font-size: 32px;
+  }
+  
+  .intro-highlights {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .highlight-item {
+    justify-content: center;
+  }
+  
+  .terms-section {
+    padding: 25px 20px;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .termination-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dispute-steps {
+    flex-direction: column;
+  }
+  
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+  
+  .abandonment-notice {
+    flex-direction: column;
+    text-align: center;
+  }
+}

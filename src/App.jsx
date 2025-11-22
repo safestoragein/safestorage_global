@@ -10,9 +10,29 @@ import FeaturesPage from './pages/FeaturesPage'
 import TestimonialsPage from './pages/TestimonialsPage'
 import ContactPage from './pages/ContactPage'
 import BlogPage from './pages/BlogPage'
+import BlogPostPage from './pages/BlogPostPage'
+import UAEBlogPage from './pages/UAEBlogPage'
+import UAEBlogPostPage from './pages/UAEBlogPostPage'
 import FAQPage from './pages/FAQPage'
 import UAEPage from './pages/UAEPage'
+import UAEStorageUnitsPage from './pages/UAEStorageUnitsPage'
+import UAEHowItWorksPage from './pages/UAEHowItWorksPage'
+import UAELocationsPage from './pages/UAELocationsPage'
+import UAEPricingPage from './pages/UAEPricingPage'
+import UAEBusinessPage from './pages/UAEBusinessPage'
+import UAEContactPage from './pages/UAEContactPage'
+import UAEPersonalStoragePage from './pages/UAEPersonalStoragePage'
+import UAEBusinessStoragePage from './pages/UAEBusinessStoragePage'
+import UAEDocumentStoragePage from './pages/UAEDocumentStoragePage'
+import UAEVehicleStoragePage from './pages/UAEVehicleStoragePage'
+import UAEMovingServicesPage from './pages/UAEMovingServicesPage'
+import UAEPrivacyPage from './pages/UAEPrivacyPage'
+import UAETermsPage from './pages/UAETermsPage'
+import UAESitemapPage from './pages/UAESitemapPage'
+import UAEGetQuotePage from './pages/UAEGetQuotePage'
+import UAEAdminPage from './pages/UAEAdminPage'
 import UKPage from './pages/UKPage'
+import ScrollToTop from './components/ScrollToTop'
 import { getRedirectPath, getUserCountryPreference } from './services/geoLocation'
 import './App.css'
 
@@ -24,6 +44,10 @@ function AppWithRouter() {
   const location = useLocation()
 
   useEffect(() => {
+    // COMMENTED OUT IP REDIRECTION - USER REQUESTED TO DISABLE DUE TO VPN CAUSING SLOW TABS
+    // WILL RE-ENABLE WHEN REQUESTED BY USER
+    
+    /* 
     const handleIPRedirect = async () => {
       // Skip detection if user has already selected a country manually
       const userPreference = getUserCountryPreference()
@@ -34,7 +58,7 @@ function AppWithRouter() {
       }
 
       // Skip detection if already on a country-specific route
-      if (location.pathname === '/uae' || location.pathname === '/uk') {
+      if (location.pathname.startsWith('/uae') || location.pathname.startsWith('/uk')) {
         setIsLoading(false)
         return
       }
@@ -60,6 +84,10 @@ function AppWithRouter() {
     }
 
     handleIPRedirect()
+    */
+    
+    // Directly set loading to false without IP detection
+    setIsLoading(false)
   }, [])
 
   if (isLoading) {
@@ -84,12 +112,36 @@ function AppWithRouter() {
 
   return (
     <div className="app">
+      <ScrollToTop />
       {/* Only show global header if NOT on country-specific pages */}
       {!isCountrySpecificPage && <Header selectedLocation={selectedLocation} />}
       
       <Routes>
         <Route path="/" element={<Navigate to="/uae" replace />} />
         <Route path="/uae" element={<UAEPage />} />
+        <Route path="/uae/storage-units" element={<UAEStorageUnitsPage />} />
+        <Route path="/uae/how-it-works" element={<UAEHowItWorksPage />} />
+        <Route path="/uae/locations" element={<UAELocationsPage />} />
+        <Route path="/uae/pricing" element={<UAEPricingPage />} />
+        <Route path="/uae/business" element={<UAEBusinessPage />} />
+        <Route path="/uae/contact" element={<UAEContactPage />} />
+        <Route path="/uae/personal-storage" element={<UAEPersonalStoragePage />} />
+        <Route path="/uae/business-storage" element={<UAEBusinessStoragePage />} />
+        <Route path="/uae/document-storage" element={<UAEDocumentStoragePage />} />
+        <Route path="/uae/vehicle-storage" element={<UAEVehicleStoragePage />} />
+        <Route path="/uae/moving-services" element={<UAEMovingServicesPage />} />
+        <Route path="/uae/privacy" element={<UAEPrivacyPage />} />
+        <Route path="/uae/terms" element={<UAETermsPage />} />
+        <Route path="/uae/sitemap" element={<UAESitemapPage />} />
+        <Route path="/uae/get-quote" element={<UAEGetQuotePage />} />
+        <Route path="/uae/admin" element={<UAEAdminPage />} />
+        <Route path="/uae/blog" element={<UAEBlogPage />} />
+        <Route path="/uae/blog/:slug" element={<UAEBlogPostPage />} />
+        <Route path="/uae/locations/business-bay" element={<UAELocationsPage />} />
+        <Route path="/uae/locations/dubai-marina" element={<UAELocationsPage />} />
+        <Route path="/uae/locations/jlt" element={<UAELocationsPage />} />
+        <Route path="/uae/locations/al-quoz" element={<UAELocationsPage />} />
+        <Route path="/uae/locations/difc" element={<UAELocationsPage />} />
         <Route path="/uk" element={<UKPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/locations" element={<LocationsPage />} />
@@ -97,6 +149,7 @@ function AppWithRouter() {
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/faq" element={<FAQPage />} />
       </Routes>
       

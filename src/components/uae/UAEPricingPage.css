@@ -1,0 +1,1042 @@
+/* UAE Pricing Page - Unique Scoped Styles */
+
+.uae-pricing-page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding-top: 70px;
+}
+
+/* Pricing Hero Section */
+.uae-pricing-page .pricing-hero-section {
+  background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.uae-pricing-page .pricing-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.uae-pricing-page .pricing-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.uae-pricing-page .pricing-hero-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.uae-pricing-page .hero-badge-pricing {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255, 107, 53, 0.2);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 30px;
+  margin-bottom: 20px;
+  color: #ff6b35;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .pricing-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.uae-pricing-page .highlight-text {
+  color: #ff6b35;
+}
+
+.uae-pricing-page .pricing-hero-content p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+}
+
+.uae-pricing-page .hero-features-pricing {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.uae-pricing-page .feature-item-pricing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+.uae-pricing-page .feature-item-pricing svg {
+  color: #4CAF50;
+}
+
+/* Calculator Section */
+.uae-pricing-page .calculator-section {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.uae-pricing-page .calculator-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.uae-pricing-page .calculator-header h2 {
+  font-size: 36px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.uae-pricing-page .calculator-header p {
+  font-size: 18px;
+  color: #666;
+}
+
+.uae-pricing-page .calculator-grid {
+  display: grid;
+  gap: 40px;
+}
+
+/* Unit Selection */
+.uae-pricing-page .unit-selection h3 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .units-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.uae-pricing-page .unit-card-pricing {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.uae-pricing-page .unit-card-pricing:hover {
+  border-color: #ff6b35;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.uae-pricing-page .unit-card-pricing.selected {
+  border-color: #ff6b35;
+  background: rgba(255, 107, 53, 0.05);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+}
+
+.uae-pricing-page .unit-card-pricing.popular {
+  border-color: #ff6b35;
+}
+
+.uae-pricing-page .popular-badge {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background: #ff6b35;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .unit-icon-pricing {
+  margin-bottom: 15px;
+  color: #ff6b35;
+}
+
+.uae-pricing-page .unit-card-pricing h4 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .unit-size {
+  font-size: 16px;
+  color: #ff6b35;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.uae-pricing-page .unit-dims {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.uae-pricing-page .unit-price-pricing {
+  margin-bottom: 15px;
+  padding: 15px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.uae-pricing-page .price-from {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.uae-pricing-page .price-amount {
+  font-size: 28px;
+  color: #ff6b35;
+  font-weight: 700;
+}
+
+.uae-pricing-page .price-period {
+  font-size: 14px;
+  color: #666;
+  margin-left: 5px;
+}
+
+.uae-pricing-page .original-price {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+  margin-top: 5px;
+}
+
+.uae-pricing-page .unit-ideal {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.uae-pricing-page .unit-fits {
+  font-size: 13px;
+  color: #999;
+}
+
+/* Options Panel */
+.uae-pricing-page .options-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.uae-pricing-page .duration-section {
+  margin-bottom: 40px;
+}
+
+.uae-pricing-page .duration-section h3 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .duration-slider {
+  position: relative;
+}
+
+.uae-pricing-page .slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+  margin: 30px 0;
+}
+
+.uae-pricing-page .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ff6b35;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+}
+
+.uae-pricing-page .slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ff6b35;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+}
+
+.uae-pricing-page .duration-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -20px;
+  padding: 0 10px;
+}
+
+.uae-pricing-page .duration-labels span {
+  font-size: 12px;
+  color: #999;
+}
+
+.uae-pricing-page .duration-display {
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.uae-pricing-page .duration-number {
+  font-size: 48px;
+  color: #ff6b35;
+  font-weight: 700;
+}
+
+.uae-pricing-page .duration-text {
+  font-size: 18px;
+  color: #666;
+}
+
+.uae-pricing-page .discount-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Add-ons Section */
+.uae-pricing-page .addons-section h3 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .addons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.uae-pricing-page .addon-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.uae-pricing-page .addon-item:hover {
+  background: #f0f0f0;
+}
+
+.uae-pricing-page .addon-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.uae-pricing-page .addon-details {
+  flex: 1;
+}
+
+.uae-pricing-page .addon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.uae-pricing-page .addon-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #001f3f;
+}
+
+.uae-pricing-page .addon-price {
+  color: #ff6b35;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.uae-pricing-page .addon-included {
+  color: #4CAF50;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.uae-pricing-page .addon-desc {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+/* Price Summary */
+.uae-pricing-page .price-summary {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.uae-pricing-page .price-summary h3 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .summary-card {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  border-radius: 12px;
+  padding: 30px;
+  color: white;
+}
+
+.uae-pricing-page .summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 16px;
+}
+
+.uae-pricing-page .summary-row.discount {
+  color: #FFE0B2;
+}
+
+.uae-pricing-page .discount-amount {
+  font-weight: 600;
+  color: #FFE0B2;
+}
+
+.uae-pricing-page .summary-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 20px 0;
+}
+
+.uae-pricing-page .summary-row.total {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .total-price {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.uae-pricing-page .summary-row.savings {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 15px -30px 0;
+  padding: 15px 30px;
+  border-radius: 0 0 12px 12px;
+}
+
+.uae-pricing-page .savings-amount {
+  color: #FFE0B2;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.uae-pricing-page .summary-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.uae-pricing-page .summary-actions button {
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.uae-pricing-page .btn-book-now {
+  background: white;
+  color: #ff6b35;
+}
+
+.uae-pricing-page .btn-book-now:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.uae-pricing-page .btn-contact-pricing {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white !important;
+}
+
+.uae-pricing-page .btn-contact-pricing:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.uae-pricing-page .summary-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.uae-pricing-page .feature-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.uae-pricing-page .feature-check svg {
+  color: #FFE0B2;
+}
+
+/* Comparison Section */
+.uae-pricing-page .comparison-section {
+  padding: 60px 0;
+  background: white;
+}
+
+.uae-pricing-page .comparison-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.uae-pricing-page .comparison-header h2 {
+  font-size: 36px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.uae-pricing-page .comparison-table {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.uae-pricing-page .comparison-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.uae-pricing-page .comparison-table th {
+  background: #f8f9fa;
+  padding: 20px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.uae-pricing-page .comparison-table td {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.uae-pricing-page .size-cell strong {
+  display: block;
+  font-size: 16px;
+  color: #001f3f;
+  margin-bottom: 5px;
+}
+
+.uae-pricing-page .size-cell span {
+  font-size: 13px;
+  color: #999;
+}
+
+.uae-pricing-page .price-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.uae-pricing-page .current-price {
+  font-size: 20px;
+  color: #ff6b35;
+  font-weight: 700;
+}
+
+.uae-pricing-page .crossed-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.uae-pricing-page .features-cell {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.uae-pricing-page .feature-tag {
+  padding: 4px 10px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.uae-pricing-page .btn-select-unit {
+  padding: 10px 20px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.uae-pricing-page .btn-select-unit:hover {
+  background: #ff5722;
+  transform: translateX(5px);
+}
+
+/* Mobile Comparison Cards */
+.uae-pricing-page .comparison-mobile {
+  display: none;
+}
+
+.uae-pricing-page .comparison-card-mobile {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.uae-pricing-page .card-header-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.uae-pricing-page .card-header-mobile h4 {
+  font-size: 20px;
+  color: #001f3f;
+  font-weight: 600;
+}
+
+.uae-pricing-page .size-badge {
+  padding: 5px 12px;
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .card-body-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.uae-pricing-page .info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.uae-pricing-page .info-row span {
+  font-size: 14px;
+  color: #666;
+}
+
+.uae-pricing-page .info-row strong {
+  font-size: 14px;
+  color: #001f3f;
+}
+
+.uae-pricing-page .price-mobile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.uae-pricing-page .price-mobile strong {
+  font-size: 20px;
+  color: #ff6b35;
+}
+
+.uae-pricing-page .price-mobile .original {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.uae-pricing-page .btn-select-mobile {
+  width: 100%;
+  padding: 15px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Offers Section */
+.uae-pricing-page .offers-section {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.uae-pricing-page .offers-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.uae-pricing-page .offers-header h2 {
+  font-size: 36px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.uae-pricing-page .offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.uae-pricing-page .offer-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.uae-pricing-page .offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.uae-pricing-page .offer-card.featured {
+  border-color: #ff6b35;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 87, 34, 0.05) 100%);
+}
+
+.uae-pricing-page .offer-badge {
+  position: absolute;
+  top: -12px;
+  left: 30px;
+  background: #ff6b35;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.uae-pricing-page .offer-card.featured .offer-badge {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+}
+
+.uae-pricing-page .offer-card h3 {
+  font-size: 24px;
+  color: #001f3f;
+  margin: 20px 0 15px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .offer-card p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.uae-pricing-page .offer-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.uae-pricing-page .offer-card li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.uae-pricing-page .offer-card li svg {
+  color: #4CAF50;
+  flex-shrink: 0;
+}
+
+.uae-pricing-page .btn-claim-offer {
+  width: 100%;
+  padding: 15px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.uae-pricing-page .btn-claim-offer:hover {
+  background: #ff5722;
+  transform: translateY(-2px);
+}
+
+/* What's Included Section */
+.uae-pricing-page .included-section {
+  padding: 60px 0;
+  background: white;
+}
+
+.uae-pricing-page .included-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.uae-pricing-page .included-header h2 {
+  font-size: 36px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.uae-pricing-page .included-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.uae-pricing-page .included-item {
+  text-align: center;
+}
+
+.uae-pricing-page .included-item svg {
+  color: #ff6b35;
+  margin-bottom: 15px;
+}
+
+.uae-pricing-page .included-item h4 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.uae-pricing-page .included-item p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.uae-pricing-page .pricing-cta-section {
+  background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+  padding: 80px 0;
+}
+
+.uae-pricing-page .pricing-cta-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.uae-pricing-page .pricing-cta-content h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.uae-pricing-page .pricing-cta-content p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.uae-pricing-page .cta-buttons-pricing {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.uae-pricing-page .cta-buttons-pricing button {
+  padding: 16px 35px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.uae-pricing-page .btn-primary-pricing {
+  background: #ff6b35;
+  color: white;
+}
+
+.uae-pricing-page .btn-primary-pricing:hover {
+  background: #ff5722;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(255, 107, 53, 0.3);
+}
+
+.uae-pricing-page .btn-secondary-pricing {
+  background: transparent;
+  color: white;
+  border: 2px solid white !important;
+}
+
+.uae-pricing-page .btn-secondary-pricing:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.uae-pricing-page .trust-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.uae-pricing-page .indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+}
+
+.uae-pricing-page .indicator svg {
+  color: #ff6b35;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .uae-pricing-page .units-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  .uae-pricing-page .comparison-table {
+    display: none;
+  }
+  
+  .uae-pricing-page .comparison-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .uae-pricing-page .pricing-hero-content h1 {
+    font-size: 32px;
+  }
+  
+  .uae-pricing-page .hero-features-pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .uae-pricing-page .units-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .uae-pricing-page .offers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .uae-pricing-page .included-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .uae-pricing-page .summary-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .uae-pricing-page .cta-buttons-pricing {
+    flex-direction: column;
+  }
+  
+  .uae-pricing-page .trust-indicators {
+    flex-direction: column;
+    align-items: center;
+  }
+}

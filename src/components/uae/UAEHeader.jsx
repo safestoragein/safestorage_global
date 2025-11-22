@@ -31,15 +31,16 @@ const UAEHeader = () => {
               <Link to="/uae/locations" className="nav-link">Locations</Link>
               <Link to="/uae/pricing" className="nav-link">Pricing</Link>
               <Link to="/uae/business" className="nav-link">Business Storage</Link>
+              <Link to="/uae/blog" className="nav-link">Blog</Link>
               <Link to="/uae/contact" className="nav-link">Contact</Link>
             </div>
 
             <div className="nav-actions">
-              <a href="https://wa.me/971545621101" className="whatsapp-btn">
+              <a href="https://wa.me/971505773388" className="whatsapp-btn">
                 <MessageCircle size={20} />
                 <span>WhatsApp Us</span>
               </a>
-              <button className="quote-btn">Get a Quote</button>
+              <Link to="/uae/get-quote" className="quote-btn">Get a Free Quote</Link>
               <button 
                 className="mobile-menu-btn"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

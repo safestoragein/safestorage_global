@@ -1,0 +1,799 @@
+/* UAE Personal Storage Page - Unique Scoped Styles */
+
+.uae-personal-storage-page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding-top: 70px;
+}
+
+/* Personal Hero Section */
+.uae-personal-storage-page .personal-hero-section {
+  background: linear-gradient(135deg, #003366 0%, #004080 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.uae-personal-storage-page .personal-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -200px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.uae-personal-storage-page .personal-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.uae-personal-storage-page .personal-hero-content {
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.uae-personal-storage-page .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255, 107, 53, 0.2);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 30px;
+  color: #ff6b35;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.uae-personal-storage-page .personal-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.uae-personal-storage-page .text-highlight {
+  color: #ff6b35;
+}
+
+.uae-personal-storage-page .personal-hero-content > p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.uae-personal-storage-page .hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.uae-personal-storage-page .feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.uae-personal-storage-page .feature-item svg {
+  color: #4CAF50;
+}
+
+.uae-personal-storage-page .hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.uae-personal-storage-page .btn-primary,
+.uae-personal-storage-page .btn-secondary {
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.uae-personal-storage-page .btn-primary {
+  background: #ff6b35;
+  color: white;
+}
+
+.uae-personal-storage-page .btn-primary:hover {
+  background: #ff5722;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.uae-personal-storage-page .btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.uae-personal-storage-page .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.uae-personal-storage-page .trust-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.uae-personal-storage-page .indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.uae-personal-storage-page .indicator svg {
+  color: #ff6b35;
+}
+
+/* Storage Categories Section */
+.uae-personal-storage-page .storage-categories-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.uae-personal-storage-page .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.uae-personal-storage-page .section-header h2 {
+  font-size: 42px;
+  color: #001f3f;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.uae-personal-storage-page .section-header p {
+  font-size: 18px;
+  color: #666;
+}
+
+.uae-personal-storage-page .categories-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.uae-personal-storage-page .category-tab {
+  padding: 20px 30px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.uae-personal-storage-page .category-tab:hover {
+  border-color: #ff6b35;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.uae-personal-storage-page .category-tab.active {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  color: white;
+  border-color: #ff6b35;
+}
+
+.uae-personal-storage-page .category-tab svg {
+  color: #ff6b35;
+}
+
+.uae-personal-storage-page .category-tab.active svg {
+  color: white;
+}
+
+.uae-personal-storage-page .category-tab span {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.uae-personal-storage-page .category-content {
+  min-height: 150px;
+  position: relative;
+}
+
+.uae-personal-storage-page .category-detail {
+  display: none;
+}
+
+.uae-personal-storage-page .category-detail.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.uae-personal-storage-page .items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.uae-personal-storage-page .item-card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.uae-personal-storage-page .item-card svg {
+  color: #4CAF50;
+  flex-shrink: 0;
+}
+
+.uae-personal-storage-page .item-card span {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.uae-personal-storage-page .storage-note {
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  color: #666;
+  font-size: 15px;
+}
+
+/* Unit Sizes Section */
+.uae-personal-storage-page .unit-sizes-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.uae-personal-storage-page .units-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.uae-personal-storage-page .unit-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.uae-personal-storage-page .unit-card:hover {
+  border-color: #ff6b35;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.uae-personal-storage-page .unit-card.popular {
+  border-color: #ff6b35;
+  box-shadow: 0 15px 50px rgba(255, 107, 53, 0.15);
+}
+
+.uae-personal-storage-page .popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6b35;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.uae-personal-storage-page .unit-header h3 {
+  font-size: 24px;
+  color: #001f3f;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.uae-personal-storage-page .unit-size {
+  font-size: 14px;
+  color: #999;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.uae-personal-storage-page .unit-ideal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.uae-personal-storage-page .unit-ideal svg {
+  color: #ff6b35;
+}
+
+.uae-personal-storage-page .unit-price {
+  margin-bottom: 25px;
+}
+
+.uae-personal-storage-page .price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.uae-personal-storage-page .period {
+  font-size: 16px;
+  color: #666;
+}
+
+.uae-personal-storage-page .unit-select-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.uae-personal-storage-page .unit-select-btn:hover {
+  background: #ff5722;
+  transform: translateX(5px);
+}
+
+.uae-personal-storage-page .size-help {
+  text-align: center;
+  color: #666;
+  font-size: 15px;
+}
+
+.uae-personal-storage-page .size-help a {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.uae-personal-storage-page .size-help a:hover {
+  text-decoration: underline;
+}
+
+/* Benefits Section */
+.uae-personal-storage-page .benefits-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.uae-personal-storage-page .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.uae-personal-storage-page .benefit-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.uae-personal-storage-page .benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.uae-personal-storage-page .benefit-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 87, 34, 0.1) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b35;
+}
+
+.uae-personal-storage-page .benefit-card h3 {
+  font-size: 22px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.uae-personal-storage-page .benefit-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Process Section */
+.uae-personal-storage-page .process-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.uae-personal-storage-page .process-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.uae-personal-storage-page .process-step {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.uae-personal-storage-page .step-number {
+  position: absolute;
+  top: -20px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 40px;
+  height: 40px;
+  background: #ff6b35;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.uae-personal-storage-page .step-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b35;
+}
+
+.uae-personal-storage-page .process-step h3 {
+  font-size: 22px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.uae-personal-storage-page .process-step p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.uae-personal-storage-page .step-connector {
+  color: #ff6b35;
+  font-size: 24px;
+  opacity: 0.5;
+}
+
+/* Testimonials Section */
+.uae-personal-storage-page .testimonials-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.uae-personal-storage-page .testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.uae-personal-storage-page .testimonial-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.uae-personal-storage-page .testimonial-rating {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.uae-personal-storage-page .testimonial-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.uae-personal-storage-page .testimonial-footer {
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.uae-personal-storage-page .testimonial-footer strong {
+  display: block;
+  font-size: 16px;
+  color: #001f3f;
+  margin-bottom: 5px;
+}
+
+.uae-personal-storage-page .testimonial-footer span {
+  font-size: 14px;
+  color: #999;
+}
+
+/* Offers Section */
+.uae-personal-storage-page .offers-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.uae-personal-storage-page .offer-card {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  border-radius: 20px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: center;
+  color: white;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.uae-personal-storage-page .offer-content h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.uae-personal-storage-page .offer-highlight {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.uae-personal-storage-page .offer-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.uae-personal-storage-page .offer-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.uae-personal-storage-page .offer-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.uae-personal-storage-page .offer-features svg {
+  color: #4CAF50;
+  flex-shrink: 0;
+}
+
+.uae-personal-storage-page .offer-cta {
+  text-align: center;
+}
+
+.uae-personal-storage-page .claim-offer-btn {
+  padding: 18px 40px;
+  background: white;
+  color: #ff6b35;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.uae-personal-storage-page .claim-offer-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.uae-personal-storage-page .offer-note {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* CTA Section */
+.uae-personal-storage-page .cta-section {
+  padding: 100px 0;
+  background: #001f3f;
+}
+
+.uae-personal-storage-page .cta-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.uae-personal-storage-page .cta-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.uae-personal-storage-page .cta-content p {
+  font-size: 20px;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.uae-personal-storage-page .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.uae-personal-storage-page .cta-btn {
+  padding: 16px 35px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.uae-personal-storage-page .cta-btn.primary {
+  background: #ff6b35;
+  color: white;
+}
+
+.uae-personal-storage-page .cta-btn.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.uae-personal-storage-page .cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .uae-personal-storage-page .offer-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .uae-personal-storage-page .process-steps {
+    flex-direction: column;
+  }
+
+  .uae-personal-storage-page .step-connector {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .uae-personal-storage-page .personal-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .uae-personal-storage-page .hero-features {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .uae-personal-storage-page .hero-cta {
+    flex-direction: column;
+  }
+
+  .uae-personal-storage-page .btn-primary,
+  .uae-personal-storage-page .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .uae-personal-storage-page .categories-tabs {
+    flex-direction: column;
+  }
+
+  .uae-personal-storage-page .category-tab {
+    width: 100%;
+  }
+
+  .uae-personal-storage-page .units-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-personal-storage-page .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-personal-storage-page .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-personal-storage-page .offer-highlight {
+    font-size: 32px;
+  }
+
+  .uae-personal-storage-page .cta-buttons {
+    flex-direction: column;
+  }
+
+  .uae-personal-storage-page .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,967 @@
+/* UAE Business Storage Page - Unique Scoped Styles */
+
+.uae-business-page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding-top: 70px;
+}
+
+/* Business Hero Section */
+.uae-business-page .business-hero-section {
+  background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.uae-business-page .business-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -200px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.uae-business-page .business-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.uae-business-page .business-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.uae-business-page .business-hero-content {
+  color: white;
+}
+
+.uae-business-page .hero-badge-business {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255, 107, 53, 0.2);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 30px;
+  color: #ff6b35;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.uae-business-page .business-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.uae-business-page .text-highlight {
+  color: #ff6b35;
+}
+
+.uae-business-page .business-hero-content p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.uae-business-page .hero-stats-business {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.uae-business-page .stat-item-business {
+  display: flex;
+  flex-direction: column;
+}
+
+.uae-business-page .stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.uae-business-page .stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 5px;
+}
+
+.uae-business-page .hero-cta-business {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.uae-business-page .hero-cta-business button {
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.uae-business-page .btn-primary-business {
+  background: #ff6b35;
+  color: white;
+}
+
+.uae-business-page .btn-primary-business:hover {
+  background: #ff5722;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.uae-business-page .btn-secondary-business {
+  background: transparent;
+  color: white;
+  border: 2px solid white !important;
+}
+
+.uae-business-page .btn-secondary-business:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.uae-business-page .trust-logos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.uae-business-page .logos-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.uae-business-page .logos-row svg {
+  color: #ff6b35;
+}
+
+/* Business Hero Visual */
+.uae-business-page .business-hero-visual {
+  position: relative;
+}
+
+.uae-business-page .visual-stats-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.uae-business-page .stats-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  color: #001f3f;
+  font-weight: 600;
+}
+
+.uae-business-page .stats-header svg {
+  color: #ff6b35;
+}
+
+.uae-business-page .growth-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.uae-business-page .chart-bar {
+  flex: 1;
+  background: linear-gradient(to top, #ff6b35, #ff5722);
+  border-radius: 8px 8px 0 0;
+  animation: growBar 1s ease-out;
+}
+
+@keyframes growBar {
+  from {
+    height: 0 !important;
+  }
+}
+
+.uae-business-page .visual-stats-card p {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin: 0;
+}
+
+.uae-business-page .floating-benefits {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.uae-business-page .benefit-card-float {
+  background: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  color: #001f3f;
+  font-weight: 600;
+  animation: float 3s ease-in-out infinite;
+}
+
+.uae-business-page .benefit-card-float:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.uae-business-page .benefit-card-float:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.uae-business-page .benefit-card-float svg {
+  color: #4CAF50;
+}
+
+/* Services Section */
+.uae-business-page .business-services-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.uae-business-page .section-header-business {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.uae-business-page .section-header-business h2 {
+  font-size: 42px;
+  color: #001f3f;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.uae-business-page .section-header-business p {
+  font-size: 18px;
+  color: #666;
+}
+
+.uae-business-page .services-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.uae-business-page .service-tab {
+  padding: 20px 30px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.uae-business-page .service-tab:hover {
+  border-color: #ff6b35;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.uae-business-page .service-tab.active {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  color: white;
+  border-color: #ff6b35;
+}
+
+.uae-business-page .service-tab svg {
+  color: #ff6b35;
+}
+
+.uae-business-page .service-tab.active svg {
+  color: white;
+}
+
+.uae-business-page .service-tab span {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.uae-business-page .services-content {
+  position: relative;
+  min-height: 400px;
+}
+
+.uae-business-page .service-detail {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.uae-business-page .service-detail.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.uae-business-page .service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.uae-business-page .service-info h3 {
+  font-size: 32px;
+  color: #001f3f;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.uae-business-page .service-info p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.uae-business-page .service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.uae-business-page .service-features li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.uae-business-page .service-features li svg {
+  color: #4CAF50;
+  flex-shrink: 0;
+}
+
+.uae-business-page .btn-learn-more {
+  padding: 14px 30px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.uae-business-page .btn-learn-more:hover {
+  background: #ff5722;
+  transform: translateX(5px);
+}
+
+.uae-business-page .service-visual {
+  text-align: center;
+}
+
+.uae-business-page .visual-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 87, 34, 0.1) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uae-business-page .visual-icon svg {
+  width: 60px;
+  height: 60px;
+  color: #ff6b35;
+}
+
+.uae-business-page .service-stats {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.uae-business-page .service-stats .stat {
+  text-align: center;
+}
+
+.uae-business-page .stat-value {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 5px;
+}
+
+.uae-business-page .stat-desc {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Benefits Section */
+.uae-business-page .business-benefits-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.uae-business-page .benefits-grid-business {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.uae-business-page .benefit-card-business {
+  padding: 40px 30px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.uae-business-page .benefit-card-business:hover {
+  background: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.uae-business-page .benefit-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.uae-business-page .benefit-card-business h3 {
+  font-size: 22px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.uae-business-page .benefit-card-business p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Industries Section */
+.uae-business-page .industries-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.uae-business-page .industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.uae-business-page .industry-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.uae-business-page .industry-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.uae-business-page .industry-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.uae-business-page .industry-card h3 {
+  font-size: 20px;
+  color: #001f3f;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.uae-business-page .industry-stats {
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.uae-business-page .companies-count {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 5px;
+}
+
+.uae-business-page .companies-label {
+  font-size: 13px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Process Section */
+.uae-business-page .business-process-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.uae-business-page .process-steps-business {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.uae-business-page .process-step {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.uae-business-page .step-number {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #ff6b35;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.uae-business-page .step-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 87, 34, 0.05) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b35;
+}
+
+.uae-business-page .process-step h3 {
+  font-size: 22px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.uae-business-page .process-step p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.uae-business-page .process-connector {
+  color: #ff6b35;
+  opacity: 0.5;
+}
+
+/* Testimonials Section */
+.uae-business-page .business-testimonials-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.uae-business-page .testimonials-grid-business {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.uae-business-page .testimonial-card-business {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.uae-business-page .testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.uae-business-page .rating-business {
+  display: flex;
+  gap: 4px;
+}
+
+.uae-business-page .industry-tag {
+  padding: 5px 12px;
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.uae-business-page .testimonial-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.uae-business-page .testimonial-footer {
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.uae-business-page .testimonial-footer strong {
+  display: block;
+  font-size: 16px;
+  color: #001f3f;
+  margin-bottom: 5px;
+}
+
+.uae-business-page .testimonial-footer span {
+  font-size: 14px;
+  color: #999;
+}
+
+/* Pricing Section */
+.uae-business-page .business-pricing-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.uae-business-page .pricing-card-business {
+  background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+  border-radius: 20px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.uae-business-page .pricing-content h2 {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.uae-business-page .pricing-content p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+}
+
+.uae-business-page .pricing-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.uae-business-page .pricing-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 15px;
+}
+
+.uae-business-page .pricing-feature svg {
+  color: #4CAF50;
+  flex-shrink: 0;
+}
+
+.uae-business-page .pricing-cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.uae-business-page .btn-get-quote {
+  padding: 16px 40px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.uae-business-page .btn-get-quote:hover {
+  background: #ff5722;
+  transform: translateX(5px);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.uae-business-page .pricing-note {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.uae-business-page .price-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.uae-business-page .price-label {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.uae-business-page .price-amount {
+  display: block;
+  font-size: 48px;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 5px;
+}
+
+.uae-business-page .price-period {
+  font-size: 16px;
+  color: #666;
+}
+
+/* CTA Section */
+.uae-business-page .business-cta-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+}
+
+.uae-business-page .cta-content-business {
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.uae-business-page .cta-content-business h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.uae-business-page .cta-content-business p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.uae-business-page .cta-buttons-business {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.uae-business-page .cta-buttons-business button {
+  padding: 16px 35px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.uae-business-page .btn-primary-cta {
+  background: white;
+  color: #ff6b35;
+}
+
+.uae-business-page .btn-primary-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.uae-business-page .btn-secondary-cta {
+  background: #25D366;
+  color: white;
+}
+
+.uae-business-page .btn-secondary-cta:hover {
+  background: #20BD5A;
+  transform: translateY(-3px);
+}
+
+.uae-business-page .btn-tertiary-cta {
+  background: transparent;
+  color: white;
+  border: 2px solid white !important;
+}
+
+.uae-business-page .btn-tertiary-cta:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.uae-business-page .contact-info-business {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  color: white;
+  font-size: 16px;
+}
+
+.uae-business-page .contact-info-business span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .uae-business-page .business-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .uae-business-page .service-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .uae-business-page .pricing-card-business {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .uae-business-page .process-steps-business {
+    flex-direction: column;
+  }
+
+  .uae-business-page .process-connector {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .uae-business-page .business-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .uae-business-page .hero-stats-business {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .uae-business-page .hero-cta-business {
+    flex-direction: column;
+  }
+
+  .uae-business-page .services-tabs {
+    flex-direction: column;
+  }
+
+  .uae-business-page .service-tab {
+    width: 100%;
+  }
+
+  .uae-business-page .benefits-grid-business {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-business-page .industries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-business-page .testimonials-grid-business {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-business-page .pricing-features {
+    grid-template-columns: 1fr;
+  }
+
+  .uae-business-page .cta-buttons-business {
+    flex-direction: column;
+  }
+
+  .uae-business-page .contact-info-business {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

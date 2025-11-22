@@ -60,7 +60,7 @@ export const countryContent = {
         { name: "Luxury Storage", desc: "Climate-controlled units for high-value items" },
         { name: "Corporate Storage", desc: "VAT compliant solutions for businesses" },
         { name: "Yacht Storage", desc: "Specialized storage for marine equipment" },
-        { name: "Art & Wine Storage", desc: "Temperature-controlled for collections" }
+        { name: "Art Storage", desc: "Temperature-controlled for art collections" }
       ]
     },
     pricing: {
