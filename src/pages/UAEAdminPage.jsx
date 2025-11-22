@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import AdminLogin from '../components/admin/AdminLogin';
 import AdminDashboard from '../components/admin/AdminDashboard';
+import SEOHead from '../components/SEOHead';
 
 const UAEAdminPage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -42,10 +43,29 @@ const UAEAdminPage = () => {
   }
 
   if (!isAuthenticated) {
-    return <AdminLogin onLogin={handleLogin} />;
+    return (
+      <>
+        <SEOHead 
+          title="SafeStorage UAE Admin - Content Management"
+          description="Admin panel for managing SafeStorage UAE website content and blog posts"
+          canonical="/uae/admin"
+          keywords="admin, cms, content management, safestorage"
+        />
+        <AdminLogin onLogin={handleLogin} />
+      </>
+    );
   }
 
-  return <AdminDashboard onLogout={handleLogout} />;
+  return (
+    <>
+      <SEOHead 
+        title="SafeStorage UAE Dashboard - Admin Panel"
+        description="Administrative dashboard for SafeStorage UAE operations"
+        canonical="/uae/admin"
+      />
+      <AdminDashboard onLogout={handleLogout} />
+    </>
+  );
 };
 
 export default UAEAdminPage;
