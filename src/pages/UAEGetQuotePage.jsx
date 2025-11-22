@@ -100,8 +100,30 @@ const UAEGetQuotePage = () => {
       setLoading(true);
       try {
         const items = await itemsService.getDubaiItems();
-        setAvailableItems(items);
-        setFilteredItems(items);
+        
+        // Ensure items is always an array
+        const safeItems = Array.isArray(items) ? items : [];
+        
+        if (safeItems.length === 0) {
+          // Use fallback items if no items returned from API
+          const fallbackItems = [
+            { id: 1, name: 'Sofa (2-3 Seater)', price: 45, category: 'Furniture' },
+            { id: 2, name: 'Double Bed', price: 40, category: 'Furniture' },
+            { id: 3, name: 'Dining Table (4 Chairs)', price: 35, category: 'Furniture' },
+            { id: 4, name: 'Refrigerator', price: 30, category: 'Appliances' },
+            { id: 5, name: 'Washing Machine', price: 25, category: 'Appliances' },
+            { id: 6, name: 'Television (32-55")', price: 20, category: 'Electronics' },
+            { id: 7, name: 'Wardrobe (Large)', price: 50, category: 'Furniture' },
+            { id: 8, name: 'Storage Boxes (Medium)', price: 8, category: 'Boxes' },
+            { id: 9, name: 'Mattress (Queen)', price: 25, category: 'Furniture' },
+            { id: 10, name: 'Office Desk', price: 30, category: 'Office' }
+          ];
+          setAvailableItems(fallbackItems);
+          setFilteredItems(fallbackItems);
+        } else {
+          setAvailableItems(safeItems);
+          setFilteredItems(safeItems);
+        }
       } catch (error) {
         console.error('Failed to load items:', error);
         // Fallback items if API fails
@@ -128,9 +150,15 @@ const UAEGetQuotePage = () => {
 
   // Filter items based on search
   useEffect(() => {
+    if (!Array.isArray(availableItems)) {
+      setFilteredItems([]);
+      return;
+    }
+    
     const filtered = availableItems.filter(item =>
-      item.name.toLowerCase().includes(itemSearchTerm.toLowerCase()) ||
-      (item.category && item.category.toLowerCase().includes(itemSearchTerm.toLowerCase()))
+      item && item.name && 
+      (item.name.toLowerCase().includes(itemSearchTerm.toLowerCase()) ||
+      (item.category && item.category.toLowerCase().includes(itemSearchTerm.toLowerCase())))
     );
     setFilteredItems(filtered);
   }, [itemSearchTerm, availableItems]);

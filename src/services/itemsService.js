@@ -7,7 +7,19 @@ export const itemsService = {
   async getDubaiItems() {
     try {
       const response = await axios.get(`${API_BASE_URL}/dubai_items_list`);
-      return response.data || [];
+      const data = response.data;
+      
+      // Ensure we always return an array
+      if (Array.isArray(data)) {
+        return data;
+      } else if (data && Array.isArray(data.items)) {
+        return data.items;
+      } else if (data && Array.isArray(data.data)) {
+        return data.data;
+      } else {
+        console.warn('API response is not an array:', data);
+        return [];
+      }
     } catch (error) {
       console.error('Error fetching Dubai items:', error);
       return [];
@@ -38,32 +50,39 @@ export const itemsService = {
 
   // Calculate pricing based on items and services
   calculatePricing(items, duration, services = []) {
-    const baseItemsCost = items.reduce((total, item) => {
-      const itemCost = (item.price || 0) * (item.quantity || 1);
+    // Ensure items is an array
+    const safeItems = Array.isArray(items) ? items : [];
+    const safeServices = Array.isArray(services) ? services : [];
+    const safeDuration = Number(duration) || 1;
+
+    const baseItemsCost = safeItems.reduce((total, item) => {
+      if (!item) return total;
+      const itemCost = (Number(item.price) || 0) * (Number(item.quantity) || 1);
       return total + itemCost;
     }, 0);
 
-    const servicesCost = services.reduce((total, service) => {
-      return total + (service.price || 0);
+    const servicesCost = safeServices.reduce((total, service) => {
+      if (!service) return total;
+      return total + (Number(service.price) || 0);
     }, 0);
 
     const monthlyTotal = baseItemsCost + servicesCost;
     
     // Apply duration discounts
     let discount = 0;
-    if (duration >= 12) discount = 0.20; // 20% for 12+ months
-    else if (duration >= 6) discount = 0.15; // 15% for 6+ months
-    else if (duration >= 3) discount = 0.10; // 10% for 3+ months
+    if (safeDuration >= 12) discount = 0.20; // 20% for 12+ months
+    else if (safeDuration >= 6) discount = 0.15; // 15% for 6+ months
+    else if (safeDuration >= 3) discount = 0.10; // 10% for 3+ months
 
     const discountAmount = monthlyTotal * discount;
     const discountedMonthly = monthlyTotal - discountAmount;
-    const totalCost = discountedMonthly * duration;
+    const totalCost = discountedMonthly * safeDuration;
 
     return {
       monthlyOriginal: monthlyTotal,
       monthlyDiscounted: discountedMonthly,
       totalCost,
-      discountAmount: discountAmount * duration,
+      discountAmount: discountAmount * safeDuration,
       discountPercentage: discount * 100
     };
   }
