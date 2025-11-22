@@ -878,6 +878,40 @@
   text-decoration: none;
 }
 
+/* Confetti Animation */
+@keyframes confetti-fall {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  10% {
+    transform: scale(1) rotate(36deg);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1) rotate(324deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Spin animation for loaders */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .form-wrapper {

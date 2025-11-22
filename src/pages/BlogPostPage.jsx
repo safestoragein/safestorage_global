@@ -1,82 +1,184 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Calendar, Clock, User, Tag, Share2, BookOpen, ChevronRight } from 'lucide-react'
-import { getPostBySlug, getLatestPosts } from '../data/blogData'
+import blogService from '../services/blogService'
+import SEOHead from '../components/SEOHead'
+import UAEHeader from '../components/uae/UAEHeader'
+import UAEFooter from '../components/uae/UAEFooter'
 import './BlogPostPage.css'
 
 const BlogPostPage = () => {
   const { slug } = useParams()
-  const post = getPostBySlug(slug)
-  const relatedPosts = getLatestPosts(3).filter(p => p.id !== post?.id)
+  const [post, setPost] = useState(null)
+  const [relatedPosts, setRelatedPosts] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      try {
+        const blogData = await blogService.getBlogBySlug(slug)
+        if (blogData) {
+          const formattedPost = blogService.formatBlog(blogData)
+          setPost(formattedPost)
+          
+          // Get related posts (exclude current post)
+          const allBlogs = await blogService.getAllBlogs()
+          const related = allBlogs
+            .filter(blog => blog.blog_id !== blogData.blog_id)
+            .slice(0, 3)
+            .map(blog => blogService.formatBlog(blog))
+          setRelatedPosts(related)
+        }
+      } catch (error) {
+        console.error('Error loading blog post:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    if (slug) {
+      fetchBlogData()
+    }
+  }, [slug])
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' }
     return new Date(dateString).toLocaleDateString('en-US', options)
   }
 
+  if (loading) {
+    return (
+      <div className="uae-page">
+        <UAEHeader />
+        <div className="container">
+          <div className="loading-state">
+            <h1>Loading article...</h1>
+          </div>
+        </div>
+        <UAEFooter />
+      </div>
+    )
+  }
+
   if (!post) {
     return (
-      <div className="page-container">
+      <div className="uae-page">
+        <UAEHeader />
         <div className="container">
           <div className="not-found">
             <h1>Blog post not found</h1>
             <p>The article you're looking for doesn't exist or has been moved.</p>
-            <Link to="/blog" className="back-to-blog">
+            <Link to="/uae/blog" className="back-to-blog">
               <ArrowLeft size={20} />
               Back to Blog
             </Link>
           </div>
         </div>
+        <UAEFooter />
       </div>
     )
   }
 
   return (
-    <div className="blog-post-page">
-      {/* Header */}
-      <div className="post-header">
-        <div className="container">
-          <Link to="/blog" className="back-link">
-            <ArrowLeft size={20} />
+    <div className="uae-page">
+      <SEOHead 
+        title={post.meta_title}
+        description={post.meta_description}
+        canonical={`/uae/blog/${post.slug}`}
+        keywords={post.tags}
+      />
+      <UAEHeader />
+      <div className="blog-post-page">
+      {/* Hero Section */}
+      <div className="blog-hero-section" style={{
+        background: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)',
+        padding: '100px 0 60px',
+        color: 'white'
+      }}>
+        <div className="container" style={{maxWidth: '1200px', margin: '0 auto', padding: '0 20px'}}>
+          <Link to="/uae/blog" className="back-link" style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            color: 'rgba(255, 255, 255, 0.8)',
+            textDecoration: 'none',
+            marginBottom: '30px',
+            fontSize: '16px'
+          }}>
+            <ArrowLeft size={20} style={{marginRight: '8px'}} />
             <span>Back to Blog</span>
           </Link>
           
           <motion.div 
-            className="post-header-content"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="post-meta-header">
-              <span className="category-badge">{post.category}</span>
-              <div className="post-meta-details">
-                <span className="read-time">
+            <div style={{display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px'}}>
+              <span style={{
+                background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
+                padding: '8px 16px',
+                borderRadius: '25px',
+                fontSize: '14px',
+                fontWeight: '600'
+              }}>{post.extraData.category}</span>
+              <div style={{display: 'flex', alignItems: 'center', gap: '16px', opacity: 0.8}}>
+                <span style={{display: 'flex', alignItems: 'center', gap: '6px'}}>
                   <Clock size={16} />
-                  {post.readTime}
+                  {post.extraData.read_time}
                 </span>
-                <span className="publish-date">
+                <span style={{display: 'flex', alignItems: 'center', gap: '6px'}}>
                   <Calendar size={16} />
-                  {formatDate(post.publishDate)}
+                  {post.formattedDate}
                 </span>
               </div>
             </div>
             
-            <h1 className="post-title">{post.title}</h1>
-            <p className="post-subtitle">{post.excerpt}</p>
+            <h1 style={{
+              fontSize: '3rem',
+              fontWeight: '700',
+              lineHeight: '1.1',
+              marginBottom: '20px'
+            }}>{post.meta_title}</h1>
+            <p style={{
+              fontSize: '1.25rem',
+              opacity: 0.9,
+              marginBottom: '30px',
+              lineHeight: '1.6'
+            }}>{post.meta_description}</p>
             
-            <div className="post-author-section">
-              <div className="author-info">
-                <div className="author-avatar">
-                  {post.author.charAt(0)}
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+              <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+                <div style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '20px',
+                  fontWeight: '700'
+                }}>
+                  {post.extraData.author?.charAt(0) || 'S'}
                 </div>
-                <div className="author-details">
-                  <p className="author-name">{post.author}</p>
-                  <p className="author-meta">Published on {formatDate(post.publishDate)}</p>
+                <div>
+                  <p style={{fontWeight: '600', marginBottom: '2px'}}>{post.extraData.author || 'SafeStorage Team'}</p>
+                  <p style={{opacity: 0.7, fontSize: '14px'}}>Published on {post.formattedDate}</p>
                 </div>
               </div>
               
-              <button className="share-button">
+              <button style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'rgba(255, 255, 255, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                color: 'white',
+                padding: '12px 20px',
+                borderRadius: '25px',
+                cursor: 'pointer'
+              }}>
                 <Share2 size={18} />
                 Share
               </button>
@@ -124,10 +226,10 @@ const BlogPostPage = () => {
               <div className="post-tags-section">
                 <h3>Tags</h3>
                 <div className="post-tags">
-                  {post.tags.map((tag, index) => (
+                  {post.tags.split(',').map((tag, index) => (
                     <span key={index} className="post-tag">
                       <Tag size={14} />
-                      {tag}
+                      {tag.trim()}
                     </span>
                   ))}
                 </div>
@@ -188,31 +290,31 @@ const BlogPostPage = () => {
           <div className="related-posts-grid">
             {relatedPosts.map((relatedPost, index) => (
               <motion.div
-                key={relatedPost.id}
+                key={relatedPost.blog_id}
                 className="related-post-card"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <Link to={`/blog/${relatedPost.slug}`}>
+                <Link to={`/uae/blog/${relatedPost.slug}`}>
                   <div className="related-post-image">
-                    <img src={relatedPost.image} alt={relatedPost.title} />
+                    <img src={relatedPost.extraData.featured_image} alt={relatedPost.meta_title} />
                     <div className="related-post-overlay">
-                      <span className="category">{relatedPost.category}</span>
+                      <span className="category">{relatedPost.extraData.category}</span>
                     </div>
                   </div>
                   <div className="related-post-content">
-                    <h3>{relatedPost.title}</h3>
-                    <p>{relatedPost.excerpt}</p>
+                    <h3>{relatedPost.meta_title}</h3>
+                    <p>{relatedPost.meta_description}</p>
                     <div className="related-post-meta">
                       <span className="read-time">
                         <Clock size={14} />
-                        {relatedPost.readTime}
+                        {relatedPost.extraData.read_time}
                       </span>
                       <span className="author">
                         <User size={14} />
-                        {relatedPost.author}
+                        {relatedPost.extraData.author}
                       </span>
                     </div>
                   </div>
@@ -250,6 +352,8 @@ const BlogPostPage = () => {
           </div>
         </div>
       </motion.section>
+      </div>
+      <UAEFooter />
     </div>
   )
 }

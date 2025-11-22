@@ -95,8 +95,8 @@ function AppWithRouter() {
         <Route path="/uae/sitemap" element={<UAESitemapPage />} />
         <Route path="/uae/get-quote" element={<UAEGetQuotePage />} />
         <Route path="/uae/admin" element={<UAEAdminPage />} />
-        <Route path="/uae/blog" element={<UAEBlogPage />} />
-        <Route path="/uae/blog/:slug" element={<UAEBlogPostPage />} />
+        <Route path="/uae/blog" element={<BlogPage />} />
+        <Route path="/uae/blog/:slug" element={<BlogPostPage />} />
         <Route path="/uae/locations/business-bay" element={<UAELocationsPage />} />
         <Route path="/uae/locations/dubai-marina" element={<UAELocationsPage />} />
         <Route path="/uae/locations/jlt" element={<UAELocationsPage />} />

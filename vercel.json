@@ -1,8 +1,12 @@
 {
   "rewrites": [
     { "source": "/uae/admin", "destination": "/index.html" },
+    { "source": "/uae/blog", "destination": "/index.html" },
+    { "source": "/uae/blog/:slug", "destination": "/index.html" },
+    { "source": "/uae/blog/(.*)", "destination": "/index.html" },
     { "source": "/uae/(.*)", "destination": "/index.html" },
-    { "source": "/uk", "destination": "/index.html" }
+    { "source": "/uk", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {
