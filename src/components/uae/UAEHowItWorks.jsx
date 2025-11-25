@@ -83,31 +83,47 @@ const UAEHowItWorks = () => {
           ))}
         </div>
 
-        {/* Video Section */}
-        <div className="video-section">
-          <div className="video-content">
-            <div className="video-text">
+        {/* Facility Images Section */}
+        <div className="facility-section">
+          <div className="facility-content">
+            <div className="facility-text">
               <h3>See Our Facilities</h3>
-              <p>Take a virtual tour of our state-of-the-art storage facilities in Dubai</p>
+              <p>Take a look at our state-of-the-art storage facilities in Dubai</p>
               <ul className="facility-features">
                 <li>Climate controlled environment</li>
                 <li>24/7 CCTV surveillance</li>
                 <li>Biometric access control</li>
                 <li>Professional moving assistance</li>
               </ul>
-              <button className="tour-button">Take Virtual Tour</button>
+              <button className="tour-button">Schedule Visit</button>
             </div>
-            <div className="video-placeholder">
-              <iframe
-                width="100%"
-                height="400"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="SafeStorage Dubai Facility Tour"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="video-iframe"
-              ></iframe>
+            <div className="facility-images">
+              <div className="image-grid">
+                <div className="facility-image">
+                  <img src="/api/placeholder/300/200" alt="Modern storage units" />
+                  <div className="image-overlay">
+                    <span>Modern Storage Units</span>
+                  </div>
+                </div>
+                <div className="facility-image">
+                  <img src="/api/placeholder/300/200" alt="Security systems" />
+                  <div className="image-overlay">
+                    <span>Advanced Security</span>
+                  </div>
+                </div>
+                <div className="facility-image">
+                  <img src="/api/placeholder/300/200" alt="Climate control" />
+                  <div className="image-overlay">
+                    <span>Climate Controlled</span>
+                  </div>
+                </div>
+                <div className="facility-image">
+                  <img src="/api/placeholder/300/200" alt="24/7 access" />
+                  <div className="image-overlay">
+                    <span>24/7 Access</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

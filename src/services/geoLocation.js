@@ -41,11 +41,11 @@ export const getRedirectPath = async () => {
     case 'IN': // India
       return { 
         type: 'external', 
-        url: 'https://safestorage.in/',
+        url: 'https://safestorage.in',
         country: 'India'
       };
       
-    case 'AE': // UAE
+    case 'AE': // UAE (Dubai specifically)
     case 'OM': // Oman
     case 'QA': // Qatar  
     case 'KW': // Kuwait

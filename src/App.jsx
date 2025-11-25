@@ -18,7 +18,6 @@ import UAEPage from './pages/UAEPage'
 import UAEStorageUnitsPage from './pages/UAEStorageUnitsPage'
 import UAEHowItWorksPage from './pages/UAEHowItWorksPage'
 import UAELocationsPage from './pages/UAELocationsPage'
-import UAEPricingPage from './pages/UAEPricingPage'
 import UAEBusinessPage from './pages/UAEBusinessPage'
 import UAEContactPage from './pages/UAEContactPage'
 import UAEPersonalStoragePage from './pages/UAEPersonalStoragePage'
@@ -46,10 +45,43 @@ function AppWithRouter() {
   const location = useLocation()
 
   useEffect(() => {
-    // Temporarily disable IP detection to fix infinite redirect loop
-    // Just set loading to false and let user navigate normally
-    setIsLoading(false)
-    setSelectedLocation('uae')
+    const handleGeoRedirect = async () => {
+      try {
+        // Check if user has manually selected a country preference
+        const userPreference = getUserCountryPreference()
+        if (userPreference) {
+          setIsLoading(false)
+          setSelectedLocation(userPreference)
+          return
+        }
+
+        // Get redirect path based on IP geolocation
+        const redirectInfo = await getRedirectPath()
+        
+        if (redirectInfo && redirectInfo.type === 'external') {
+          // Redirect to external URL
+          window.location.href = redirectInfo.url
+          return
+        }
+        
+        // If no redirect needed or internal redirect, continue normally
+        setIsLoading(false)
+        setSelectedLocation(redirectInfo?.country?.toLowerCase() || 'uae')
+        
+        if (redirectInfo && redirectInfo.type === 'internal' && redirectInfo.path !== location.pathname) {
+          navigate(redirectInfo.path, { replace: true })
+        } else if (!redirectInfo && location.pathname === '/') {
+          // Default to UAE if no geolocation info and on home page
+          navigate('/uae', { replace: true })
+        }
+      } catch (error) {
+        console.error('Error handling geo redirect:', error)
+        setIsLoading(false)
+        setSelectedLocation('uae')
+      }
+    }
+
+    handleGeoRedirect()
   }, [])
 
   if (isLoading) {
@@ -84,7 +116,6 @@ function AppWithRouter() {
         <Route path="/uae/storage-units" element={<UAEStorageUnitsPage />} />
         <Route path="/uae/how-it-works" element={<UAEHowItWorksPage />} />
         <Route path="/uae/locations" element={<UAELocationsPage />} />
-        <Route path="/uae/pricing" element={<UAEPricingPage />} />
         <Route path="/uae/business" element={<UAEBusinessPage />} />
         <Route path="/uae/contact" element={<UAEContactPage />} />
         <Route path="/uae/personal-storage" element={<UAEPersonalStoragePage />} />

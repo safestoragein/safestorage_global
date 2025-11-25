@@ -11,6 +11,14 @@
   margin-top: 0;
   padding-top: 80px;
   padding-bottom: 40px;
+  margin-bottom: 0;
+}
+
+.hero-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Hero Background */
@@ -45,12 +53,16 @@
 }
 
 /* Container */
-.dubai-container {
+.dubai-hero .dubai-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
   z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Trust Bar */
@@ -63,6 +75,10 @@
   z-index: 10;
   align-items: center;
   justify-content: flex-start;
+}
+
+.hero-main-content-centered .hero-trust-bar {
+  justify-content: center;
 }
 
 .hero-trust-bar .trust-item {
@@ -114,19 +130,39 @@
   align-items: start;
 }
 
+.hero-main-content-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
 /* Text Section */
 .hero-text-section {
   padding-top: 20px;
   text-align: left;
 }
 
+.hero-text-section-centered {
+  padding-top: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .headline-wrapper {
   margin-bottom: 30px;
   animation: fadeInUp 0.8s ease;
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 
 .hero-headline {
@@ -137,7 +173,7 @@
   margin-bottom: 0 !important;
   margin-top: 0 !important;
   letter-spacing: -1px;
-  text-align: left;
+  text-align: center;
 }
 
 .text-gold {
@@ -151,9 +187,11 @@
   font-weight: 400;
   line-height: 1.5;
   max-width: 600px;
-  text-align: left;
+  text-align: center;
   margin-bottom: 0 !important;
   margin-top: 0 !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .headline-wrapper .hero-subtitle {
@@ -166,6 +204,10 @@
   gap: 15px;
   margin-bottom: 30px;
   flex-wrap: wrap;
+}
+
+.hero-main-content-centered .hero-cta-group {
+  justify-content: center;
 }
 
 .cta-primary {
@@ -241,6 +283,10 @@
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+}
+
+.hero-main-content-centered .hero-features {
+  justify-content: center;
 }
 
 .feature-tag {

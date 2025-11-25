@@ -128,7 +128,7 @@ const UAEVehicleStoragePage = () => {
           <div className="options-grid">
             <div className="option-card">
               <h3>Indoor Storage</h3>
-              <div className="option-price">From AED 799/month</div>
+              <div className="option-price">Contact for pricing</div>
               <ul>
                 <li><CheckCircle size={16} /> Climate controlled</li>
                 <li><CheckCircle size={16} /> Complete protection</li>
@@ -140,7 +140,7 @@ const UAEVehicleStoragePage = () => {
 
             <div className="option-card">
               <h3>Outdoor Storage</h3>
-              <div className="option-price">From AED 399/month</div>
+              <div className="option-price">Contact for pricing</div>
               <ul>
                 <li><CheckCircle size={16} /> Covered parking</li>
                 <li><CheckCircle size={16} /> 24/7 surveillance</li>

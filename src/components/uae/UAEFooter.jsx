@@ -36,6 +36,19 @@ const UAEFooter = () => {
 
             {/* Quick Links */}
             <div className="footer-column">
+              <h3>Quick Links</h3>
+              <ul className="footer-links">
+                <li><Link to="/uae/storage-units">Storage Units</Link></li>
+                <li><Link to="/uae/how-it-works">How It Works</Link></li>
+                <li><Link to="/uae/business">Business Storage</Link></li>
+                <li><Link to="/uae/locations">Locations</Link></li>
+                <li><Link to="/uae/blog">Blog</Link></li>
+                <li><Link to="/uae/contact">Contact</Link></li>
+              </ul>
+            </div>
+
+            {/* Storage Solutions */}
+            <div className="footer-column">
               <h3>Storage Solutions</h3>
               <ul className="footer-links">
                 <li><Link to="/uae/personal-storage">Personal Storage</Link></li>
@@ -43,22 +56,9 @@ const UAEFooter = () => {
                 <li><Link to="/uae/document-storage">Document Storage</Link></li>
                 <li><Link to="/uae/vehicle-storage">Vehicle Storage</Link></li>
                 <li><Link to="/uae/moving-services">Moving Services</Link></li>
-                <li><Link to="/uae/blog">Storage Tips Blog</Link></li>
               </ul>
             </div>
 
-            {/* Locations */}
-            <div className="footer-column">
-              <h3>Our Locations</h3>
-              <ul className="footer-links">
-                <li><Link to="/uae/locations/business-bay">Business Bay</Link></li>
-                <li><Link to="/uae/locations/dubai-marina">Dubai Marina</Link></li>
-                <li><Link to="/uae/locations/jlt">JLT</Link></li>
-                <li><Link to="/uae/locations/al-quoz">Al Quoz</Link></li>
-                <li><Link to="/uae/locations/difc">DIFC</Link></li>
-                <li><Link to="/uae/locations">View All Locations</Link></li>
-              </ul>
-            </div>
 
             {/* Get In Touch (Active Section) */}
             <div className="footer-column">

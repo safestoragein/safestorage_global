@@ -17,14 +17,14 @@ const UAEBusinessStoragePage = () => {
       description: 'Perfect for growing startups',
       features: ['10-50 m²', 'Flexible terms', 'Scalable space'],
       icon: <TrendingUp />,
-      price: 'From AED 599/month'
+      price: 'Contact for pricing'
     },
     {
       title: 'SME Solutions',
       description: 'Ideal for small to medium businesses',
       features: ['50-200 m²', 'Office integration', '24/7 access'],
       icon: <Building />,
-      price: 'From AED 1,999/month'
+      price: 'Contact for pricing'
     },
     {
       title: 'Enterprise Storage',
@@ -38,7 +38,7 @@ const UAEBusinessStoragePage = () => {
       description: 'Complete fulfillment center',
       features: ['Pick & pack', 'Inventory management', 'Shipping integration'],
       icon: <Package />,
-      price: 'From AED 2,999/month'
+      price: 'Contact for pricing'
     }
   ];
 

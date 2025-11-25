@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UAEHeader from '../components/uae/UAEHeader';
 import UAEFooter from '../components/uae/UAEFooter';
 import { sessionManager } from '../utils/sessionManager';
+import '../components/uae/UAEQuoteForm.css';
 
 const UAEGetQuoteStep2 = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [apiItems, setApiItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
@@ -17,7 +20,7 @@ const UAEGetQuoteStep2 = () => {
     const step1Data = sessionManager.getData('step1Data');
     if (!step1Data) {
       alert('Please complete Step 1 first');
-      window.location.href = '/uae/get-quote';
+      navigate('/uae/get-quote');
       return;
     }
 
@@ -159,11 +162,11 @@ const UAEGetQuoteStep2 = () => {
     console.log('About to navigate to step 3...');
     
     // Navigate to step 3
-    window.location.href = '/uae/get-quote/step3';
+    navigate('/uae/get-quote/step3');
   };
 
   const handlePrevious = () => {
-    window.location.href = '/uae/get-quote';
+    navigate('/uae/get-quote');
   };
 
   return (
@@ -248,6 +251,7 @@ const UAEGetQuoteStep2 = () => {
                   placeholder="Search for furniture, electronics, etc..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
+                  className="uae-quote-input"
                   style={{
                     width: '100%',
                     paddingLeft: '48px',
@@ -256,6 +260,8 @@ const UAEGetQuoteStep2 = () => {
                     border: '2px solid #e2e8f0',
                     borderRadius: '12px',
                     fontSize: '16px',
+                    color: '#000000',
+                    backgroundColor: 'white',
                     outline: 'none',
                     transition: 'all 0.2s'
                   }}
@@ -284,8 +290,16 @@ const UAEGetQuoteStep2 = () => {
               </div>
             </div>
 
-            {/* Items Content */}
-            <div style={{ padding: '32px' }}>
+            {/* Items Content - Two Column Layout */}
+            <div style={{ 
+              display: 'flex', 
+              flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+              gap: '24px', 
+              padding: '32px', 
+              minHeight: '600px' 
+            }}>
+              {/* Items Grid - Left Side */}
+              <div style={{ flex: selectedItems.length > 0 ? '2' : '1' }}>
               {isLoading ? (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '16px' }}>
                   {[...Array(12)].map((_, i) => (
@@ -442,30 +456,44 @@ const UAEGetQuoteStep2 = () => {
                   <p style={{ color: '#64748b' }}>Search for items like "chair", "TV", "refrigerator", etc.</p>
                 </div>
               )}
-            </div>
+              </div>
 
-            {/* Selected Items Summary */}
-            {selectedItems.length > 0 && (
-              <div style={{ backgroundColor: '#f8fafc', borderTop: '1px solid #e2e8f0', padding: '24px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                  <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1e293b' }}>
-                    Selected Items ({selectedItems.length})
-                  </h3>
-                  <button
-                    onClick={() => setSelectedItems([])}
-                    style={{ fontSize: '14px', color: '#ef4444', fontWeight: '500', background: 'none', border: 'none', cursor: 'pointer' }}
-                  >
-                    Clear All
-                  </button>
-                </div>
-
+              {/* Selected Items Panel - Right Side */}
+              {selectedItems.length > 0 && (
                 <div style={{ 
-                  display: 'grid', 
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', 
-                  gap: '12px', 
-                  maxHeight: '160px', 
-                  overflowY: 'auto' 
+                  flex: '1', 
+                  minWidth: window.innerWidth < 768 ? '100%' : '300px', 
+                  maxWidth: window.innerWidth < 768 ? '100%' : '400px' 
                 }}>
+                  <div style={{ 
+                    position: window.innerWidth < 768 ? 'relative' : 'sticky', 
+                    top: window.innerWidth < 768 ? 'auto' : '24px' 
+                  }}>
+                    <div style={{ backgroundColor: '#f8fafc', borderRadius: '16px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
+                      <div style={{ padding: '24px', borderBottom: '1px solid #e2e8f0' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                          <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1e293b' }}>
+                            Selected Items ({selectedItems.length})
+                          </h3>
+                          <button
+                            onClick={() => setSelectedItems([])}
+                            style={{ fontSize: '14px', color: '#ef4444', fontWeight: '500', background: 'none', border: 'none', cursor: 'pointer' }}
+                          >
+                            Clear All
+                          </button>
+                        </div>
+                        <p style={{ fontSize: '14px', color: '#64748b' }}>Review and adjust quantities</p>
+                      </div>
+                      
+                      <div style={{ padding: '16px' }}>
+
+                        <div style={{ 
+                          display: 'flex', 
+                          flexDirection: 'column',
+                          gap: '12px', 
+                          maxHeight: '400px', 
+                          overflowY: 'auto' 
+                        }}>
                   {selectedItems.map((selectedItem, index) => (
                     <div
                       key={`${selectedItem.name}-${index}`}
@@ -494,18 +522,19 @@ const UAEGetQuoteStep2 = () => {
                           }}
                           disabled={selectedItem.quantity <= 1}
                           style={{
-                            width: '28px', height: '28px', borderRadius: '50%', backgroundColor: '#e2e8f0',
-                            border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#f3f4f6',
+                            border: '2px solid #d1d5db', display: 'flex', alignItems: 'center', justifyContent: 'center',
                             cursor: selectedItem.quantity <= 1 ? 'not-allowed' : 'pointer',
-                            opacity: selectedItem.quantity <= 1 ? 0.5 : 1
+                            opacity: selectedItem.quantity <= 1 ? 0.5 : 1,
+                            color: '#000000'
                           }}
                         >
-                          <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M20 12H4" />
                           </svg>
                         </button>
 
-                        <span style={{ width: '32px', textAlign: 'center', fontWeight: '600', color: '#1e293b', fontSize: '14px' }}>
+                        <span style={{ width: '40px', textAlign: 'center', fontWeight: '600', color: '#1e293b', fontSize: '16px' }}>
                           {selectedItem.quantity}
                         </span>
 
@@ -515,13 +544,13 @@ const UAEGetQuoteStep2 = () => {
                             updateQuantity(index, 1);
                           }}
                           style={{
-                            width: '28px', height: '28px', borderRadius: '50%', backgroundColor: '#2563eb',
+                            width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#2563eb',
                             color: 'white', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',
                             cursor: 'pointer'
                           }}
                         >
-                          <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                           </svg>
                         </button>
 
@@ -542,10 +571,14 @@ const UAEGetQuoteStep2 = () => {
                         </button>
                       </div>
                     </div>
-                  ))}
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
 
             {/* Navigation Buttons */}
             <div style={{ backgroundColor: 'white', borderTop: '1px solid #e2e8f0', padding: '24px 32px' }}>

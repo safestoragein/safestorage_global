@@ -409,11 +409,14 @@ html {
 /* Hero Section - Redesigned */
 .hero {
   position: relative;
-  min-height: 480px;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  background: linear-gradient(135deg, rgba(15,12,41,0.8) 0%, rgba(48,43,99,0.8) 50%, rgba(36,36,62,0.8) 100%), url('../src/assets/uae-hero.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   overflow: hidden;
   padding: 60px 0 40px;
 }
@@ -523,8 +526,29 @@ html {
   padding: 0 20px;
 }
 
+.hero-content-wrapper-centered {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
 .hero-main-content {
   color: white;
+}
+
+.hero-main-content-centered {
+  color: white;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-badge-new {
@@ -540,6 +564,8 @@ html {
   font-weight: 500;
   margin-bottom: 20px;
   color: #ffd700;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-title-new {
@@ -547,6 +573,7 @@ html {
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .hero-title-line {
@@ -576,6 +603,9 @@ html {
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 30px;
   max-width: 500px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-buttons-new {
@@ -583,6 +613,7 @@ html {
   gap: 16px;
   margin-bottom: 40px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-primary-hero {
@@ -631,6 +662,7 @@ html {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-feature-item {
@@ -993,6 +1025,10 @@ html {
     gap: 40px;
     padding: 0 20px;
   }
+
+  .hero-content-wrapper-centered {
+    padding: 0 20px;
+  }
   
   .hero-main-content {
     text-align: center;
@@ -1076,6 +1112,12 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .hero-content-wrapper-centered {
+    padding: 0 15px;
+    gap: 20px;
+    min-height: calc(100vh - 40px);
   }
   
   .hero-main-content {

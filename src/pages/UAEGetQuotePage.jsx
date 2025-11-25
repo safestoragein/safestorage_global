@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UAEHeader from '../components/uae/UAEHeader';
 import UAEFooter from '../components/uae/UAEFooter';
 import { sessionManager } from '../utils/sessionManager';
+import '../components/uae/UAEQuoteForm.css';
 
 const UAEGetQuotePage = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -11,7 +14,6 @@ const UAEGetQuotePage = () => {
     address: "",
     floor: "",
     liftAvailable: "",
-    storageType: "long-term",
   });
 
   // Load existing data from session storage on component mount
@@ -46,7 +48,7 @@ const UAEGetQuotePage = () => {
       console.log("Form Data:", formData);
       sessionManager.saveData('step1Data', formData);
       // Navigate to step 2
-      window.location.href = '/uae/get-quote/step2';
+      navigate('/uae/get-quote/step2');
     }
   };
 
@@ -121,6 +123,7 @@ const UAEGetQuotePage = () => {
                       placeholder="Ahmed Al-Mansouri"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                      className="uae-quote-input"
                       style={{
                         width: '100%',
                         height: '48px',
@@ -128,7 +131,9 @@ const UAEGetQuotePage = () => {
                         border: '2px solid #e2e8f0',
                         borderRadius: '8px',
                         fontSize: '16px',
+                        color: '#000000',
                         outline: 'none',
+                        backgroundColor: 'white',
                         transition: 'all 0.2s'
                       }}
                       onFocus={(e) => {
@@ -149,6 +154,7 @@ const UAEGetQuotePage = () => {
                       placeholder="+971 50 577 3388"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="uae-quote-input"
                       style={{
                         width: '100%',
                         height: '48px',
@@ -156,7 +162,9 @@ const UAEGetQuotePage = () => {
                         border: '2px solid #e2e8f0',
                         borderRadius: '8px',
                         fontSize: '16px',
+                        color: '#000000',
                         outline: 'none',
+                        backgroundColor: 'white',
                         transition: 'all 0.2s'
                       }}
                       onFocus={(e) => {
@@ -179,6 +187,7 @@ const UAEGetQuotePage = () => {
                     placeholder="ahmed.mansouri@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="uae-quote-input"
                     style={{
                       width: '100%',
                       height: '48px',
@@ -186,7 +195,9 @@ const UAEGetQuotePage = () => {
                       border: '2px solid #e2e8f0',
                       borderRadius: '8px',
                       fontSize: '16px',
+                      color: '#000000',
                       outline: 'none',
+                      backgroundColor: 'white',
                       transition: 'all 0.2s'
                     }}
                     onFocus={(e) => {
@@ -211,6 +222,7 @@ const UAEGetQuotePage = () => {
                         placeholder="Villa 123, Dubai Marina, Dubai, UAE"
                         value={formData.address}
                         onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                        className="uae-quote-input"
                         style={{
                           width: '100%',
                           height: '48px',
@@ -218,7 +230,9 @@ const UAEGetQuotePage = () => {
                           border: '2px solid #e2e8f0',
                           borderRadius: '8px',
                           fontSize: '16px',
+                          color: '#000000',
                           outline: 'none',
+                          backgroundColor: 'white',
                           transition: 'all 0.2s'
                         }}
                         onFocus={(e) => {
@@ -287,127 +301,6 @@ const UAEGetQuotePage = () => {
                   </div>
                 </div>
 
-                {/* Storage Type */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <div>
-                    <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1e293b' }}>Storage Duration *</h3>
-                    <p style={{ fontSize: '14px', color: '#64748b', marginTop: '4px' }}>Choose the option that best fits your needs</p>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                    
-                    <label 
-                      style={{ 
-                        display: 'flex', alignItems: 'center', gap: '16px', padding: '16px', 
-                        borderRadius: '12px', border: '2px solid #e2e8f0', cursor: 'pointer',
-                        transition: 'all 0.2s',
-                        borderColor: formData.storageType === 'short-term' ? '#93c5fd' : '#e2e8f0',
-                        backgroundColor: formData.storageType === 'short-term' ? '#dbeafe' : 'transparent'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#93c5fd';
-                        e.currentTarget.style.backgroundColor = '#dbeafe';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = formData.storageType === 'short-term' ? '#93c5fd' : '#e2e8f0';
-                        e.currentTarget.style.backgroundColor = formData.storageType === 'short-term' ? '#dbeafe' : 'transparent';
-                      }}
-                    >
-                      <input
-                        type="radio"
-                        name="storageType"
-                        value="short-term"
-                        checked={formData.storageType === 'short-term'}
-                        onChange={(e) => setFormData({ ...formData, storageType: e.target.value })}
-                        style={{ width: '16px', height: '16px', accentColor: '#2563eb' }}
-                      />
-                      <div style={{ flex: 1 }}>
-                        <div style={{ fontWeight: '600', color: '#1e293b' }}>Short-term Storage</div>
-                        <div style={{ fontSize: '14px', color: '#64748b' }}>Perfect for 1-3 months • Flexible terms</div>
-                      </div>
-                      <div style={{ textAlign: 'right' }}>
-                        <div style={{ fontSize: '14px', color: '#64748b' }}>Starting from</div>
-                        <div style={{ fontWeight: 'bold', color: '#2563eb' }}>AED 50/month</div>
-                      </div>
-                    </label>
-
-                    <label 
-                      style={{ 
-                        position: 'relative', display: 'flex', alignItems: 'center', gap: '16px', padding: '16px', 
-                        borderRadius: '12px', border: '2px solid #e2e8f0', cursor: 'pointer',
-                        transition: 'all 0.2s',
-                        borderColor: formData.storageType === 'long-term' ? '#6ee7b7' : '#e2e8f0',
-                        backgroundColor: formData.storageType === 'long-term' ? '#d1fae5' : 'transparent'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#6ee7b7';
-                        e.currentTarget.style.backgroundColor = '#d1fae5';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = formData.storageType === 'long-term' ? '#6ee7b7' : '#e2e8f0';
-                        e.currentTarget.style.backgroundColor = formData.storageType === 'long-term' ? '#d1fae5' : 'transparent';
-                      }}
-                    >
-                      <input
-                        type="radio"
-                        name="storageType"
-                        value="long-term"
-                        checked={formData.storageType === 'long-term'}
-                        onChange={(e) => setFormData({ ...formData, storageType: e.target.value })}
-                        style={{ width: '16px', height: '16px', accentColor: '#059669' }}
-                      />
-                      <div style={{ flex: 1 }}>
-                        <div style={{ fontWeight: '600', color: '#1e293b' }}>Long-term Storage</div>
-                        <div style={{ fontSize: '14px', color: '#059669', fontWeight: '500' }}>3+ months • Save 15% on total cost</div>
-                      </div>
-                      <div style={{ textAlign: 'right' }}>
-                        <div style={{ fontSize: '14px', color: '#64748b' }}>Starting from</div>
-                        <div style={{ fontWeight: 'bold', color: '#059669' }}>AED 42/month</div>
-                      </div>
-                      <span style={{ 
-                        position: 'absolute', top: '8px', right: '8px', backgroundColor: '#059669', 
-                        color: 'white', fontSize: '12px', padding: '4px 8px', borderRadius: '9999px', 
-                        fontWeight: 'bold' 
-                      }}>
-                        BEST VALUE
-                      </span>
-                    </label>
-
-                    <label 
-                      style={{ 
-                        display: 'flex', alignItems: 'center', gap: '16px', padding: '16px', 
-                        borderRadius: '12px', border: '2px solid #e2e8f0', cursor: 'pointer',
-                        transition: 'all 0.2s',
-                        borderColor: formData.storageType === 'business' ? '#c084fc' : '#e2e8f0',
-                        backgroundColor: formData.storageType === 'business' ? '#faf5ff' : 'transparent'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#c084fc';
-                        e.currentTarget.style.backgroundColor = '#faf5ff';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = formData.storageType === 'business' ? '#c084fc' : '#e2e8f0';
-                        e.currentTarget.style.backgroundColor = formData.storageType === 'business' ? '#faf5ff' : 'transparent';
-                      }}
-                    >
-                      <input
-                        type="radio"
-                        name="storageType"
-                        value="business"
-                        checked={formData.storageType === 'business'}
-                        onChange={(e) => setFormData({ ...formData, storageType: e.target.value })}
-                        style={{ width: '16px', height: '16px', accentColor: '#9333ea' }}
-                      />
-                      <div style={{ flex: 1 }}>
-                        <div style={{ fontWeight: '600', color: '#1e293b' }}>Business Storage</div>
-                        <div style={{ fontSize: '14px', color: '#64748b' }}>Commercial solutions • Bulk discounts available</div>
-                      </div>
-                      <div style={{ textAlign: 'right' }}>
-                        <div style={{ fontSize: '14px', color: '#64748b' }}>Custom pricing</div>
-                        <div style={{ fontWeight: 'bold', color: '#9333ea' }}>Contact us</div>
-                      </div>
-                    </label>
-                  </div>
-                </div>
               </div>
             </div>
 

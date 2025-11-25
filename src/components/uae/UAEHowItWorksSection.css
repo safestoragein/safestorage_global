@@ -144,29 +144,29 @@
   z-index: 1;
 }
 
-/* Video Section */
-.uae-how-it-works .video-section {
+/* Facility Section */
+.uae-how-it-works .facility-section {
   background: white;
   border-radius: 20px;
   padding: 60px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
-.uae-how-it-works .video-content {
+.uae-how-it-works .facility-content {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 60px;
   align-items: center;
 }
 
-.uae-how-it-works .video-text h3 {
+.uae-how-it-works .facility-text h3 {
   font-size: 36px;
   font-weight: 600;
   color: #001f3f;
   margin-bottom: 20px;
 }
 
-.uae-how-it-works .video-text p {
+.uae-how-it-works .facility-text p {
   font-size: 16px;
   color: #666;
   margin-bottom: 30px;
@@ -214,24 +214,62 @@
   box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
 }
 
-.uae-how-it-works .video-placeholder {
+/* Facility Images */
+.uae-how-it-works .facility-images {
   position: relative;
+}
+
+.uae-how-it-works .image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.uae-how-it-works .facility-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  height: 200px;
   transition: all 0.3s ease;
 }
 
-.uae-how-it-works .video-placeholder:hover {
-  transform: scale(1.02);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+.uae-how-it-works .facility-image:hover {
+  transform: scale(1.05);
+  z-index: 2;
 }
 
-.uae-how-it-works .video-iframe {
+.uae-how-it-works .facility-image img {
   width: 100%;
-  height: 400px;
-  border-radius: 20px;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.uae-how-it-works .facility-image:hover img {
+  transform: scale(1.1);
+}
+
+.uae-how-it-works .image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.uae-how-it-works .facility-image:hover .image-overlay {
+  transform: translateY(0);
+}
+
+.uae-how-it-works .image-overlay span {
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /* Responsive Design */
@@ -260,17 +298,26 @@
     grid-template-columns: 1fr;
   }
 
-  .uae-how-it-works .video-content {
+  .uae-how-it-works .facility-content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .uae-how-it-works .video-section {
+  .uae-how-it-works .facility-section {
     padding: 40px 20px;
   }
 
-  .uae-how-it-works .video-text h3 {
+  .uae-how-it-works .facility-text h3 {
     font-size: 28px;
+  }
+
+  .uae-how-it-works .image-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .uae-how-it-works .facility-image {
+    height: 150px;
   }
 
   .uae-how-it-works .section-title {

@@ -43,35 +43,35 @@ const UAEPersonalStoragePage = () => {
       size: '10 sq ft',
       name: 'Locker',
       ideal: 'Few boxes, seasonal items',
-      price: 'AED 99',
+      price: 'Contact for pricing',
       popular: false
     },
     {
       size: '25 sq ft',
       name: 'Small',
       ideal: 'Studio apartment contents',
-      price: 'AED 199',
+      price: 'Contact for pricing',
       popular: false
     },
     {
       size: '50 sq ft',
       name: 'Medium',
       ideal: '1-bedroom apartment',
-      price: 'AED 349',
+      price: 'Contact for pricing',
       popular: true
     },
     {
       size: '100 sq ft',
       name: 'Large',
       ideal: '2-bedroom apartment',
-      price: 'AED 599',
+      price: 'Contact for pricing',
       popular: false
     },
     {
       size: '200 sq ft',
       name: 'Extra Large',
       ideal: '3+ bedroom villa',
-      price: 'AED 999',
+      price: 'Contact for pricing',
       popular: false
     }
   ];
@@ -138,7 +138,7 @@ const UAEPersonalStoragePage = () => {
             <div className="hero-features">
               <div className="feature-item">
                 <CheckCircle size={20} />
-                <span>From AED 99/month</span>
+                <span>Affordable monthly rates</span>
               </div>
               <div className="feature-item">
                 <CheckCircle size={20} />

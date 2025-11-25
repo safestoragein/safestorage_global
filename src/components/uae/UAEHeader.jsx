@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Menu, X, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Menu, X, MessageCircle, Globe, ChevronDown } from 'lucide-react';
 import safeStorageLogo from '../../assets/safestorage-logo.jpeg';
 import './UAEHeader.css';
 
@@ -12,8 +12,12 @@ const UAEHeader = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -28,14 +32,44 @@ const UAEHeader = () => {
               <Link to="/uae" className="nav-link">Home</Link>
               <Link to="/uae/storage-units" className="nav-link">Storage Units</Link>
               <Link to="/uae/how-it-works" className="nav-link">How It Works</Link>
-              <Link to="/uae/locations" className="nav-link">Locations</Link>
-              <Link to="/uae/pricing" className="nav-link">Pricing</Link>
               <Link to="/uae/business" className="nav-link">Business Storage</Link>
-              <Link to="/uae/blog" className="nav-link">Blog</Link>
-              <Link to="/uae/contact" className="nav-link">Contact</Link>
             </div>
 
             <div className="nav-actions">
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <select 
+                  style={{
+                    padding: '10px 16px',
+                    border: '2px solid #333',
+                    borderRadius: '8px',
+                    background: 'white',
+                    cursor: 'pointer',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    color: '#000000',
+                    minWidth: '120px',
+                    height: '44px',
+                    outline: 'none'
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.background = 'white';
+                    e.target.style.color = '#000000';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.background = 'white';
+                    e.target.style.color = '#000000';
+                  }}
+                  onChange={(e) => {
+                    if (e.target.value === 'india') {
+                      window.location.href = 'https://safestorage.in/';
+                    }
+                  }}
+                  defaultValue="uae"
+                >
+                  <option value="uae">🇦🇪 UAE</option>
+                  <option value="india">🇮🇳 India</option>
+                </select>
+              </div>
               <a href="https://wa.me/971505773388" className="whatsapp-btn">
                 <MessageCircle size={20} />
                 <span>WhatsApp Us</span>

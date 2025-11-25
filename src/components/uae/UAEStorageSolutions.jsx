@@ -1,199 +1,169 @@
 import React, { useState } from 'react';
-import { Home, Building, FileText, Car, Package, ChevronRight, Check } from 'lucide-react';
+import { Home, Building, ArrowRight, CheckCircle, Package } from 'lucide-react';
 import './UAEStorageSolutions.css';
 
 const UAEStorageSolutions = () => {
   const [activeTab, setActiveTab] = useState('personal');
 
-  const solutions = {
-    personal: {
-      icon: <Home size={24} />,
-      title: "Personal Storage",
-      description: "Perfect for household items, furniture, and personal belongings",
-      units: [
-        {
-          size: "Small Box",
-          dimensions: "10-25 sq ft",
-          ideal: "Boxes, small furniture",
-          price: "AED 99",
-          period: "/month",
-          features: ["Climate controlled", "24/7 access", "Security cameras", "Free insurance"]
-        },
-        {
-          size: "Studio",
-          dimensions: "50 sq ft",
-          ideal: "Studio apartment items",
-          price: "AED 299",
-          period: "/month",
-          popular: true,
-          features: ["Climate controlled", "24/7 access", "Security cameras", "Free insurance", "Shelving included"]
-        },
-        {
-          size: "1 Bedroom",
-          dimensions: "100 sq ft",
-          ideal: "1BR apartment contents",
-          price: "AED 549",
-          period: "/month",
-          features: ["Climate controlled", "24/7 access", "Security cameras", "Free insurance", "Free pickup"]
-        },
-        {
-          size: "2 Bedroom",
-          dimensions: "150+ sq ft",
-          ideal: "2BR apartment or villa",
-          price: "AED 799",
-          period: "/month",
-          features: ["Climate controlled", "24/7 access", "Security cameras", "Free insurance", "Free pickup", "Premium location"]
-        }
-      ]
+  const storageOptions = [
+    {
+      id: 'personal-small',
+      size: 'Small',
+      area: '25-50 sq ft',
+      price: 'Contact for pricing',
+      period: '/month',
+      ideal: 'Personal items, boxes',
+      features: ['Climate controlled', '24/7 access', 'CCTV security'],
+      popular: false
     },
-    business: {
-      icon: <Building size={24} />,
-      title: "Business Storage",
-      description: "Scalable solutions for inventory, equipment, and office supplies",
-      units: [
-        {
-          size: "Startup",
-          dimensions: "50-100 sq ft",
-          ideal: "Small inventory",
-          price: "AED 449",
-          period: "/month",
-          features: ["Loading dock access", "Inventory management", "24/7 access", "Flexible terms"]
-        },
-        {
-          size: "Small Business",
-          dimensions: "200 sq ft",
-          ideal: "Retail stock",
-          price: "AED 999",
-          period: "/month",
-          popular: true,
-          features: ["Loading dock access", "Inventory software", "24/7 access", "Dedicated manager", "Pallet storage"]
-        },
-        {
-          size: "Enterprise",
-          dimensions: "500+ sq ft",
-          ideal: "Warehouse needs",
-          price: "Custom",
-          period: "quote",
-          features: ["Private loading bay", "Inventory system", "24/7 access", "Account manager", "Custom solutions"]
-        }
-      ]
+    {
+      id: 'personal-medium',
+      size: 'Medium',
+      area: '75-100 sq ft',
+      price: 'Contact for pricing',
+      period: '/month',
+      ideal: 'Studio apartment items',
+      features: ['Climate controlled', '24/7 access', 'CCTV security', 'Moving assistance'],
+      popular: true
     },
-    specialty: {
-      icon: <Package size={24} />,
-      title: "Specialty Storage",
-      description: "Specialized storage for vehicles, documents, and more",
-      units: [
-        {
-          size: "Document Storage",
-          dimensions: "Per box",
-          ideal: "Legal documents",
-          price: "AED 29",
-          period: "/box/month",
-          features: ["Climate controlled", "Fireproof", "Indexed filing", "Retrieval service"]
-        },
-        {
-          size: "Vehicle Storage",
-          dimensions: "Car/Bike",
-          ideal: "Cars, motorcycles",
-          price: "AED 599",
-          period: "/month",
-          features: ["Indoor parking", "Battery maintenance", "Regular checks", "Dust protection"]
-        },
-        {
-          size: "Art Storage",
-          dimensions: "Custom",
-          ideal: "Artwork & collectibles",
-          price: "AED 199",
-          period: "/month",
-          features: ["Climate controlled", "UV protection", "Security monitoring", "White-glove handling"]
-        }
-      ]
+    {
+      id: 'personal-large',
+      size: 'Large',
+      area: '150-200 sq ft',
+      price: 'Contact for pricing',
+      period: '/month',
+      ideal: '1-2 bedroom contents',
+      features: ['Climate controlled', '24/7 access', 'CCTV security', 'Moving assistance', 'Priority support'],
+      popular: false
+    },
+    {
+      id: 'personal-xlarge',
+      size: 'Extra Large',
+      area: '250+ sq ft',
+      price: 'Contact for pricing',
+      period: '/month',
+      ideal: '3+ bedroom house',
+      features: ['Climate controlled', '24/7 access', 'CCTV security', 'Moving assistance', 'Priority support', 'Dedicated manager'],
+      popular: false
     }
+  ];
+
+  const businessOptions = [
+    {
+      id: 'business-startup',
+      size: 'Startup',
+      area: '50-100 sq ft',
+      price: 'Contact for pricing',
+      period: '/month',
+      ideal: 'Small inventory, documents',
+      features: ['Loading dock access', 'Inventory tracking', 'Flexible terms'],
+      popular: false
+    },
+    {
+      id: 'business-sme',
+      size: 'SME',
+      area: '200-300 sq ft',
+      price: 'Contact for pricing',
+      period: '/month',
+      ideal: 'Retail stock, equipment',
+      features: ['Loading dock access', 'Inventory tracking', 'Account manager', 'Bulk discounts'],
+      popular: true
+    },
+    {
+      id: 'business-enterprise',
+      size: 'Enterprise',
+      area: '500+ sq ft',
+      price: 'Custom',
+      period: 'quote',
+      ideal: 'Warehouse operations',
+      features: ['Dedicated warehouse', 'Custom solutions', 'Enterprise support', 'Advanced security'],
+      popular: false
+    }
+  ];
+
+  const getCurrentOptions = () => {
+    return activeTab === 'personal' ? storageOptions : businessOptions;
   };
 
   return (
-    <section className="uae-storage-solutions">
+    <section className="modern-storage-section">
       <div className="dubai-container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-badge">Storage Solutions</span>
           <h2 className="section-title">
-            Find Your Perfect
-            <span className="highlight"> Storage Unit</span>
+            Find Your Perfect <span className="text-highlight">Storage Solution</span>
           </h2>
-          <p className="section-subtitle">
-            From small lockers to large warehouses, we have the right space for your needs
+          <p className="section-description">
+            Professional storage units with premium security and climate control
           </p>
         </div>
 
-        {/* Solution Tabs */}
-        <div className="solution-tabs">
-          {Object.keys(solutions).map((key) => (
-            <button
-              key={key}
-              className={`tab-button ${activeTab === key ? 'active' : ''}`}
-              onClick={() => setActiveTab(key)}
-            >
-              {solutions[key].icon}
-              <span>{solutions[key].title}</span>
-            </button>
+        {/* Tab Navigation */}
+        <div className="tab-navigation">
+          <button
+            className={`nav-tab ${activeTab === 'personal' ? 'active' : ''}`}
+            onClick={() => setActiveTab('personal')}
+          >
+            <Home size={18} />
+            Personal Storage
+          </button>
+          <button
+            className={`nav-tab ${activeTab === 'business' ? 'active' : ''}`}
+            onClick={() => setActiveTab('business')}
+          >
+            <Building size={18} />
+            Business Storage
+          </button>
+        </div>
+
+        {/* Storage Options Grid */}
+        <div className="storage-options-grid">
+          {getCurrentOptions().map((option, index) => (
+            <div key={option.id} className={`storage-option-card ${option.popular ? 'featured' : ''}`}>
+              {option.popular && (
+                <div className="popular-badge">
+                  <span>Most Popular</span>
+                </div>
+              )}
+              
+              <div className="option-header">
+                <div className="size-icon">
+                  <Package size={24} />
+                </div>
+                <h3 className="size-title">{option.size}</h3>
+                <p className="size-area">{option.area}</p>
+              </div>
+
+              <div className="ideal-section">
+                <p className="ideal-for">Ideal for: {option.ideal}</p>
+              </div>
+
+              <div className="features-list">
+                {option.features.map((feature, idx) => (
+                  <div key={idx} className="feature-item">
+                    <CheckCircle size={14} />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a href="/uae/get-quote" className="cta-button">
+                Get Quote
+                <ArrowRight size={16} />
+              </a>
+            </div>
           ))}
         </div>
 
-        {/* Active Solution Content */}
-        <div className="solution-content">
-          <div className="solution-header">
-            <h3>{solutions[activeTab].title}</h3>
-            <p>{solutions[activeTab].description}</p>
-          </div>
-
-          <div className="units-grid">
-            {solutions[activeTab].units.map((unit, index) => (
-              <div key={index} className={`unit-card ${unit.popular ? 'popular' : ''}`}>
-                {unit.popular && <span className="popular-badge">Most Popular</span>}
-                
-                <div className="unit-header">
-                  <h4>{unit.size}</h4>
-                  <p className="dimensions">{unit.dimensions}</p>
-                  <p className="ideal-for">{unit.ideal}</p>
-                </div>
-
-                <div className="unit-pricing">
-                  <span className="price">{unit.price}</span>
-                  <span className="period">{unit.period}</span>
-                </div>
-
-                <ul className="unit-features">
-                  {unit.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <Check size={16} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button className="unit-cta">
-                  Get Started
-                  <ChevronRight size={18} />
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="solutions-cta">
+        {/* Bottom CTA */}
+        <div className="bottom-cta">
           <div className="cta-content">
-            <h3>Not sure what size you need?</h3>
-            <p>Our storage experts will help you find the perfect unit</p>
+            <h3>Need help choosing the right size?</h3>
+            <p>Our storage experts are here to help you find the perfect solution</p>
           </div>
-          <div className="cta-buttons">
-            <a href="tel:+971505773388" className="cta-call">
-              Call Us Now
-            </a>
-            <button className="cta-calculator">
-              Size Calculator
-            </button>
+          <div className="cta-actions">
+            <a href="tel:8088848484" className="cta-call">Call 8088848484</a>
+            <a href="/uae/get-quote" className="cta-quote">Get Free Quote</a>
           </div>
         </div>
       </div>

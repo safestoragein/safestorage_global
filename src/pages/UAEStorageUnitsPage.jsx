@@ -144,7 +144,7 @@ const UAEStorageUnitsPage = () => {
         <div className="container">
           <div className="hero-content">
             <h1>Dubai's Most Trusted Storage Units</h1>
-            <p>From AED 99/month • No Hidden Fees • Instant Move-In</p>
+            <p>Affordable monthly rates • No Hidden Fees • Instant Move-In</p>
             
             {/* Quick Search Bar */}
             <div className="hero-search">
@@ -314,7 +314,7 @@ const UAEStorageUnitsPage = () => {
                   <li>• 5-10 boxes</li>
                 </ul>
               </div>
-              <div className="size-price">From AED 99/month</div>
+              <div className="size-price">Contact for pricing</div>
               <button className="select-size-btn">Select This Size</button>
             </div>
 
@@ -336,7 +336,7 @@ const UAEStorageUnitsPage = () => {
                   <li>• 20-30 boxes</li>
                 </ul>
               </div>
-              <div className="size-price">From AED 349/month</div>
+              <div className="size-price">Contact for pricing</div>
               <button className="select-size-btn popular">Most Popular</button>
             </div>
 
@@ -358,7 +358,7 @@ const UAEStorageUnitsPage = () => {
                   <li>• 50+ boxes</li>
                 </ul>
               </div>
-              <div className="size-price">From AED 599/month</div>
+              <div className="size-price">Contact for pricing</div>
               <button className="select-size-btn">Select This Size</button>
             </div>
 
@@ -380,7 +380,7 @@ const UAEStorageUnitsPage = () => {
                   <li>• Commercial storage</li>
                 </ul>
               </div>
-              <div className="size-price">From AED 899/month</div>
+              <div className="size-price">Contact for pricing</div>
               <button className="select-size-btn">Select This Size</button>
             </div>
           </div>

@@ -54,9 +54,9 @@ const UAEHero = () => {
       {/* Main Hero Content */}
       <div className="hero-content">
         <div className="dubai-container">
-          {/* Hero Text Content */}
-          <div className="hero-main-content">
-            <div className="hero-text-section">
+          {/* Hero Text Content - Centered */}
+          <div className="hero-main-content-centered">
+            <div className="hero-text-section-centered">
               {/* Trust Indicators */}
               <div className="hero-trust-bar">
                 <div className="trust-item">
@@ -88,18 +88,14 @@ const UAEHero = () => {
 
               {/* CTA Buttons */}
               <div className="hero-cta-group">
-                <a href="tel:+971505773388" className="cta-primary">
+                <a href="tel:8088848484" className="cta-primary">
                   <Phone size={20} />
-                  <span>Call +971 50 577 3388</span>
+                  <span>Call 8088848484</span>
                 </a>
-                <a href="https://wa.me/971505773388" className="cta-whatsapp">
-                  <MessageCircle size={20} />
-                  <span>WhatsApp</span>
-                </a>
-                <Link to="/uae/get-quote" className="cta-secondary">
+                <a href="/uae/get-quote" className="cta-secondary">
                   Get a Free Quote
                   <ArrowRight size={18} />
-                </Link>
+                </a>
               </div>
 
               {/* Quick Features */}
@@ -110,59 +106,6 @@ const UAEHero = () => {
                     <span>{feature}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Quick Form */}
-            <div className="hero-form-section">
-              <div className="quick-form-card">
-                <div className="form-header">
-                  <h3>Get Started Today</h3>
-                  <p>Find your perfect storage unit</p>
-                </div>
-                
-                <form className="hero-quick-form">
-                  <div className="form-group">
-                    <select className="form-select">
-                      <option>Select Unit Size</option>
-                      <option>Small (10-25 sq ft)</option>
-                      <option>Medium (50-75 sq ft)</option>
-                      <option>Large (100-150 sq ft)</option>
-                      <option>Extra Large (200+ sq ft)</option>
-                    </select>
-                  </div>
-                  
-                  <div className="form-group">
-                    <select className="form-select">
-                      <option>Select Location</option>
-                      <option>Business Bay</option>
-                      <option>Dubai Marina</option>
-                      <option>JLT</option>
-                      <option>Al Quoz</option>
-                      <option>DIFC</option>
-                    </select>
-                  </div>
-
-                  <div className="form-group">
-                    <input 
-                      type="tel" 
-                      placeholder="Your Phone Number" 
-                      className="form-input"
-                    />
-                  </div>
-
-                  <Link to="/uae/get-quote" className="form-submit">
-                    <Zap size={18} />
-                    Get a Free Quote
-                  </Link>
-                </form>
-
-                <div className="form-footer">
-                  <p className="form-note">
-                    <CheckCircle size={14} />
-                    Free consultation • No commitment
-                  </p>
-                </div>
               </div>
             </div>
           </div>

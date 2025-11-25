@@ -249,8 +249,8 @@ const UAEDocumentStoragePage = () => {
               <div className="pricing-option">
                 <h3>Box Storage</h3>
                 <div className="price">
-                  <span className="amount">AED 29</span>
-                  <span className="period">/box/month</span>
+                  <span className="amount">Contact for pricing</span>
+                  <span className="period"></span>
                 </div>
                 <ul>
                   <li><CheckCircle size={16} /> Standard archive box</li>
@@ -263,8 +263,8 @@ const UAEDocumentStoragePage = () => {
                 <div className="featured-badge">Most Popular</div>
                 <h3>Business Package</h3>
                 <div className="price">
-                  <span className="amount">AED 499</span>
-                  <span className="period">/month</span>
+                  <span className="amount">Contact for pricing</span>
+                  <span className="period"></span>
                 </div>
                 <ul>
                   <li><CheckCircle size={16} /> Up to 50 boxes</li>

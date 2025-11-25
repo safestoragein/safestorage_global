@@ -1,0 +1,41 @@
+/* UAE Quote Form Styles */
+.uae-quote-input {
+  color: #000000 !important;
+  background-color: white !important;
+}
+
+.uae-quote-input::placeholder {
+  color: #9ca3af !important;
+}
+
+.uae-quote-input:focus {
+  color: #000000 !important;
+  background-color: white !important;
+}
+
+.uae-quote-input:active {
+  color: #000000 !important;
+  background-color: white !important;
+}
+
+/* Ensure text remains black in all states */
+input.uae-quote-input {
+  color: #000000 !important;
+  background-color: white !important;
+}
+
+input.uae-quote-input:focus {
+  color: #000000 !important;
+  background-color: white !important;
+}
+
+input.uae-quote-input:active {
+  color: #000000 !important;
+  background-color: white !important;
+}
+
+input.uae-quote-input:-webkit-autofill {
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  background-color: white !important;
+}

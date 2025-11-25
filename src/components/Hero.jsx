@@ -40,9 +40,9 @@ const Hero = () => {
       </div>
       
       <div className="container">
-        <div className="hero-content-wrapper">
+        <div className="hero-content-wrapper-centered">
           <motion.div 
-            className="hero-main-content"
+            className="hero-main-content-centered"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -96,22 +96,25 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <motion.button 
+              <motion.a 
+                href="https://safestorage.in/customer/create-quotation"
                 className="btn-primary-hero"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
-                <span>Get Quote</span>
+                <span>Get a Free Quote</span>
                 <ArrowRight size={18} />
-              </motion.button>
-              <motion.button 
+              </motion.a>
+              <motion.a 
+                href="tel:8088848484"
                 className="btn-secondary-hero"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
-                <Play size={18} />
-                <span>View Tour</span>
-              </motion.button>
+                <span>Call 8088848484</span>
+              </motion.a>
             </motion.div>
 
             {/* Features Row */}
@@ -133,89 +136,6 @@ const Hero = () => {
                   <span>{feature.text}</span>
                 </motion.div>
               ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Stats Cards - Redesigned */}
-          <motion.div 
-            className="hero-stats-section"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            {/* Main Stats Grid */}
-            <div className="stats-grid-modern">
-              {stats.map((stat, index) => (
-                <motion.div 
-                  key={index}
-                  className="stat-card-modern"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 + index * 0.15 }}
-                  whileHover={{ scale: 1.05, rotate: [0, -1, 1, 0] }}
-                >
-                  <div className="stat-glow"></div>
-                  <div className="stat-icon-wrapper">
-                    <span className="stat-icon-modern">{stat.icon}</span>
-                  </div>
-                  <div className="stat-info">
-                    <h3 className="stat-value-modern">{stat.value}</h3>
-                    <p className="stat-label-modern">{stat.label}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Bottom Feature Card */}
-            <motion.div 
-              className="feature-highlight-card"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="highlight-bg-animation"></div>
-              <div className="highlight-content">
-                <div className="highlight-left">
-                  <div className="pulse-circle">
-                    <div className="pulse"></div>
-                    <div className="pulse-dot"></div>
-                  </div>
-                  <div className="highlight-text">
-                    <h4>99.9%</h4>
-                    <p>Ontime</p>
-                  </div>
-                </div>
-                <div className="highlight-divider"></div>
-                <div className="highlight-right">
-                  <Star size={20} className="star-icon" />
-                  <div className="rating-text">
-                    <strong>Top Rated</strong>
-                    <span>Service Provider</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Trust Indicators */}
-            <motion.div 
-              className="trust-indicators-modern"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
-            >
-              <div className="indicator-item">
-                <Shield size={16} />
-                <span>Insured</span>
-              </div>
-              <div className="indicator-item">
-                <Award size={16} />
-                <span>Certified</span>
-              </div>
-              <div className="indicator-item">
-                <Globe2 size={16} />
-                <span>Global</span>
-              </div>
             </motion.div>
           </motion.div>
         </div>
