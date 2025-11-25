@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UAEHeader from '../components/uae/UAEHeader';
 import UAEFooter from '../components/uae/UAEFooter';
@@ -98,43 +98,46 @@ const UAEGetQuoteStep3 = () => {
     };
   };
 
-  // Main pricing calculation function
-  const calculatePricing = (storageType = selectedStorage) => {
-    console.log('🔍 Calculating pricing for:', storageType);
-    console.log('📦 Selected items:', selectedItems);
-    console.log('📊 Items count:', selectedItems.length);
-    
-    if (storageType === 'shared') {
-      const result = calculateSharedSpacePricing(selectedItems);
-      console.log('✅ Shared calculation result:', result);
-      return {
-        type: 'shared',
-        totalCost: result.totalCost,
-        breakdown: {
-          totalPoints: result.totalPoints,
-          pallets: result.pallets,
-          calculatedSqft: result.calculatedSqft,
-          chargeableSqft: result.chargeableSqft,
-          pricePerSqft: result.pricePerSqft
-        },
-        description: result.description
-      };
-    } else {
-      const result = calculateClosedSpacePricing(selectedItems);
-      console.log('✅ Closed calculation result:', result);
-      return {
-        type: 'closed',
-        totalCost: result.totalCost,
-        breakdown: {
-          totalPoints: result.totalPoints,
-          pallets: result.pallets,
-          calculatedSqft: result.calculatedSqft,
-          containersNeeded: result.containersNeeded,
-          pricePerContainer: result.pricePerContainer
-        },
-        description: result.description
-      };
-    }
+  // Reactive pricing calculations using useMemo
+  const sharedPricing = useMemo(() => {
+    console.log('🔄 Recalculating shared pricing, selectedItems:', selectedItems);
+    const result = calculateSharedSpacePricing(selectedItems);
+    console.log('✅ Shared calculation result:', result);
+    return {
+      type: 'shared',
+      totalCost: result.totalCost,
+      breakdown: {
+        totalPoints: result.totalPoints,
+        pallets: result.pallets,
+        calculatedSqft: result.calculatedSqft,
+        chargeableSqft: result.chargeableSqft,
+        pricePerSqft: result.pricePerSqft
+      },
+      description: result.description
+    };
+  }, [selectedItems]);
+
+  const closedPricing = useMemo(() => {
+    console.log('🔄 Recalculating closed pricing, selectedItems:', selectedItems);
+    const result = calculateClosedSpacePricing(selectedItems);
+    console.log('✅ Closed calculation result:', result);
+    return {
+      type: 'closed',
+      totalCost: result.totalCost,
+      breakdown: {
+        totalPoints: result.totalPoints,
+        pallets: result.pallets,
+        calculatedSqft: result.calculatedSqft,
+        containersNeeded: result.containersNeeded,
+        pricePerContainer: result.pricePerContainer
+      },
+      description: result.description
+    };
+  }, [selectedItems]);
+
+  // Get current pricing based on selected storage type
+  const getCurrentPricing = (storageType = selectedStorage) => {
+    return storageType === 'shared' ? sharedPricing : closedPricing;
   };
 
   const handleStorageSelection = (storageType) => {
@@ -146,7 +149,7 @@ const UAEGetQuoteStep3 = () => {
     const step3Data = { selectedStorage };
     sessionManager.saveData('step3Data', step3Data);
     
-    const finalPricing = calculatePricing(selectedStorage);
+    const finalPricing = getCurrentPricing(selectedStorage);
     
     // Create detailed breakdown message
     let breakdownMessage = `Selected Storage: ${selectedStorage === 'closed' ? 'Closed Storage' : 'Shared Storage'}\nTotal Monthly Cost: AED ${finalPricing.totalCost}\n\n📊 Calculation Breakdown:\n- Total Points: ${finalPricing.breakdown.totalPoints}\n- Pallets Needed: ${finalPricing.breakdown.pallets}\n- Space Required: ${finalPricing.breakdown.calculatedSqft} sqft`;
@@ -324,10 +327,10 @@ const UAEGetQuoteStep3 = () => {
                         MONTHLY RATE
                       </div>
                       <div style={{ color: 'white', fontSize: '32px', fontWeight: 'bold', marginBottom: '4px' }}>
-                        AED {calculatePricing('closed').totalCost}
+                        AED {closedPricing.totalCost}
                       </div>
                       <div style={{ color: '#bfdbfe', fontSize: '14px' }}>
-                        {calculatePricing('closed').description}
+                        {closedPricing.description}
                       </div>
                     </div>
                   </div>
@@ -424,10 +427,10 @@ const UAEGetQuoteStep3 = () => {
                         MONTHLY RATE
                       </div>
                       <div style={{ color: 'white', fontSize: '32px', fontWeight: 'bold', marginBottom: '4px' }}>
-                        AED {calculatePricing('shared').totalCost}
+                        AED {sharedPricing.totalCost}
                       </div>
                       <div style={{ color: '#a7f3d0', fontSize: '14px' }}>
-                        {calculatePricing('shared').description}
+                        {sharedPricing.description}
                       </div>
                       <div style={{ color: '#a7f3d0', fontSize: '12px', marginTop: '4px' }}>
                         *Minimum 30 sqft applied
