@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MessageCircle, ArrowRight, Shield, Award, CheckCircle, Star, MapPin, Zap } from 'lucide-react';
-import uaeHeroImage from '../../assets/uae-hero.jpeg';
+import storageHeroImage from '../../assets/storage-hero.jpg';
 import './UAEHero.css';
 
 const UAEHero = () => {
@@ -46,9 +46,10 @@ const UAEHero = () => {
   return (
     <section className="dubai-hero">
       {/* Hero Background with Overlay */}
-      <div className="hero-background">
-        <img src={uaeHeroImage} alt="SafeStorage Dubai" className="hero-bg-image" />
+      <div className="hero-background" style={{ backgroundImage: `url(${storageHeroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <img src={storageHeroImage} alt="SafeStorage Dubai" className="hero-bg-image" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         <div className="hero-overlay"></div>
+        <div className="hero-pattern-overlay"></div>
       </div>
 
       {/* Main Hero Content */}
@@ -61,7 +62,7 @@ const UAEHero = () => {
               <div className="hero-trust-bar">
                 <div className="trust-item">
                   <Shield size={18} />
-                  <span>SIRA Approved</span>
+                  <span>Most Trusted</span>
                 </div>
                 <div className="trust-item">
                   <Award size={18} />
@@ -88,9 +89,9 @@ const UAEHero = () => {
 
               {/* CTA Buttons */}
               <div className="hero-cta-group">
-                <a href="tel:8088848484" className="cta-primary">
+                <a href="tel:+971505773388" className="cta-primary">
                   <Phone size={20} />
-                  <span>Call 8088848484</span>
+                  <span>Call +971 50 577 3388</span>
                 </a>
                 <a href="/uae/get-quote" className="cta-secondary">
                   Get a Free Quote

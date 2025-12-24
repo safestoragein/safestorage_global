@@ -30,45 +30,12 @@ const getCountryFromIP = async () => {
 
 // Determine redirect based on country
 export const getRedirectPath = async () => {
-  const location = await getCountryFromIP();
-  
-  if (!location) return null;
-  
-  const countryCode = location.countryCode;
-  
-  // Redirect logic based on country
-  switch(countryCode) {
-    case 'IN': // India
-      return { 
-        type: 'external', 
-        url: 'https://safestorage.in',
-        country: 'India'
-      };
-      
-    case 'AE': // UAE (Dubai specifically)
-    case 'OM': // Oman
-    case 'QA': // Qatar  
-    case 'KW': // Kuwait
-    case 'BH': // Bahrain
-    case 'SA': // Saudi Arabia
-      return { 
-        type: 'internal', 
-        path: '/uae',
-        country: 'UAE'
-      };
-      
-    case 'GB': // United Kingdom
-    case 'UK': // Alternative UK code
-      return { 
-        type: 'internal', 
-        path: '/uk',
-        country: 'UK'
-      };
-      
-    default:
-      // For other countries, don't redirect but show country selector
-      return null;
-  }
+  // Always redirect to UAE page regardless of location
+  return { 
+    type: 'internal', 
+    path: '/uae',
+    country: 'UAE'
+  };
 };
 
 // Check if user has manually selected a country (stored in localStorage)

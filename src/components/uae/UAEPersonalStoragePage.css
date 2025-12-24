@@ -76,6 +76,7 @@
   gap: 30px;
   margin-bottom: 40px;
   flex-wrap: wrap;
+  color: white;
 }
 
 .uae-personal-storage-page .feature-item {
@@ -483,7 +484,7 @@
 
 .uae-personal-storage-page .step-number {
   position: absolute;
-  top: -20px;
+  top: -1px;
   right: 50%;
   transform: translateX(50%);
   width: 40px;

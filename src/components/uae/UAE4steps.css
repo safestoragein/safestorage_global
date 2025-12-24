@@ -1,0 +1,67 @@
+.uae-personal-storage-page .process-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.uae-personal-storage-page .process-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.uae-personal-storage-page .process-step {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.uae-personal-storage-page .step-number {
+  position: absolute;
+  top: -1px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 40px;
+  height: 40px;
+  background: #ff6b35;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.uae-personal-storage-page .step-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b35;
+}
+
+.uae-personal-storage-page .process-step h3 {
+  font-size: 22px;
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.uae-personal-storage-page .process-step p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.uae-personal-storage-page .step-connector {
+  color: #ff6b35;
+  font-size: 24px;
+  opacity: 0.5;
+}

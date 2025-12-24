@@ -17,60 +17,60 @@ const UAEHowItWorksPage = () => {
       id: 1,
       number: '01',
       icon: <Search size={30} />,
-      title: 'Choose Your Unit',
-      shortDesc: 'Find the perfect storage size',
-      fullDesc: 'Use our online size guide or speak with our storage experts to find the ideal unit for your needs. Browse real-time availability and pricing.',
-      features: [
-        'Interactive size calculator',
-        'Virtual facility tours',
-        'Real-time unit availability',
-        'Instant price quotes'
-      ],
+      title: 'Packing',
+      shortDesc: 'We pack at your home',
+      fullDesc: 'Protect your belongings with our 3-layer professional packing system designed for maximum safety and damage prevention. Our experts ensure every item is securely packed using high-quality materials for worry-free storage and transport.',
+features: [
+  '3-layer protective packing system',
+  'High-quality packing materials',
+  'Expert handling for fragile items',
+  'Maximum safety & damage prevention'
+],
       time: '2 minutes'
     },
     {
       id: 2,
       number: '02',
       icon: <Calendar size={30} />,
-      title: 'Book Online or Call',
-      shortDesc: 'Reserve your unit instantly',
-      fullDesc: 'Book your storage unit online in seconds or call our 24/7 customer service. No deposit required, and you can move in the same day.',
-      features: [
-        'Instant online booking',
-        '24/7 phone support',
-        'No security deposit',
-        'Flexible start dates'
-      ],
+     title: 'Doorstep Pickup',
+shortDesc: 'We pick up your items directly from your doorstep',
+fullDesc: 'Schedule a hassle-free doorstep pickup where our trained team arrives at your location, professionally packs your items using our 3-layer safety system, and transports them securely to our storage facility.',
+features: [
+  'Doorstep pickup at your convenience',
+  'Professional 3-layer packing',
+  'Trained packing & handling team',
+  'Safe and secure transportation'
+],
       time: '30 seconds'
     },
     {
       id: 3,
       number: '03',
       icon: <Truck size={30} />,
-      title: 'We Help You Move',
-      shortDesc: 'Free moving truck & assistance',
-      fullDesc: 'Get a free moving truck for up to 2 hours, plus complimentary trolleys and packing materials. Our team can even help you move in.',
-      features: [
-        'Free moving truck (2 hours)',
-        'Professional moving team available',
-        'Free trolleys & equipment',
-        'Packing supplies at cost'
-      ],
+     title: 'Storing',
+shortDesc: 'Your items are stored safely in our secure warehouses',
+fullDesc: 'Your belongings are carefully stored in our secure, monitored warehouses with strict safety protocols to ensure protection, cleanliness, and long-term preservation.',
+features: [
+  '24/7 monitored secure warehouses',
+  'Clean & well-maintained storage units',
+  'Restricted access & safety controls',
+  'Protection from damage, dust & moisture'
+],
       time: 'Same day'
     },
     {
       id: 4,
       number: '04',
       icon: <Key size={30} />,
-      title: 'Access Anytime',
-      shortDesc: '24/7 secure access',
-      fullDesc: 'Your personalized access code gives you 24/7 entry to our climate-controlled facility. Access your belongings whenever you need them.',
-      features: [
-        '24/7 facility access',
-        'Personal access code',
-        'Mobile app control',
-        'Guest access options'
-      ],
+    title: 'Doorstep Delivery',
+shortDesc: 'We deliver your items back to your doorstep',
+fullDesc: 'Request delivery anytime and our team will safely retrieve, pack, and deliver your stored items directly to your doorstep at your preferred time.',
+features: [
+  'On-demand doorstep delivery',
+  'Safe handling during retrieval',
+  'Flexible delivery scheduling',
+  'Careful unpacking on request'
+],
       time: 'Always available'
     }
   ];
@@ -183,14 +183,18 @@ const UAEHowItWorksPage = () => {
               </div>
 
               <div className="hero-cta">
+                <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
+
                 <button className="btn-primary">
                   <Calendar size={18} />
                   Start Storing Today
-                </button>
+                </button></a>
+                  <a href='tel:+97150577338' target='__blank'>
+
                 <button className="btn-secondary">
                   <Phone size={18} />
                   <span>Talk to Expert</span>
-                </button>
+                </button></a>
               </div>
 
               <div className="hero-trust">
@@ -244,10 +248,11 @@ const UAEHowItWorksPage = () => {
                   ))}
                 </div>
                 <div className="visual-footer">
+                  <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
                   <button className="get-started-btn">
                     Get Started Now
                     <ArrowRight size={16} />
-                  </button>
+                  </button></a>
                 </div>
               </div>
             </div>
@@ -271,8 +276,8 @@ const UAEHowItWorksPage = () => {
                   className={`timeline-item ${activeStep === step.id ? 'active' : ''} ${step.id < activeStep ? 'completed' : ''}`}
                   onClick={() => setActiveStep(step.id)}
                 >
-                  <div className="timeline-marker">
-                    <span className="step-number">{step.number}</span>
+                  <div className="timeline-marker" >
+                    <span className="step-number" style={{ paddingTop: '10px', marginTop:'15px' }}>{step.number}</span>
                     {step.id < activeStep && <Check className="check-icon" size={20} />}
                   </div>
                   <div className="timeline-content">
@@ -310,6 +315,7 @@ const UAEHowItWorksPage = () => {
                       </li>
                     ))}
                   </ul>
+                  <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
                   <button className="detail-cta">
                     {step.id === 1 ? 'Browse Units' : 
                      step.id === 2 ? 'Book Now' :
@@ -317,6 +323,7 @@ const UAEHowItWorksPage = () => {
                      'Sign Up'}
                     <ArrowRight size={16} />
                   </button>
+                </a>
                 </div>
               ))}
             </div>
@@ -523,14 +530,22 @@ const UAEHowItWorksPage = () => {
             <div className="faqs-cta">
               <p>Still have questions?</p>
               <div className="cta-buttons">
-                <button className="btn-chat">
-                  <MessageCircle size={18} />
-                  Live Chat
-                </button>
+                <a
+  href="https://api.whatsapp.com/send/?phone=971505773388&text=Hi%2C+I%27m+interested+in+your+storage+services.+Can+you+please+provide+more+information%3F&type=phone_number&app_absent=0"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="btn-chat">
+    <MessageCircle size={18} />
+    Chat with us
+  </button>
+</a>
+<a href='tel:+97150577338'>
                 <button className="btn-call">
                   <Phone size={18} />
                   Call Us 24/7
                 </button>
+              </a>
               </div>
             </div>
           </div>
@@ -546,7 +561,7 @@ const UAEHowItWorksPage = () => {
               <p>Join 1 Lakh+ satisfied customers • No deposit required • Move in today</p>
               <div className="cta-benefits">
                 <span><Check /> 50% off first month</span>
-                <span><Check /> Free moving truck</span>
+                <span><Check /> Hassle - Free storing</span>
                 <span><Check /> 24/7 access</span>
               </div>
               <div className="cta-actions">
@@ -554,17 +569,19 @@ const UAEHowItWorksPage = () => {
                   <Calendar size={18} />
                   Book Your Unit
                 </button>
+                <a href='tel:+97150577338'>
+
                 <button className="btn-secondary">
                   <Phone size={18} />
                   +971 50 577 3388
-                </button>
+                </button></a>
               </div>
             </div>
-            <div className="cta-visual">
+            <div className="cta-visual" style= {{ backgroundColor:'#002850' }}>
               <div className="trust-badges">
                 <div className="badge">
                   <Award size={30} />
-                  <span>SIRA Certified</span>
+                  <span>Most Trusted Unit</span>
                 </div>
                 <div className="badge">
                   <Users size={30} />

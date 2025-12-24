@@ -147,7 +147,7 @@ const UAEStorageUnitsPage = () => {
             <p>Affordable monthly rates • No Hidden Fees • Instant Move-In</p>
             
             {/* Quick Search Bar */}
-            <div className="hero-search">
+           {/* <div className="hero-search">
               <div className="search-card">
                 <div className="search-inputs">
                   <div className="search-field">
@@ -184,7 +184,12 @@ const UAEStorageUnitsPage = () => {
                   <span className="tag">No Security Deposit</span>
                 </div>
               </div>
-            </div>
+            </div>*/}
+            <a href ='https://safestorageglobal.com/uae/get-quote' target='__blank'>
+             <button className="search-btn">
+                    <Search size={20} />
+                    Get A Free Quote
+                  </button></a>
           </div>
         </div>
       </section>
@@ -216,7 +221,7 @@ const UAEStorageUnitsPage = () => {
       </section>
 
       {/* Units Grid */}
-      <section className="units-section">
+     {/* <section className="units-section">
         <div className="container">
           <div className="section-header">
             <h2>Available Storage Units</h2>
@@ -270,7 +275,7 @@ const UAEStorageUnitsPage = () => {
           </div>
         </div>
       </section>
-
+*/}
       {/* Features Section */}
       <section className="features-section">
         <div className="container">
@@ -315,7 +320,7 @@ const UAEStorageUnitsPage = () => {
                 </ul>
               </div>
               <div className="size-price">Contact for pricing</div>
-              <button className="select-size-btn">Select This Size</button>
+             <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'> <button className="select-size-btn">Get A Free Quote</button></a>
             </div>
 
             <div className="size-card" data-size="small">
@@ -337,7 +342,7 @@ const UAEStorageUnitsPage = () => {
                 </ul>
               </div>
               <div className="size-price">Contact for pricing</div>
-              <button className="select-size-btn popular">Most Popular</button>
+           <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>     <button className="select-size-btn popular">Most Popular</button> </a>
             </div>
 
             <div className="size-card" data-size="medium">
@@ -359,7 +364,7 @@ const UAEStorageUnitsPage = () => {
                 </ul>
               </div>
               <div className="size-price">Contact for pricing</div>
-              <button className="select-size-btn">Select This Size</button>
+             <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>   <button className="select-size-btn">Get A Free Quote</button> </a>
             </div>
 
             <div className="size-card" data-size="large">
@@ -381,11 +386,11 @@ const UAEStorageUnitsPage = () => {
                 </ul>
               </div>
               <div className="size-price">Contact for pricing</div>
-              <button className="select-size-btn">Select This Size</button>
+               <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'> <button className="select-size-btn">Get A Free Quote</button></a>
             </div>
           </div>
 
-          <div className="calculator-section">
+         {/* <div className="calculator-section">
             <div className="calc-header">
               <Calculator size={24} />
               <h3>Storage Size Calculator</h3>
@@ -467,21 +472,23 @@ const UAEStorageUnitsPage = () => {
               </button>
             </div>
           </div>
-
+*/}
           <div className="size-help-cta">
             <div className="help-content">
               <h3>Still Not Sure?</h3>
               <p>Our storage experts are here to help you choose the perfect size</p>
             </div>
             <div className="help-actions">
+              <a href='tel:+971505773388'>
               <button className="btn-chat">
                 <Phone size={18} />
                 Talk to Expert
-              </button>
+              </button></a>
+              <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
               <button className="btn-tour">
                 <Camera size={18} />
-                Virtual Tour
-              </button>
+                Get A Free Quote
+              </button></a>
             </div>
           </div>
         </div>
@@ -494,10 +501,10 @@ const UAEStorageUnitsPage = () => {
             <div className="promo-text">
               <h2>Limited Time Offer</h2>
               <h3>Get 50% OFF Your First 2 Months!</h3>
-              <p>Plus FREE moving truck and packing supplies</p>
+              <p>Plus Hassle - FREE moving truck and packing supplies</p>
               <div className="promo-features">
                 <span><Check /> No Security Deposit</span>
-                <span><Check /> Free Lock</span>
+                <span><Check /> Secured Storage Spaces</span>
                 <span><Check /> Flexible Terms</span>
               </div>
             </div>
@@ -506,9 +513,11 @@ const UAEStorageUnitsPage = () => {
                 <span className="offer-ends">Offer ends in:</span>
                 <div className="timer">2 Days 14:23:45</div>
               </div>
+                            <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
+
               <button className="promo-btn">
                 <Zap /> Claim Offer Now
-              </button>
+              </button></a>
               <a href="tel:+971505773388" className="promo-call">
                 <Phone /> +971 50 577 3388
               </a>
@@ -523,7 +532,7 @@ const UAEStorageUnitsPage = () => {
           <div className="trust-items">
             <div className="trust-item">
               <Award size={40} />
-              <strong>SIRA Approved</strong>
+              <strong>Most Trusted Unit</strong>
               <span>Licensed & Regulated</span>
             </div>
             <div className="trust-item">
@@ -539,7 +548,7 @@ const UAEStorageUnitsPage = () => {
             <div className="trust-item">
               <TrendingUp size={40} />
               <strong>10+ Years</strong>
-              <span>Trusted Since 2014</span>
+              <span>Trusted Since 2015</span>
             </div>
           </div>
         </div>

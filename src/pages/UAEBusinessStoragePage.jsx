@@ -7,6 +7,7 @@ import {
   BarChart, Database, Truck, FileText, Settings, Zap
 } from 'lucide-react';
 import '../components/uae/UAEBusinessStoragePage.css';
+import UAE4steps from '../components/uae/UAE4steps';
 
 const UAEBusinessStoragePage = () => {
   const [selectedSize, setSelectedSize] = useState('medium');
@@ -15,21 +16,21 @@ const UAEBusinessStoragePage = () => {
     {
       title: 'Startup Storage',
       description: 'Perfect for growing startups',
-      features: ['10-50 m²', 'Flexible terms', 'Scalable space'],
+      features: ['Pick & pack', 'Flexible terms', 'Scalable space'],
       icon: <TrendingUp />,
       price: 'Contact for pricing'
     },
     {
       title: 'SME Solutions',
       description: 'Ideal for small to medium businesses',
-      features: ['50-200 m²', 'Office integration', '24/7 access'],
+      features: ['Pick & pack', 'Office integration', '24/7 access'],
       icon: <Building />,
       price: 'Contact for pricing'
     },
     {
       title: 'Enterprise Storage',
       description: 'Large-scale business storage',
-      features: ['200-1000 m²', 'Dedicated manager', 'Custom solutions'],
+      features: ['Pick & pack', 'Dedicated manager', 'Custom solutions'],
       icon: <Database />,
       price: 'Custom pricing'
     },
@@ -72,16 +73,7 @@ const UAEBusinessStoragePage = () => {
       title: 'Inventory System',
       description: 'Digital tracking and management'
     },
-    {
-      icon: <Users />,
-      title: 'Multi-User Access',
-      description: 'Authorize multiple staff members'
-    },
-    {
-      icon: <Settings />,
-      title: 'Custom Setup',
-      description: 'Racking, shelving, office space available'
-    }
+   
   ];
 
   const sizeOptions = [
@@ -104,7 +96,7 @@ const UAEBusinessStoragePage = () => {
               <span>Business Storage Solutions</span>
             </div>
             <h1>Business Storage <span className="highlight">Dubai</span></h1>
-            <p className="hero-subtitle">
+            <p style = {{ color:"white" }} >
               Secure warehouse space for Dubai businesses. From 10m² to 1000m² with flexible terms.
             </p>
             
@@ -113,10 +105,7 @@ const UAEBusinessStoragePage = () => {
                 <span className="stat-value">2000+</span>
                 <span className="stat-label">Business Clients</span>
               </div>
-              <div className="stat">
-                <span className="stat-value">50,000m²</span>
-                <span className="stat-label">Total Space</span>
-              </div>
+             
               <div className="stat">
                 <span className="stat-value">24/7</span>
                 <span className="stat-label">Access Available</span>
@@ -124,14 +113,16 @@ const UAEBusinessStoragePage = () => {
             </div>
 
             <div className="hero-actions">
+              <a href='tel:+97150577338'>
               <button className="btn-primary-hero">
                 <Phone size={18} />
                 Talk to Business Expert
-              </button>
+              </button></a>
+<a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
               <button className="btn-secondary-hero">
-                Calculate Your Space
+                Get A Free Quote
                 <ArrowRight size={18} />
-              </button>
+              </button></a>
             </div>
           </div>
         </div>
@@ -160,8 +151,10 @@ const UAEBusinessStoragePage = () => {
                   ))}
                 </ul>
                 <div className="solution-footer">
-                  <span className="solution-price">{solution.price}</span>
-                  <button className="solution-btn">Learn More →</button>
+                  {/*<span className="solution-price">{solution.price}</span>*/}
+                  <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
+                  <button className="solution-btn">Get A Free Quote →</button>
+                </a>
                 </div>
               </div>
             ))}
@@ -184,7 +177,6 @@ const UAEBusinessStoragePage = () => {
                   onClick={() => setSelectedSize(option.id)}
                 >
                   <span className="option-label">{option.label}</span>
-                  <span className="option-size">{option.size}</span>
                   <span className="option-units">{option.units}</span>
                 </button>
               ))}
@@ -225,7 +217,7 @@ const UAEBusinessStoragePage = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="industries-section">
+     {/* <section className="industries-section">
         <div className="business-storage-container">
           <div className="section-header">
             <h2>Industries We Serve</h2>
@@ -249,7 +241,7 @@ const UAEBusinessStoragePage = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Success Stories */}
       <section className="success-section">
@@ -318,7 +310,8 @@ const UAEBusinessStoragePage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="process-section">
+      <UAE4steps />
+     {/* <section className="process-section">
         <div className="business-storage-container">
           <div className="section-header">
             <h2>Get Started in 3 Steps</h2>
@@ -352,14 +345,14 @@ const UAEBusinessStoragePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* CTA Section */}
       <section className="business-cta-section">
         <div className="business-storage-container">
           <div className="cta-content">
             <h2>Ready to Optimize Your Business Storage?</h2>
-            <p>Join 2000+ Dubai businesses already benefiting from our solutions</p>
+            <p style= {{ color:'white' }}>Join 2000+ Dubai businesses already benefiting from our solutions</p>
             
             <div className="cta-features">
               <div className="cta-feature">
@@ -377,20 +370,16 @@ const UAEBusinessStoragePage = () => {
             </div>
 
             <div className="cta-actions">
+              <a href='tel:+97150577338'>
               <button className="cta-btn-primary">
                 <Phone size={18} />
                 Call Business Team
-              </button>
-              <button className="cta-btn-secondary">
-                <Mail size={18} />
-                Email Inquiry
-              </button>
+              </button></a>
+
+              
             </div>
 
-            <div className="cta-contact">
-              <span><Phone size={16} /> +971 50 577 3388</span>
-              <span><Mail size={16} /> business@safestorage.ae</span>
-            </div>
+           
           </div>
         </div>
       </section>

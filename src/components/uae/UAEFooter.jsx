@@ -10,7 +10,7 @@ import './UAEFooter.css';
 
 const UAEFooter = () => {
   return (
-    <footer className="uae-footer">
+    <footer className="uae-footer" style={{ marginTop:'50px' }}>
       {/* Main Footer */}
       <div className="footer-main">
         <div className="uae-container">
@@ -29,7 +29,7 @@ const UAEFooter = () => {
                 </div>
                 <div className="cert-badge">
                   <Award size={20} />
-                  <span>SIRA Approved</span>
+                  <span>Most Trusted Storage</span>
                 </div>
               </div>
             </div>
@@ -54,7 +54,6 @@ const UAEFooter = () => {
                 <li><Link to="/uae/personal-storage">Personal Storage</Link></li>
                 <li><Link to="/uae/business-storage">Business Storage</Link></li>
                 <li><Link to="/uae/document-storage">Document Storage</Link></li>
-                <li><Link to="/uae/vehicle-storage">Vehicle Storage</Link></li>
                 <li><Link to="/uae/moving-services">Moving Services</Link></li>
               </ul>
             </div>
@@ -65,7 +64,7 @@ const UAEFooter = () => {
               <h3>Get In Touch</h3>
               <ul className="footer-links">
                 <li><MapPin size={16} className="contact-icon" />Al Quoz Industrial Area 3, Dubai, UAE</li>
-                <li><Phone size={16} className="contact-icon" />+971 50 577 3388</li>
+               <a href='tel:+971505773388'> <li><Phone size={16} className="contact-icon" />+971 50 577 3388</li></a>
                 <li><Mail size={16} className="contact-icon" />safestoragedubai@gmail.com</li>
                 <li><Clock size={16} className="contact-icon" />Access: 24/7</li>
               </ul>
@@ -96,7 +95,7 @@ const UAEFooter = () => {
 
                 <div className="contact-item">
                   <Phone size={18} className="contact-icon" />
-                  <a href="tel:+97145621101">+971 4 562 1101</a>
+                  <a href="tel:+971505773388">+971 50 577 3388</a>
                 </div>
 
                 <div className="contact-item">
@@ -124,25 +123,73 @@ const UAEFooter = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="footer-newsletter">
-            <div className="newsletter-content">
-              <div className="newsletter-text">
-                <h3>Stay Updated</h3>
-                <p>Get storage tips, special offers, and updates</p>
-              </div>
-              <form className="newsletter-form">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="newsletter-input"
-                />
-                <button type="submit" className="newsletter-btn">
-                  Subscribe
-                  <ChevronRight size={16} />
-                </button>
-              </form>
-            </div>
-          </div>
+         <div className="footer-newsletter">
+  <div className="newsletter-content">
+    <div className="newsletter-text">
+      <h3>Stay Updated</h3>
+      <p style={{ color: "black" }}>
+        Get storage tips, special offers, and updates
+      </p>
+    </div>
+
+    <form
+      className="newsletter-form"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "16px"
+      }}
+    >
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="newsletter-input"
+        style={{
+          width: "420px",
+          height: "56px",
+          padding: "0 20px",
+
+          backgroundColor: "#ccc",
+
+          border: "2px solid black",
+          borderRadius: "999px",
+
+          color: "black",
+          fontSize: "16px",
+
+          outline: "none",
+          boxSizing: "border-box"
+        }}
+      />
+
+      <button
+        type="submit"
+        className="newsletter-btn"
+        style={{
+          height: "56px",
+          padding: "0 28px",
+
+          backgroundColor: "#4169e1",
+          color: "white",
+
+          border: "none",
+          borderRadius: "999px",
+
+          fontSize: "16px",
+          fontWeight: "600",
+
+          display: "flex",
+          alignItems: "center",
+          gap: "6px",
+          cursor: "pointer"
+        }}
+      >
+        Subscribe
+        <ChevronRight size={16} />
+      </button>
+    </form>
+  </div>
+</div>
         </div>
       </div>
 
@@ -151,7 +198,7 @@ const UAEFooter = () => {
         <div className="uae-container">
           <div className="bottom-content">
             <div className="copyright">
-              <p>© 2025 SafeStorage UAE. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} SafeStorage UAE. All rights reserved.</p>
             </div>
             <div className="legal-links">
               <Link to="/uae/privacy">Privacy Policy</Link>

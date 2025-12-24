@@ -6,6 +6,7 @@ import {
   CheckCircle, ArrowRight, Phone, Award, Database, Folder
 } from 'lucide-react';
 import '../components/uae/UAEDocumentStoragePage.css';
+import UAE4steps from '../components/uae/UAE4steps';
 
 const UAEDocumentStoragePage = () => {
   const features = [
@@ -73,10 +74,12 @@ const UAEDocumentStoragePage = () => {
             </div>
 
             <div className="hero-actions">
+              <a href='tel:+971505773388'>
               <button className="btn-primary">
                 <Phone size={18} />
                 Call +971 50 577 3388
               </button>
+            </a>
               <a href="/uae/get-quote" className="btn-secondary">
                 Get a Free Quote
                 <ArrowRight size={18} />
@@ -85,7 +88,7 @@ const UAEDocumentStoragePage = () => {
 
             <div className="trust-badge">
               <Award size={20} />
-              <span>ISO 9001:2015 Certified | SIRA Approved</span>
+              <span>ISO 9001:2015 Certified | Most Trusted Storage Unit</span>
             </div>
           </div>
         </div>
@@ -174,70 +177,40 @@ const UAEDocumentStoragePage = () => {
                 </div>
               </div>
 
+<a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
               <button className="learn-more-btn">
-                Learn More About Our Services
+Get A Free Quote
                 <ArrowRight size={18} />
               </button>
+            </a>
             </div>
 
-            <div className="services-image">
-              <div className="image-placeholder">
-                <FileText size={80} />
-                <p>Professional Document Storage</p>
-              </div>
-            </div>
+           <div className="services-image">
+  <div className="image-placeholder">
+    <img
+      src="https://safestorage.in/images/doc2.jpg"
+      alt="Professional Document Storage"
+      loading="lazy"
+      style={{
+        width: '100%',
+        height: 'auto',
+        borderRadius: '12px',
+        objectFit: 'cover',
+        display: 'block'
+      }}
+    />
+    <p>Professional Document Storage</p>
+  </div>
+</div>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="process-section">
-        <div className="document-container">
-          <div className="section-header">
-            <h2>How It Works</h2>
-            <p>Simple process for secure document storage</p>
-          </div>
-
-          <div className="process-steps">
-            <div className="process-step">
-              <div className="step-number">1</div>
-              <Phone size={30} />
-              <h3>Contact Us</h3>
-              <p>Discuss your document storage needs</p>
-            </div>
-
-            <div className="step-arrow">→</div>
-
-            <div className="process-step">
-              <div className="step-number">2</div>
-              <Archive size={30} />
-              <h3>We Collect</h3>
-              <p>Secure pickup from your location</p>
-            </div>
-
-            <div className="step-arrow">→</div>
-
-            <div className="process-step">
-              <div className="step-number">3</div>
-              <Database size={30} />
-              <h3>Store & Catalog</h3>
-              <p>Documents stored and digitally indexed</p>
-            </div>
-
-            <div className="step-arrow">→</div>
-
-            <div className="process-step">
-              <div className="step-number">4</div>
-              <Search size={30} />
-              <h3>Access Anytime</h3>
-              <p>Retrieve documents when needed</p>
-            </div>
-          </div>
-        </div>
-      </section>
+     <UAE4steps />
 
       {/* Pricing Section */}
-      <section className="pricing-section">
+      {/*<section className="pricing-section">
         <div className="document-container">
           <div className="pricing-card">
             <div className="pricing-header">
@@ -260,7 +233,7 @@ const UAEDocumentStoragePage = () => {
               </div>
 
               <div className="pricing-option featured">
-                <div className="featured-badge">Most Popular</div>
+                <div className="featured-badge" style={{ marginTop:'50px' }}>Most Popular</div>
                 <h3>Business Package</h3>
                 <div className="price">
                   <span className="amount">Contact for pricing</span>
@@ -296,22 +269,26 @@ const UAEDocumentStoragePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* CTA Section */}
       <section className="document-cta-section">
         <div className="document-container">
           <div className="cta-content">
-            <h2>Secure Your Documents Today</h2>
-            <p>Join thousands of businesses trusting SafeStorage with their documents</p>
+            <h2 >Secure Your Documents Today</h2>
+            <p style={{ color:'white' }}>Join thousands of businesses trusting SafeStorage with their documents</p>
             <div className="cta-buttons">
+              <a href='tel:+971505773388'>
               <button className="cta-btn-primary">
                 <Phone size={18} />
                 Call Now
               </button>
+            </a>
+            <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
               <button className="cta-btn-secondary">
                 Request Quote
               </button>
+            </a>
             </div>
           </div>
         </div>

@@ -6,8 +6,8 @@ const UAEWhyChooseUs = () => {
   const features = [
     {
       icon: <Shield size={40} />,
-      title: "Dubai Police Approved",
-      description: "Fully licensed and approved by Dubai authorities for secure storage"
+      title: "Dubai's Most Trusted Storage",
+      description: "Safe, secure, and reliable storage solutions trusted by homes and businesses across Dubai"
     },
     {
       icon: <Clock size={40} />,
@@ -32,7 +32,7 @@ const UAEWhyChooseUs = () => {
     {
       icon: <Users size={40} />,
       title: "Professional Team",
-      description: "Expert staff fluent in English, Arabic, Hindi & Malayalam"
+      description: "Expert staff to solve customer concerns on priority"
     },
     {
       icon: <CreditCard size={40} />,
@@ -41,7 +41,7 @@ const UAEWhyChooseUs = () => {
     },
     {
       icon: <Truck size={40} />,
-      title: "Free Moving Service",
+      title: "Hassle - Free Moving Service",
       description: "Complimentary pickup for units above 100 sq ft"
     }
   ];
@@ -83,7 +83,7 @@ const UAEWhyChooseUs = () => {
             </div>
             <div className="trust-stat">
               <strong>10+</strong>
-              <span>Years in Dubai</span>
+              <span>Years Of Experience</span>
             </div>
             <div className="trust-stat">
               <strong>5</strong>

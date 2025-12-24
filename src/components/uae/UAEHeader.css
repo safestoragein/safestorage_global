@@ -24,21 +24,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 10px 0;
   position: relative;
 }
 
 /* Logo */
 .uae-logo img {
-  height: 40px;
-  width: auto;
+  height: 80px;
+  width: 150px;
 }
 
 /* Navigation Menu - Mobile First */
 .nav-menu {
   display: none;
   position: fixed;
-  top: 70px;
+  top: 80px;
   left: 0;
   right: 0;
   background: white;
@@ -71,8 +71,11 @@
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
+  margin-right: 20px;
+
 }
+
 
 /* Country Selector Dropdown */
 .country-selector-dropdown {
@@ -266,7 +269,8 @@
   }
 
   .uae-logo img {
-    height: 40px;
+    height: 60px;
+    width:150px;
   }
 
   /* Show desktop menu */
@@ -302,10 +306,11 @@
 
   /* Nav Actions */
   .nav-actions {
-    gap: 8px;
+    gap: 20px;
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    margin-right: 20px;
   }
 
   /* Show country selector on desktop */
@@ -355,7 +360,7 @@
 
   .nav-link {
     padding: 8px 12px;
-    font-size: 13px;
+    font-size: 18px;
   }
 
   .quote-btn {

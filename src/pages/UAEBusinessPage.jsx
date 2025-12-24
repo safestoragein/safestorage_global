@@ -151,7 +151,7 @@ const UAEBusinessPage = () => {
                   <span className="stat-label">Business Clients</span>
                 </div>
                 <div className="stat-item-business">
-                  <span className="stat-number">50,000 m²</span>
+                  <span className="stat-number">#1 Dubai's Trusted</span>
                   <span className="stat-label">Storage Space</span>
                 </div>
                 <div className="stat-item-business">
@@ -161,25 +161,26 @@ const UAEBusinessPage = () => {
               </div>
 
               <div className="hero-cta-business">
+                <a href='tel:+97150577338'>
                 <button className="btn-primary-business">
                   <Phone size={18} />
                   Talk to Business Expert
                 </button>
+              </a>
+               <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
                 <button className="btn-secondary-business">
                   <FileText size={18} />
-                  Download Brochure
-                </button>
+Get A Free Quote                </button>
+              </a>
               </div>
 
               <div className="trust-logos">
                 <span>Trusted by:</span>
                 <div className="logos-row">
                   <Award size={24} />
-                  <span>SIRA Certified</span>
+                  <span>1000+ reviews</span>
                   <span>•</span>
-                  <span>ISO 9001</span>
-                  <span>•</span>
-                  <span>DED Licensed</span>
+                  <span>ISO 9001 Certified</span>
                 </div>
               </div>
             </div>
@@ -234,7 +235,7 @@ const UAEBusinessPage = () => {
                 onClick={() => setSelectedService(service.id)}
               >
                 {service.icon}
-                <span>{service.title}</span>
+                <span style={{ color:'black' }}>{service.title}</span>
               </button>
             ))}
           </div>
@@ -327,17 +328,15 @@ const UAEBusinessPage = () => {
       <section className="business-process-section">
         <div className="business-container">
           <div className="section-header-business">
-            <h2>Get Started in 3 Simple Steps</h2>
+            <h2>Get Started in 4 Simple Steps</h2>
             <p>Quick and easy setup for your business storage</p>
           </div>
 
           <div className="process-steps-business">
             <div className="process-step">
               <div className="step-number">01</div>
-              <div className="step-icon">
-                <Phone size={30} />
-              </div>
-              <h3>Consultation</h3>
+              
+              <h3 style ={{ paddingTop:'30px' }}>Consultation</h3>
               <p>Discuss your requirements with our business storage experts</p>
             </div>
 
@@ -347,11 +346,9 @@ const UAEBusinessPage = () => {
 
             <div className="process-step">
               <div className="step-number">02</div>
-              <div className="step-icon">
-                <Settings size={30} />
-              </div>
-              <h3>Customization</h3>
-              <p>We tailor a solution specific to your business needs</p>
+             
+              <h3 style ={{ paddingTop:'30px' }}>Pickup and Packing</h3>
+              <p>We pack all your items and will pickup from your doorstep</p>
             </div>
 
             <div className="process-connector">
@@ -360,11 +357,20 @@ const UAEBusinessPage = () => {
 
             <div className="process-step">
               <div className="step-number">03</div>
-              <div className="step-icon">
-                <Key size={30} />
-              </div>
-              <h3>Move In</h3>
-              <p>Get access codes and start using your storage immediately</p>
+             
+              <h3 style ={{ paddingTop:'30px' }}>Store In Warehouse</h3>
+              <p>We securely store your items in our warehouse.</p>
+            </div>
+
+              <div className="process-connector">
+              <ChevronRight size={24} />
+            </div>
+
+            <div className="process-step">
+              <div className="step-number">04</div>
+             
+              <h3 style ={{ paddingTop:'30px' }}>Doorstep Delivery</h3>
+              <p>We deliver to your doorstep whenever you need.</p>
             </div>
           </div>
         </div>
@@ -403,29 +409,29 @@ const UAEBusinessPage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="business-pricing-section">
+      <section className="business-pricing-section" style={{ color:'black' }}>
         <div className="business-container">
           <div className="pricing-card-business">
             <div className="pricing-content">
-              <h2>Transparent Business Pricing</h2>
-              <p>No hidden fees, no surprises</p>
+              <h2 style={{ color:'black' }}>Transparent Business Pricing</h2>
+              <p style={{ color:'black' }}>No hidden fees, no surprises</p>
               
               <div className="pricing-features">
                 <div className="pricing-feature">
                   <Check size={20} />
-                  <span>Volume discounts available</span>
+                  <span style={{ color:'black' }}>Volume discounts available</span>
                 </div>
                 <div className="pricing-feature">
                   <Check size={20} />
-                  <span>Custom payment terms</span>
+                  <span style={{ color:'black' }}>Custom payment terms</span>
                 </div>
                 <div className="pricing-feature">
                   <Check size={20} />
-                  <span>Tax invoice provided</span>
+                  <span style={{ color:'black' }}>Tax invoice provided</span>
                 </div>
                 <div className="pricing-feature">
                   <Check size={20} />
-                  <span>Corporate rates</span>
+                  <span style={{ color:'black' }}>Corporate rates</span>
                 </div>
               </div>
 
@@ -457,23 +463,28 @@ const UAEBusinessPage = () => {
             <p>Join 2,000+ Dubai businesses already saving with SafeStorage</p>
             
             <div className="cta-buttons-business">
+               <a href='tel:+97150577338' target='__blank'>
               <button className="btn-primary-cta">
                 <Phone size={18} />
                 Call Business Team
               </button>
+            </a>
+            <a
+  href="https://api.whatsapp.com/send/?phone=971505773388&text=Hi%2C+I%27m+interested+in+your+storage+services.+Can+you+please+provide+more+information%3F&type=phone_number&app_absent=0"
+  target="_blank"
+  rel="noopener noreferrer"
+>
               <button className="btn-secondary-cta">
                 <MessageCircle size={18} />
                 WhatsApp Us
               </button>
-              <button className="btn-tertiary-cta">
-                <Mail size={18} />
-                Email Inquiry
-              </button>
+            </a>
+             
             </div>
 
             <div className="contact-info-business">
               <span><Phone size={16} /> +971 50 577 3388</span>
-              <span><Mail size={16} /> business@safestorage.ae</span>
+              <span><Mail size={16} /> safestoragedubai@gmail.com</span>
             </div>
           </div>
         </div>

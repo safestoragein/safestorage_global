@@ -69,14 +69,18 @@ const UAEVehicleStoragePage = () => {
             </div>
 
             <div className="hero-actions">
+<a href='tel:+971505773388'>
               <button className="btn-primary">
                 <Phone size={18} />
                 Call +971 50 577 3388
               </button>
+            </a>
+              <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
               <button className="btn-secondary">
                 Check Availability
                 <ArrowRight size={18} />
               </button>
+            </a>
             </div>
           </div>
         </div>

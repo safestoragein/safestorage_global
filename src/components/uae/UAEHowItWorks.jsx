@@ -9,28 +9,34 @@ const UAEHowItWorks = () => {
       icon: <Phone size={40} />,
       title: "Contact Us",
       description: "Call or WhatsApp us to discuss your storage needs. Get instant quote.",
-      action: "Call +971 50 577 3388"
+      action: "Call +971 50 577 3388",
+      value: "tel:+971505773388"
     },
     {
       number: "02",
       icon: <Package size={40} />,
-      title: "Choose Your Unit",
-      description: "Select the perfect size unit. We offer free pickup for units above 100 sq ft.",
-      action: "View Sizes"
+      title: "Doorstep Pickup",
+      description: "We pack your items and pickup from your Doorstep",
+      action: "Get A Free Quote",
+      value: "https://safestorageglobal.com/uae/get-quote"
     },
     {
       number: "03", 
       icon: <Key size={40} />,
-      title: "Move In",
-      description: "Sign agreement online, get your access code, and start storing immediately.",
-      action: "Book Now"
+      title: "Store In Warehouse",
+      description: "We store your items securely in our warehouses",
+      action: "Get A Free Quote",
+      value: "https://safestorageglobal.com/uae/get-quote"
+
     },
     {
       number: "04",
       icon: <CheckCircle size={40} />,
-      title: "Access Anytime",
-      description: "Enjoy 24/7 access to your belongings with complete security and peace of mind.",
-      action: "Get Started"
+      title: "Doorstep Delivery",
+      description: "We deliver back your items, Whenever you need",
+      action: "Get A Free Quote",
+      value: "https://safestorageglobal.com/uae/get-quote"
+
     }
   ];
 
@@ -59,7 +65,8 @@ const UAEHowItWorks = () => {
               </div>
               <h3 className="step-title">{step.title}</h3>
               <p className="step-description">{step.description}</p>
-              <button className="step-action">{step.action}</button>
+              <a href={step.value}>
+              <button className="step-action">{step.action}</button></a>
               {index < steps.length - 1 && (
                 <div className="step-connector">
                   <svg width="40" height="40" viewBox="0 0 40 40">
@@ -95,30 +102,30 @@ const UAEHowItWorks = () => {
                 <li>Biometric access control</li>
                 <li>Professional moving assistance</li>
               </ul>
-              <button className="tour-button">Schedule Visit</button>
+             <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'> <button className="tour-button">Get A Free Quote</button></a>
             </div>
             <div className="facility-images">
               <div className="image-grid">
                 <div className="facility-image">
-                  <img src="/api/placeholder/300/200" alt="Modern storage units" />
+                  <img src="https://t3.ftcdn.net/jpg/08/80/21/76/360_F_880217681_rFT1TQrfOaiZpknJY00SVccrFKyTdKEk.jpg" alt="Modern storage units" />
                   <div className="image-overlay">
                     <span>Modern Storage Units</span>
                   </div>
                 </div>
                 <div className="facility-image">
-                  <img src="/api/placeholder/300/200" alt="Security systems" />
+                  <img src="https://www.store-insure.co.uk/Portals/0/blog/storychief-generated-2025-08-04-11-00-28_0176399d5bc14f3735f59d6a2b8d6839.jpeg?ver=2025-08-04-130637-090" alt="Security systems" />
                   <div className="image-overlay">
                     <span>Advanced Security</span>
                   </div>
                 </div>
                 <div className="facility-image">
-                  <img src="/api/placeholder/300/200" alt="Climate control" />
+                  <img src="https://www.shutterstock.com/image-photo/video-surveillance-warehouse-cctv-camera-600nw-2415205769.jpg" alt="Climate control" />
                   <div className="image-overlay">
                     <span>Climate Controlled</span>
                   </div>
                 </div>
                 <div className="facility-image">
-                  <img src="/api/placeholder/300/200" alt="24/7 access" />
+                  <img src="https://sastoragesolutions.com.au/wp-content/uploads/9a6mrkq4xam1336x630.jpg" alt="24/7 access" />
                   <div className="image-overlay">
                     <span>24/7 Access</span>
                   </div>

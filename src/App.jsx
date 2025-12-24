@@ -45,43 +45,13 @@ function AppWithRouter() {
   const location = useLocation()
 
   useEffect(() => {
-    const handleGeoRedirect = async () => {
-      try {
-        // Check if user has manually selected a country preference
-        const userPreference = getUserCountryPreference()
-        if (userPreference) {
-          setIsLoading(false)
-          setSelectedLocation(userPreference)
-          return
-        }
-
-        // Get redirect path based on IP geolocation
-        const redirectInfo = await getRedirectPath()
-        
-        if (redirectInfo && redirectInfo.type === 'external') {
-          // Redirect to external URL
-          window.location.href = redirectInfo.url
-          return
-        }
-        
-        // If no redirect needed or internal redirect, continue normally
-        setIsLoading(false)
-        setSelectedLocation(redirectInfo?.country?.toLowerCase() || 'uae')
-        
-        if (redirectInfo && redirectInfo.type === 'internal' && redirectInfo.path !== location.pathname) {
-          navigate(redirectInfo.path, { replace: true })
-        } else if (!redirectInfo && location.pathname === '/') {
-          // Default to UAE if no geolocation info and on home page
-          navigate('/uae', { replace: true })
-        }
-      } catch (error) {
-        console.error('Error handling geo redirect:', error)
-        setIsLoading(false)
-        setSelectedLocation('uae')
-      }
+    // Simply redirect to /uae for all users
+    setIsLoading(false)
+    setSelectedLocation('uae')
+    
+    if (location.pathname === '/') {
+      navigate('/uae', { replace: true })
     }
-
-    handleGeoRedirect()
   }, [])
 
   if (isLoading) {

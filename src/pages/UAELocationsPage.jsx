@@ -48,7 +48,7 @@ const UAELocationsPage = () => {
       distance: '3.8 km',
       rating: 4.9,
       reviews: 189,
-      phone: '+971 50 577 3389',
+      phone: '+971 50 577 3388',
       email: 'businessbay@safestorage.ae',
       hours: '6 AM - 10 PM',
       availableUnits: 32,
@@ -69,7 +69,7 @@ const UAELocationsPage = () => {
       distance: '5.2 km',
       rating: 4.7,
       reviews: 312,
-      phone: '+971 50 577 3390',
+      phone: '+971 50 577 3388',
       email: 'marina@safestorage.ae',
       hours: '24/7 Access',
       availableUnits: 28,
@@ -90,7 +90,7 @@ const UAELocationsPage = () => {
       distance: '4.1 km',
       rating: 4.6,
       reviews: 156,
-      phone: '+971 50 577 3391',
+      phone: '+971 50 577 3388',
       email: 'jlt@safestorage.ae',
       hours: '7 AM - 11 PM',
       availableUnits: 38,
@@ -111,7 +111,7 @@ const UAELocationsPage = () => {
       distance: '6.7 km',
       rating: 4.5,
       reviews: 267,
-      phone: '+971 50 577 3392',
+      phone: '+971 50 577 3388',
       email: 'rasalkhor@safestorage.ae',
       hours: '24/7 Access',
       availableUnits: 62,
@@ -132,7 +132,7 @@ const UAELocationsPage = () => {
       distance: '1.2 km',
       rating: 4.9,
       reviews: 423,
-      phone: '+971 50 577 3393',
+      phone: '+971 50 577 3388',
       email: 'downtown@safestorage.ae',
       hours: '6 AM - 12 AM',
       availableUnits: 18,
@@ -216,7 +216,7 @@ const UAELocationsPage = () => {
             <p>6 Premium facilities across Dubai with 24/7 access and top-tier security</p>
             
             {/* Search Bar */}
-            <div className="hero-search">
+           {/* <div className="hero-search">
               <div className="search-input-wrapper">
                 <Search size={20} />
                 <input
@@ -230,7 +230,7 @@ const UAELocationsPage = () => {
                 <Navigation size={18} />
                 Use My Location
               </button>
-            </div>
+            </div>*/}
 
             {/* Quick Stats */}
             <div className="hero-stats">
@@ -256,7 +256,7 @@ const UAELocationsPage = () => {
       </section>
 
       {/* Filters Section */}
-      <section className="filters-section">
+      {/*<section className="filters-section">
         <div className="container">
           <div className="filters-wrapper">
             <div className="filter-group">
@@ -308,7 +308,7 @@ const UAELocationsPage = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Main Content */}
       <section className="locations-content">
@@ -439,18 +439,23 @@ const UAELocationsPage = () => {
                     </div>
 
                     <div className="card-actions">
+                      <a href='tel:+97150577338'>
+
                       <button className="btn-primary">
                         <Phone size={16} />
                         Call Now
                       </button>
+                    </a>
+                      <a
+  href="https://api.whatsapp.com/send/?phone=971505773388&text=Hi%2C+I%27m+interested+in+your+storage+services.+Can+you+please+provide+more+information%3F&type=phone_number&app_absent=0"
+  target="_blank"
+  rel="noopener noreferrer"
+>
                       <button className="btn-secondary">
                         <MessageCircle size={16} />
                         WhatsApp
-                      </button>
-                      <button className="btn-outline">
-                        View Details
-                        <ChevronRight size={16} />
-                      </button>
+                      </button> </a>
+                      
                     </div>
                   </div>
                 </div>
@@ -481,16 +486,20 @@ const UAELocationsPage = () => {
         <div className="container">
           <div className="cta-content">
             <h2>Can't Decide? Let Us Help!</h2>
-            <p>Our storage experts will help you find the perfect location and unit size</p>
+            <p style = {{ color:'white' }}>Our storage experts will help you find the perfect location and unit size</p>
             <div className="cta-buttons">
+              <a href='tel:+97150577338'>
               <button className="btn-primary">
                 <Phone size={18} />
                 Call +971 50 577 3388
               </button>
-              <button className="btn-secondary">
+            </a>
+ <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
+               <button className="btn-secondary">
                 <Mail size={18} />
-                Email Us
+               Get A Free Quote
               </button>
+            </a>
             </div>
           </div>
         </div>

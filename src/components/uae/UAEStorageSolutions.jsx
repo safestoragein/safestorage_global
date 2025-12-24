@@ -162,7 +162,7 @@ const UAEStorageSolutions = () => {
             <p>Our storage experts are here to help you find the perfect solution</p>
           </div>
           <div className="cta-actions">
-            <a href="tel:8088848484" className="cta-call">Call 8088848484</a>
+            <a href="tel:+971505773388" className="cta-call">Call +971 50 577 3388</a>
             <a href="/uae/get-quote" className="cta-quote">Get Free Quote</a>
           </div>
         </div>

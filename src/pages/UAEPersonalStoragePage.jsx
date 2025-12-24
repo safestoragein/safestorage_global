@@ -135,18 +135,18 @@ const UAEPersonalStoragePage = () => {
             <h1>Personal Storage Units in <span className="text-highlight">Dubai</span></h1>
             <p>Secure, affordable storage for all your personal belongings. From a few boxes to entire home contents.</p>
             
-            <div className="hero-features">
+            <div className="hero-features" style={{ color:'white' }}>
               <div className="feature-item">
                 <CheckCircle size={20} />
-                <span>Affordable monthly rates</span>
+                <span className="text-highlight">Affordable monthly rates</span>
               </div>
               <div className="feature-item">
                 <CheckCircle size={20} />
-                <span>No long-term contracts</span>
+                <span className="text-highlight">No long-term contracts</span>
               </div>
               <div className="feature-item">
                 <CheckCircle size={20} />
-                <span>Free insurance included</span>
+                <span className="text-highlight">Free insurance included</span>
               </div>
             </div>
 
@@ -172,7 +172,7 @@ const UAEPersonalStoragePage = () => {
               </div>
               <div className="indicator">
                 <Award size={20} />
-                <span>SIRA Certified</span>
+                <span>Most Trusted Storage</span>
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@ const UAEPersonalStoragePage = () => {
       </section>
 
       {/* What Can You Store Section */}
-      <section className="storage-categories-section">
+      {/*<section className="storage-categories-section">
         <div className="personal-container">
           <div className="section-header">
             <h2>What Can You Store?</h2>
@@ -222,10 +222,10 @@ const UAEPersonalStoragePage = () => {
             <p>✨ Special handling available for fragile and valuable items</p>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Unit Sizes Section */}
-      <section className="unit-sizes-section">
+     {/* <section className="unit-sizes-section">
         <div className="personal-container">
           <div className="section-header">
             <h2>Choose Your Perfect Storage Unit</h2>
@@ -260,7 +260,7 @@ const UAEPersonalStoragePage = () => {
             <p>Not sure what size you need? <a href="#">Use our size calculator</a> or <a href="#">talk to our experts</a></p>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Benefits Section */}
       <section className="benefits-section">
@@ -287,7 +287,7 @@ const UAEPersonalStoragePage = () => {
         <div className="personal-container">
           <div className="section-header">
             <h2>How It Works</h2>
-            <p>Get your storage unit in 3 simple steps</p>
+            <p>Get your storage unit in 4 simple steps</p>
           </div>
 
           <div className="process-steps">
@@ -307,8 +307,8 @@ const UAEPersonalStoragePage = () => {
               <div className="step-icon">
                 <Box size={30} />
               </div>
-              <h3>Move In</h3>
-              <p>Bring your items. We provide free trolleys and assistance.</p>
+              <h3>Packing and Pickup</h3>
+              <p>We pack your items and pick your items from your doorstep.</p>
             </div>
 
             <div className="step-connector">→</div>
@@ -318,8 +318,19 @@ const UAEPersonalStoragePage = () => {
               <div className="step-icon">
                 <Shield size={30} />
               </div>
-              <h3>Secure & Access</h3>
-              <p>Your items are safe. Access them anytime you need.</p>
+              <h3>Storing In Warehouse</h3>
+              <p>We store your items in our secured Warehouses.</p>
+            </div>
+
+              <div className="step-connector">→</div>
+
+            <div className="process-step">
+              <div className="step-number">4</div>
+              <div className="step-icon">
+                <Shield size={30} />
+              </div>
+              <h3>Doorstep Delivery</h3>
+              <p>We return your items back whenever you need them.</p>
             </div>
           </div>
         </div>
@@ -367,10 +378,12 @@ const UAEPersonalStoragePage = () => {
               </ul>
             </div>
             <div className="offer-cta">
+              <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
               <button className="claim-offer-btn">
                 Claim This Offer
                 <ArrowRight size={18} />
               </button>
+            </a>
               <p className="offer-note">*Terms and conditions apply</p>
             </div>
           </div>
@@ -382,12 +395,14 @@ const UAEPersonalStoragePage = () => {
         <div className="personal-container">
           <div className="cta-content">
             <h2>Ready to Store Your Belongings?</h2>
-            <p>Get started today with Dubai's most trusted storage provider</p>
+            <p style={{ color:'white' }}>Get started today with Dubai's most trusted storage provider</p>
             <div className="cta-buttons">
+              <a href="tel:+97150577338">
               <button className="cta-btn primary">
                 <Phone size={18} />
                 Call Now
               </button>
+            </a>
               <a href="/uae/get-quote" className="cta-btn secondary">
                 Get a Free Quote
               </a>

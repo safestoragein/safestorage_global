@@ -84,10 +84,10 @@ const UAELocations = () => {
             <div className="location-details">
               <div className="location-header">
                 <h3>{locations[activeLocation].name}</h3>
-                <button className="directions-btn">
+               {/* <button className="directions-btn">
                   <Navigation size={18} />
                   Get Directions
-                </button>
+                </button>*/}
               </div>
 
               <div className="location-info">
@@ -126,10 +126,11 @@ const UAELocations = () => {
                   ))}
                 </div>
               </div>
-
+<a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
               <button className="book-location-btn">
-                Book at {locations[activeLocation].name}
+                Get A Free Quote
               </button>
+            </a>
             </div>
 
             {/* Map */}
@@ -152,10 +153,11 @@ const UAELocations = () => {
         <div className="service-area-banner">
           <Car size={40} />
           <div>
-            <h3>Free Pickup Service</h3>
-            <p>We offer free pickup service for storage units above 100 sq ft within Dubai</p>
+            <h3>Hassle - Free Pickup Service</h3>
+            <p>We offer hassle free pickup service within Dubai</p>
           </div>
-          <button className="schedule-pickup-btn">Schedule Pickup</button>
+          <a href='https://safestorageglobal.com/uae/get-quote' target='__blank'>
+          <button className="schedule-pickup-btn">Schedule Pickup</button></a>
         </div>
       </div>
     </section>

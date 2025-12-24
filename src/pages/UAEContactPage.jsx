@@ -35,15 +35,15 @@ const UAEContactPage = () => {
       icon: <Phone />,
       title: 'Phone',
       primary: '+971 50 577 3388',
-      secondary: '+971 4 123 4567',
+      secondary: '+971 50 577 3388',
       action: 'tel:+971505773388'
     },
     {
       icon: <Mail />,
       title: 'Email',
-      primary: 'info@safestorage.ae',
-      secondary: 'support@safestorage.ae',
-      action: 'mailto:info@safestorage.ae'
+      primary: 'safestoragedubai@gmail.com',
+      secondary: 'support@safestorage.in',
+      action: 'mailto:safestoragedubai@gmail.com'
     },
     {
       icon: <MapPin />,
@@ -65,25 +65,25 @@ const UAEContactPage = () => {
     {
       name: 'Business Bay',
       address: 'Bay Square, Building 5',
-      phone: '+971 50 111 2233',
+      phone: '+971 50 577 3388',
       hours: '24/7 Access'
     },
     {
       name: 'Dubai Marina',
       address: 'Marina Plaza, Tower B',
-      phone: '+971 50 222 3344',
+      phone: '+971 50 577 3388',
       hours: '24/7 Access'
     },
     {
       name: 'Al Quoz',
       address: 'Al Quoz Industrial 3',
-      phone: '+971 50 333 4455',
+      phone: '+971 50 577 3388',
       hours: '24/7 Access'
     },
     {
       name: 'JLT',
       address: 'Cluster A, Lake View',
-      phone: '+971 50 444 5566',
+      phone: '+971 50 577 3388',
       hours: '24/7 Access'
     }
   ];
@@ -108,9 +108,9 @@ const UAEContactPage = () => {
                 <MessageCircle size={18} />
                 <span>WhatsApp</span>
               </a>
-              <a href="mailto:info@safestorage.ae" className="quick-contact-btn">
+              <a href='https://safestorageglobal.com/uae/get-quote' target='__blank' className="quick-contact-btn">
                 <Mail size={18} />
-                <span>Email Us</span>
+                <span>Get A Free Quote</span>
               </a>
             </div>
           </div>
@@ -267,7 +267,7 @@ const UAEContactPage = () => {
                     <Shield size={20} />
                     <div>
                       <strong>Secure Storage</strong>
-                      <span>SIRA approved facility</span>
+                      <span>Secured Storage facility</span>
                     </div>
                   </div>
                   <div className="feature-item">
@@ -352,7 +352,7 @@ const UAEContactPage = () => {
         <div className="contact-container">
           <div className="cta-content">
             <h2>Ready to Get Started?</h2>
-            <p>Find the perfect storage solution for your needs today</p>
+            <p style= {{ color:'white' }}>Find the perfect storage solution for your needs today</p>
             <div className="cta-buttons">
               <a href="tel:+971505773388" className="cta-btn primary">
                 <Phone size={18} />
